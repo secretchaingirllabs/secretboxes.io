@@ -4,6 +4,8 @@
 import Head from '@components/Head.astro';
 import TopNavigation from '@components/TopNavigation.astro';
 import TopNotificationBar from '@components/TopNotificationBar.astro';
+import PrimaryButton from '@components/ButtonPrimary.astro';
+import SocialButton from '@components/SocialButton.astro';
 
 export interface Props {
     title: string,
@@ -26,7 +28,46 @@ const { title = 'Secret Boxes' } = Astro.props;
 
         <!-- Note: Home page requires a special footer-->
         <footer>
-            <p class="text-3xl">This is a custom footer for the Home page.</p> 
+            <div id="footer-left">
+                <h2>Sign Up For The Mailing List</h2>
+                <p>We don't send these very often so you know if you get an email from us, it's gonna be good and it's gonna be worth reading.</p>
+            
+                <label for="footer-nickname">Nickname</label>
+                <input id="footer-nickname" type="text" placeholder="wumpus">
+
+                <label for="footer-email">Email Address</label>
+                <input id="footer-email" type="text" placeholder="wumpus@email.com">
+
+                <input id="mailing-list-checkbox" type="checkbox">
+                <label for="mailing-list-checkbox">I agree to recieve cool stuff from the Secret Boxes Team!</label>
+
+                <PrimaryButton text="Subscribe"></PrimaryButton>
+
+                <ul>
+                    <li><SocialButton></SocialButton></li>
+                    <li><SocialButton></SocialButton></li>
+                    <li><SocialButton></SocialButton></li>
+                    <li><SocialButton></SocialButton></li>
+                </ul>
+
+                <ul>
+                    <li>SCG Foundation</li>
+                    <li>Contact</li>
+                    <li>Support</li>
+                </ul>
+            </div>
+
+            <div id="footer-right">
+                <h3>Contact Us</h3>
+                <h3>Team</h3>
+                <h3>Github</h3>
+
+                <p>We'd love to hear from you! Feel free to contact us with your ideas or feedback.</p>
+                <p>And cehckout our GitHub to see how you can contribute.</p>
+                <p class="font-bold">support@secretboxes.io</p>
+
+                <p>&#169; 2021 SecretChainGirl Foundation</p>
+            </div>
         </footer>
     </body>
 </html>

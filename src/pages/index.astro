@@ -2,15 +2,68 @@
 import Logo from '../components/Logo.astro';
 import HomeLayout from '@layouts/Home.astro';
 import PrimaryButton from '@components/ButtonPrimary.astro';
+import SecondaryButton from '@components/ButtonSecondary.astro';
 import '../styles/global.css';
 
 let title = 'Home | Secret Boxes';
 ---
 <HomeLayout title={title}>
 	<!-- Home Page content goes here. -->
-	<section>
+	<div id="home-hero">
+		<!-- Note: Home Hero title is larger than H1 specified in typography (118px vs 96px) -->
 		<h1>Secret Boxes</h1>
-		<h2>The beautiful, fun, and easy way to get started building Secret Apps</h2>
+		<h2>The beautiful, fun and easy way to get started building Secret Apps</h2>
 		<PrimaryButton text="Start Unboxing"></PrimaryButton>
-	</section>
+		<!-- 
+			<img src="alien.svg" alt="">
+		-->
+	</div>
+
+	<div id="home-description">
+		<div>
+			<h2>What Are Secret Boxes?</h2>
+			<p>Secret Boxes are quickstart to help you build <span class="font-bold">decentralized, privacy preserving dApps</span> on Secret Network.</p>
+			<p><span class="font-bold">Each box</span> comes with everything you need to start building and includes libraries, secret contracts and beautiful UI elements so you can focus on coding your functionality.</p>
+			<p><span class="font-bold">Secret Boxes</span> can be anything from use case blueprints to chain integrations, technical bootstraps and more.</p>
+			<PrimaryButton text="Learn More"></PrimaryButton>
+		</div>	
+
+		<div>
+			<div>
+				<span>
+					<h3>Secret Counter</h3>
+					<div>New</div>
+				</span>
+				<p>A simple counter illustrating the basics of working</p>
+				<PrimaryButton text="Let's Go!"></PrimaryButton>
+				<SecondaryButton text="Docs"></SecondaryButton>
+				<SecondaryButton text="Repo">
+					<!--Github logo svg goes here-->
+				</SecondaryButton>
+			</div>
+
+			<div>
+				<span>
+					<h3>Figment Learn</h3>
+					<div>New</div>
+				</span>
+				<p>The learn pathway for devs using Figment's DataHub gateway to access the Secret Network and deploy secret contracts.</p>
+				<PrimaryButton text="Let's Go!"></PrimaryButton>
+				<SecondaryButton text="Docs"></SecondaryButton>
+			</div>
+
+			<div>
+				<span>
+					<h3>Richie Rich</h3>
+					<div>Coming Soon</div>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div id="home-news">
+		<h1>News & Updates</h1>
+		<p>What's going on in the Secret Boxes univers? Here is where devs can find out about new Secret Boxess, launch announcements, protocol updates, developer working groups and more.</p>
+		<!-- Clickable images cards go here-->
+	</div>
 </HomeLayout>
