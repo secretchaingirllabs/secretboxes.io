@@ -1,0 +1,10 @@
+---
+export interface Props {
+    img: string,
+};
+
+const { img = '/logo.svg' } = Astro.props;
+---
+<div class="rounded-full">
+    <img src={img} alt="Social button">
+</div>
