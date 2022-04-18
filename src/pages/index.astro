@@ -1,33 +1,10 @@
 ---
-// import {Content as TourContent} from '../content/Tour.md';
 import Logo from '../components/Logo.astro';
+import HomeLayout from '@layouts/Home.astro';
 import '../styles/global.css';
 
-let title = 'My Astro Site';
+let title = 'Home | Secret Boxes';
 ---
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>{title}</title>
-
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-</head>
-<body>
-	<main>
-		<header>
-			<div>
-				<Logo width={60} height={80} />
-				<h1 class="text-6xl font-bold underline">Welcome to <a href="https://astro.build/">Astro</a></h1>
-			</div>
-		</header>
-
-		<article>
-			<div class="banner">
-				<p><strong>🧑‍🚀 Seasoned astronaut?</strong> Delete this template and have fun!</p>
-			</div>
-			<!-- <TourContent /> -->
-		</article>
-	</main>
-</body>
-</html>
+<HomeLayout title={title}>
+	<!-- Home Page content goes here. -->
+</HomeLayout>
