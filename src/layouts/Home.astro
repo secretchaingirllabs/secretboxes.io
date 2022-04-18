@@ -2,6 +2,8 @@
 // Home.astro defines a generic layout for the index.astro page to use. 
 // Specifically, the home page requires a custom footer.
 import Head from '@components/Head.astro';
+import TopNavigation from '@components/TopNavigation.astro';
+import TopNotificationBar from '@components/TopNotificationBar.astro';
 
 export interface Props {
     title: string,
@@ -13,11 +15,13 @@ const { title = 'Secret Boxes' } = Astro.props;
     <Head title={title}></Head>
     
     <body>
+        <TopNotificationBar></TopNotificationBar>
+        <TopNavigation></TopNavigation>
         <slot />
     </body>
 
     <!-- Note: Home page requires a special footer-->
     <footer>
-        <p>This is a custom footer for the Home page.</p> 
+        <p class="text-3xl">This is a custom footer for the Home page.</p> 
     </footer>
 </html>

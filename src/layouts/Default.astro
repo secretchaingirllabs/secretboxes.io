@@ -2,6 +2,8 @@
 // Default.astro defines a generic layout for all pages to use. 
 import Head from '@components/Head.astro';
 import Footer from '@components/Footer.astro';
+import TopNavigation from '@components/TopNavigation.astro';
+import TopNotificationBar from '@components/TopNotificationBar.astro';
 
 export interface Props {
     title: string,
@@ -11,7 +13,11 @@ const { title = 'Secret Boxes' } = Astro.props;
 ---
 <html lang="en">
     <Head title={title}></Head>
+    
     <body>
+        <TopNotificationBar></TopNotificationBar>
+        <TopNavigation></TopNavigation>
+
         <slot />
     </body>
     <Footer></Footer>
