@@ -1,0 +1,14 @@
+---
+export interface Props {
+    text: string,
+    route?: string,
+};
+
+const { text = 'Button', route = '#' } = Astro.props;
+---
+<button>
+    <a href={route}>
+        {text}
+        <slot />
+    </a>
+</button>

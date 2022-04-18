@@ -1,10 +1,16 @@
 ---
 import Logo from '../components/Logo.astro';
 import HomeLayout from '@layouts/Home.astro';
+import PrimaryButton from '@components/ButtonPrimary.astro';
 import '../styles/global.css';
 
 let title = 'Home | Secret Boxes';
 ---
 <HomeLayout title={title}>
 	<!-- Home Page content goes here. -->
+	<section>
+		<h1>Secret Boxes</h1>
+		<h2>The beautiful, fun, and easy way to get started building Secret Apps</h2>
+		<PrimaryButton text="Start Unboxing"></PrimaryButton>
+	</section>
 </HomeLayout>
