@@ -15,13 +15,18 @@ const { title = 'Secret Boxes' } = Astro.props;
     <Head title={title}></Head>
     
     <body>
-        <TopNotificationBar></TopNotificationBar>
-        <TopNavigation></TopNavigation>
-        <slot />
-    </body>
+        <header>
+            <TopNotificationBar></TopNotificationBar>
+            <TopNavigation></TopNavigation>
+        </header>
 
-    <!-- Note: Home page requires a special footer-->
-    <footer>
-        <p class="text-3xl">This is a custom footer for the Home page.</p> 
-    </footer>
+        <main>
+            <slot />
+        </main>
+
+        <!-- Note: Home page requires a special footer-->
+        <footer>
+            <p class="text-3xl">This is a custom footer for the Home page.</p> 
+        </footer>
+    </body>
 </html>

@@ -15,10 +15,15 @@ const { title = 'Secret Boxes' } = Astro.props;
     <Head title={title}></Head>
     
     <body>
-        <TopNotificationBar></TopNotificationBar>
-        <TopNavigation></TopNavigation>
+        <header>
+            <TopNotificationBar></TopNotificationBar>
+            <TopNavigation></TopNavigation>
+        </header>
+        
+        <main>
+            <slot />
+        </main>
 
-        <slot />
+        <Footer></Footer>
     </body>
-    <Footer></Footer>
 </html>
