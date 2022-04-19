@@ -1,43 +1,45 @@
-# Welcome to [Astro](https://astro.build)
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/starter)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
+# Secretboxes.io
 ## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
 
 ```
 /
-├── public/
+├── public/ 
 │   ├── robots.txt
 │   └── favicon.ico
+│   └── logo.svg
 ├── src/
 │   ├── components/
-│   │   └── Tour.astro
+│   ├── layouts/
 │   └── pages/
-│       └── index.astro
+│   └── styles/
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### public/
+The public directory contains static assets such as images and other non-code assets.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### src/components
+Contains reusable components `astro` and (for this project) `svelte` components.
 
-Any static assets, like images, can be placed in the `public/` directory.
+### src/layouts
+Contains reusable page layouts.
 
-## 🧞 Commands
+### src/pages
+Contains full pages. Pages is a special directory for Astro. Each
+component in the pages directory is assigned a route based on its
+file name. [See more](https://docs.astro.build/en/core-concepts/routing/)
 
-All commands are run from the root of the project, from a terminal:
+### src/styles
+Contains CSS stylesheets. In our case, global.css is used to import
+Tailwindcss base styles.
+
+## 🧞 Commands & Usage
+
+After cloning the repo, all commands are run from the root of the project, from a terminal:
 
 | Command           | Action                                       |
 |:----------------  |:-------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
+| `yarn`     | Installs dependencies                        |
+| `yarn dev`     | Starts local dev server at `localhost:3000`  |
+| `yarn build`   | Build your production site to `./dist/`      |
+| `yarn preview` | Preview your build locally, before deploying |
