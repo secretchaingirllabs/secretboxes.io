@@ -1,0 +1,11 @@
+---
+export interface Props {
+    type: string,
+    msg: string,
+}
+
+const { type = 'success', msg = '' } = Astro.props;
+---
+<div>
+    <span>{msg}</span>
+</div>

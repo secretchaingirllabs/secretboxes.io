@@ -1,0 +1,21 @@
+---
+export interface Props {
+    heading: string,
+    msg: string,
+    primaryButtonText: string,
+    secondaryButtonText: string,
+}
+
+const { 
+    heading = 'Welcome', 
+    msg = 'This is a modal', 
+    primaryButtonText = 'Continue',
+    secondaryButtonText = 'Skip'
+} = Astro.props;
+---
+<div>
+    <h2>{heading}</h2>
+    <p>{msg}</p>
+    <button>{primaryButtonText}</button>
+    <button>{secondaryButtonText}</button>
+</div>
