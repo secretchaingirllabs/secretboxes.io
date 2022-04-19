@@ -8,7 +8,9 @@ const { text = 'Button', route = '#' } = Astro.props;
 ---
 <button>
     <a href={route}>
+        <slot name="pre-text" />
         {text}
+        <slot name="post-text" />
         <slot />
     </a>
 </button>
