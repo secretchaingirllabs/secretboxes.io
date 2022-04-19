@@ -1,0 +1,46 @@
+---
+import DefaultLayout from '@layouts/Default.astro';
+import PrimaryButton from '@components/ButtonPrimary.astro';
+import SupportForm from '@components/FormSupport.svelte';
+import '../styles/global.css';
+
+let title = 'Support | Secret Boxes';
+---
+<DefaultLayout title={title}>
+    <h2>Support & Community</h2>
+    <p>We're here to support you and help you get going with Secret Boxes as part of your path to building dApps on the Secret Network. We have an awesome community of developers so come chat with us about use cases, suggestions, ideas, and more!</p>
+
+    <div>
+        <!--Discord logo here. Note: Logo has a wrapper in Figma -->
+        <h5>Chat on Discord</h5>
+        <p>If you're looking for real-time discussions, check out the Secret Network discord. This is the best place to chat, get help or make suggestions!</p>
+        <!-- There are different buttons on this page. I'm going to assume we are reusing the style previously defined -->
+        <PrimaryButton text="Check Discord">
+            <!-- Right facing arrow svg here -->
+        </PrimaryButton>
+    </div>
+
+    <div>
+        <!--Secret Network logo here. Note: Logo has a wrapper in Figma -->
+        <h5>Post on the Forum</h5>
+        <p>The Secret Network froum is where you can participate in more thoughtful discussions, ideas and more.</p>
+        <!-- There are different buttons on this page. I'm going to assume we are reusing the style previously defined -->
+        <PrimaryButton text="Check Forum">
+            <!-- Right facing arrow svg here -->
+        </PrimaryButton>
+    </div>
+
+    <div>
+        <!--Secret Network logo here. Note: Logo has a wrapper in Figma -->
+        <h5>Find us on Github</h5>
+        <p>If you want to report an issue or make a suggestion, come find us. We welcome your feedback!</p>
+        <!-- There are different buttons on this page. I'm going to assume we are reusing the style previously defined -->
+        <PrimaryButton text="Open An Issue">
+            <!-- Right facing arrow svg here -->
+        </PrimaryButton>
+    </div>
+
+    <h3>Support Ticket</h3>
+    <p>The best way to get support directly from SecretChainGirl Foundation! Open a support ticket to start a conversation with us. This will help us in building our FAQ to assit future Secret Boxers!</p>
+    <SupportForm></SupportForm>
+</DefaultLayout>
