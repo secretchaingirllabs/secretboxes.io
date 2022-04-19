@@ -1,0 +1,14 @@
+---
+/**
+ * AttributeTag.astro is used for bordered box elements as seen
+ * on the Home page.
+ */
+export interface Props {
+    attr: string,
+};
+
+const { attr = 'New' } = Astro.props;
+---
+<div>
+    {attr}
+</div>
