@@ -1,0 +1,27 @@
+---
+import DefaultLayout from '@layouts/Default.astro';
+import SecondaryButton from '@components/ButtonSecondary.astro';
+
+const { content } = Astro.props;
+---
+<!-- Note: May want to validate format of content props -->
+<DefaultLayout title={content.title}>
+    <div id="hero">
+        <h2>{content.title}</h2>
+
+        <div>
+            <div id="author">
+                <!-- User Icon -->
+                <p>{content.author}</p>
+            </div>
+                <!-- Calendar Icon -->
+                <p>{content.date}</p>
+        </div>
+    </div>
+
+    <slot />
+
+    <SecondaryButton text="Back To Tutorial Page">
+        <!-- Right facing arrow (post-text) here-->
+    </SecondaryButton> 
+</DefaultLayout>
