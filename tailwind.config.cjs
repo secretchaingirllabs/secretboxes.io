@@ -21,8 +21,10 @@ module.exports = {
 				200: '#797B7E'
 			}
 		},
+		// Note: Sans will default for all text.
 		fontFamily: {
-			sans: ['Gobold High', 'sans-serif'],
+			sans: ['Source Sans Pro', 'sans-serif'],
+			heading: ['Gobold High', 'sans-serif'],
 		},
 		borderRadius: {
 			'none': '0',
