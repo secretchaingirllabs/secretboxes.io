@@ -5,6 +5,6 @@ export interface Props {
 
 const { img = '/logo.svg' } = Astro.props;
 ---
-<div class="rounded-full">
-    <img src={img} alt="Social button">
+<div class="inline-flex rounded-full bg-white h-7 w-7 p-1 mr-6">
+    <img class="m-auto h-5/6 w-5/6" src={img} alt="Social button">
 </div>
