@@ -4,7 +4,7 @@
 import Head from '@components/Head.astro';
 import TopNavigation from '@components/TopNavigation.astro';
 import TopNotificationBar from '@components/TopNotificationBar.astro';
-import PrimaryButton from '@components/ButtonPrimary.astro';
+import Button from '@components/Button.astro';
 import SocialButton from '@components/SocialButton.astro';
 
 export interface Props {
@@ -41,7 +41,7 @@ const { title = 'Secret Boxes' } = Astro.props;
                 <input id="mailing-list-checkbox" type="checkbox">
                 <label for="mailing-list-checkbox">I agree to recieve cool stuff from the Secret Boxes Team!</label>
 
-                <PrimaryButton text="Subscribe"></PrimaryButton>
+                <Button kind="primary" route="/" text="Subscribe"></Button>
 
                 <ul>
                     <li><SocialButton></SocialButton></li>

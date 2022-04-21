@@ -1,9 +1,7 @@
 ---
 import DefaultLayout from '@layouts/Default.astro';
 import AttributeTag from '@components/AttributeTag.astro';
-import PrimaryButton from '@components/ButtonPrimary.astro';
-import SecondaryButton from '@components/ButtonSecondary.astro';
-import TertiaryButton from '@components/ButtonTertiary.astro';
+import Button from '@components/Button.astro';
 import '../styles/global.css';
 
 let title = 'Boxes | Secret Boxes';
@@ -12,13 +10,11 @@ let title = 'Boxes | Secret Boxes';
     <div>
         <h2>Secret Counter</h2>
         <p>This is the starting point for learning about Secret Contracts. Based on the "simple counter" secret contract this box illustrates the basics of querying and modifying contract state using the <span class="font-bold">"getCount"</span> and <span class="font-bold">"increment"</span> messages</p>
-        <PrimaryButton text="Learn More"></PrimaryButton>
-        <SecondaryButton text="Repo">
-            <span slot="pre-text">
-                <!-- Github Logo Here -->
-            </span>
-        </SecondaryButton>
-        <SecondaryButton text="Docs"></SecondaryButton>
+        <Button kind="primary" route="/" text="Learn More"></Button>
+        <Button kind="secondary" route="/" text="Repo">
+            <!-- Github Logo Here -->
+        </Button>
+        <Button kind="secondary" route="/docs" text="Docs"></Button>
         <!-- img or svg goes here-->
     </div>
 
@@ -27,20 +23,20 @@ let title = 'Boxes | Secret Boxes';
 
         <h2>Figment Learn</h2>
         <p>Figment Learn is a fun learning pathway to help developers quickly learn about working with Secret Network. Using the DataHub gateway, you'll be taken through the steps to deploy a secret contract to the testnet, and even get some SCRT tokens for your efforts!</p>
-        <PrimaryButton text="Learn More"></PrimaryButton>
+        <Button kind="primary" route="/" text="Learn More"></Button>
     </div>
 
     <div>
         <h2>Richie Rich</h2>
         <AttributeTag attr='Coming Soon'></AttributeTag>
         <p>Figment Learn is a fun learning pathway to help developers quickly learn about working with Secret Network. Using the DataHub gateway, you'll be taken through the steps to deploy a secret contract to the testnet, and even get some SCRT tokens for your efforts!</p>
-        <PrimaryButton text="Learn More"></PrimaryButton>
+        <Button kind="primary" route="/" text="Subscribe"></Button>
         <!-- img or svg goes here-->
     </div>
 
-    <TertiaryButton text="Explore More Boxes">
+    <Button kind="tertiary" route="/" text="Explore More Boxes">
         <!-- Fill slot post-text with right facing arrow -->
-    </TertiaryButton>
+    </Button>
 
     <div id="mailing-list-forum">
         <h1>Sign up for the Mailing List</h1>

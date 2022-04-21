@@ -1,8 +1,7 @@
 ---
 import Logo from '../components/Logo.astro';
 import HomeLayout from '@layouts/Home.astro';
-import PrimaryButton from '@components/ButtonPrimary.astro';
-import SecondaryButton from '@components/ButtonSecondary.astro';
+import Button from '@components/Button.astro';
 import '../styles/global.css';
 
 let title = 'Home | Secret Boxes';
@@ -13,7 +12,7 @@ let title = 'Home | Secret Boxes';
 		<!-- Note: Home Hero title is larger than H1 specified in typography (118px vs 96px) -->
 		<h1 class="text-yellow">Secret Boxes</h1>
 		<h2>The beautiful, fun and easy way to get started building Secret Apps</h2>
-		<PrimaryButton text="Start Unboxing"></PrimaryButton>
+		<Button kind="primary" route="/boxes" text="Start Unboxing"></Button>
 		<!-- 
 			<img src="alien.svg" alt="">
 		-->
@@ -25,7 +24,7 @@ let title = 'Home | Secret Boxes';
 			<p>Secret Boxes are quickstart to help you build <span class="font-bold">decentralized, privacy preserving dApps</span> on Secret Network.</p>
 			<p><span class="font-bold">Each box</span> comes with everything you need to start building and includes libraries, secret contracts and beautiful UI elements so you can focus on coding your functionality.</p>
 			<p><span class="font-bold">Secret Boxes</span> can be anything from use case blueprints to chain integrations, technical bootstraps and more.</p>
-			<PrimaryButton text="Learn More"></PrimaryButton>
+			<Button kind="primary" route="/tutorials" text="Learn more"></Button>
 		</div>	
 
 		<div>
@@ -35,11 +34,11 @@ let title = 'Home | Secret Boxes';
 					<div>New</div>
 				</span>
 				<p>A simple counter illustrating the basics of working</p>
-				<PrimaryButton text="Let's Go!"></PrimaryButton>
-				<SecondaryButton text="Docs"></SecondaryButton>
-				<SecondaryButton text="Repo">
+				<Button kind="primary" route="/tutorials" text="Let's Go!"></Button>
+				<Button kind="secondary" route="/docs" text="Docs"></Button>
+				<Button kind="secondary" route="/docs" text="Repo">
 					<!--Github logo svg goes here-->
-				</SecondaryButton>
+				</Button>
 			</div>
 
 			<div>
@@ -48,8 +47,8 @@ let title = 'Home | Secret Boxes';
 					<div>New</div>
 				</span>
 				<p>The learn pathway for devs using Figment's DataHub gateway to access the Secret Network and deploy secret contracts.</p>
-				<PrimaryButton text="Let's Go!"></PrimaryButton>
-				<SecondaryButton text="Docs"></SecondaryButton>
+				<Button kind="primary" route="/" text="Let's Go!"></Button>
+				<Button kind="secondary" route="/docs" text="Docs"></Button>
 			</div>
 
 			<div>

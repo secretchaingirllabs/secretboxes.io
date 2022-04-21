@@ -1,0 +1,60 @@
+---
+// 
+// Button.astro is a generic button component for
+// our three main buttons: primary, secondary, & tertiary.
+// This component contains shared and isolated styles for each
+// button. This interface can be made to give more granular
+// design freedom by extending Props further.
+// 
+export interface Props {
+    kind: string,
+    text: string,
+    route: string,
+    rounded?: boolean,
+    width?: string,
+    height?: string,
+};
+
+const { 
+    kind = '',
+    text = '', 
+    route = '', 
+    rounded = true, 
+    width = 'w-fit',
+    height = 'h-12',
+} = Astro.props;
+
+const SHARED_STYLES = `inline-flex justify-center items-center px-11 py-7 font-bold ${height} ${width} ${rounded ? 'rounded-lg' : ''}`
+const PRIMARY_BUTTON_STYLES = 'bg-gray-300 text-white'
+const SECONDARY_BUTTON_STYLES = 'border-solid border-2 border-gray-300 text-gray-300'
+const TERTIARY_BUTTON_STYLES = 'text-gray-300'
+
+function style() {
+    switch(kind.toLowerCase()) {
+        case 'primary': return getPrimaryStyles();
+        case 'secondary': return getSecondaryStyles();
+        case 'tertiary': return getTertiaryStyles();
+        default: return getPrimaryStyles();
+    }
+}
+
+function getPrimaryStyles() {
+    return `${SHARED_STYLES} ${PRIMARY_BUTTON_STYLES}`;
+}
+
+function getSecondaryStyles() {
+    return `${SHARED_STYLES} ${SECONDARY_BUTTON_STYLES}`;
+}
+
+function getTertiaryStyles() {
+    return `${SHARED_STYLES} ${TERTIARY_BUTTON_STYLES}`;
+}
+---
+<a 
+    class={style()}
+    href={route}>
+    <slot name="pre" />
+    {text}
+    <slot name="post" />
+    <slot />
+</a>

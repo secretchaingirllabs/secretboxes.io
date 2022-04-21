@@ -1,6 +1,6 @@
 ---
 import DefaultLayout from '@layouts/Default.astro';
-import PrimaryButton from '@components/ButtonPrimary.astro';
+import Button from '@components/Button.astro';
 import SupportForm from '@components/FormSupport.svelte';
 import '../styles/global.css';
 
@@ -15,9 +15,9 @@ let title = 'Support | Secret Boxes';
         <h5>Chat on Discord</h5>
         <p>If you're looking for real-time discussions, check out the Secret Network discord. This is the best place to chat, get help or make suggestions!</p>
         <!-- There are different buttons on this page. I'm going to assume we are reusing the style previously defined -->
-        <PrimaryButton text="Check Discord">
+        <Button kind="primary" route="/" text="Check Discord">
             <!-- Right facing arrow svg here -->
-        </PrimaryButton>
+        </Button>
     </div>
 
     <div>
@@ -25,9 +25,9 @@ let title = 'Support | Secret Boxes';
         <h5>Post on the Forum</h5>
         <p>The Secret Network froum is where you can participate in more thoughtful discussions, ideas and more.</p>
         <!-- There are different buttons on this page. I'm going to assume we are reusing the style previously defined -->
-        <PrimaryButton text="Check Forum">
+        <Button kind="primary" route="/" text="Check Forum">
             <!-- Right facing arrow svg here -->
-        </PrimaryButton>
+        </Button>
     </div>
 
     <div>
@@ -35,9 +35,9 @@ let title = 'Support | Secret Boxes';
         <h5>Find us on Github</h5>
         <p>If you want to report an issue or make a suggestion, come find us. We welcome your feedback!</p>
         <!-- There are different buttons on this page. I'm going to assume we are reusing the style previously defined -->
-        <PrimaryButton text="Open An Issue">
+        <Button kind="primary" route="/" text="Open An Issue">
             <!-- Right facing arrow svg here -->
-        </PrimaryButton>
+        </Button>
     </div>
 
     <h3>Support Ticket</h3>
