@@ -1,10 +1,11 @@
 ---
 export interface Props {
     img?: string,
+    alt?: string,
 };
 
-const { img = '/logo.svg' } = Astro.props;
+const { img = '/logo.svg', alt = 'This is a social button'} = Astro.props;
 ---
 <div class="inline-flex rounded-full bg-white h-7 w-7 p-1 mr-6">
-    <img class="m-auto h-5/6 w-5/6" src={img} alt="Social button">
+    <img class="m-auto h-5/6 w-5/6" src={img} alt={alt}>
 </div>
