@@ -1,9 +1,15 @@
-<nav>
-    <ul>
-        <li>Boxes<span class="dropdown-arrow"></span></li>
-        <li>Tutorials</li>
-        <li>Docs</li>
-        <li>Updates</li>
-        <li>Support</li>
-    </ul>
-</nav>
+<div class="grid grid-cols-3 items-center justify-items-center bg-white h-28 py-6">
+    <!-- Note: Logo.astro is likely an extraneous component and can be deleted later-->
+    <!-- Logo only appears in top navigation for now and would likely...-->
+    <!-- ...require additional/different styles if placed elsewhere-->
+    <img class="col-start-1" src="/logo.svg" alt="Secret boxes logo">
+
+    <!-- May want to move dropdown icons to a seperate component -->
+    <nav class="col-start-2 text-lg font-semibold text-gray-300">
+        <a class="mx-6" href="/boxes">Boxes<img class="inline ml-2" src="/arrow_down_icon.svg" alt="Dropdown Icon"></a>
+        <a class="mx-6" href="/tutorials">Tutorials</a>
+        <a class="mx-6" href="/docs">Docs</a>
+        <a class="mx-6" href="/updates">Updates</a>
+        <a class="mx-6" href="/support">Support</a>
+    </nav>
+</div>

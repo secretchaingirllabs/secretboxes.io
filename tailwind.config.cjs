@@ -18,7 +18,8 @@ module.exports = {
 			black: '#282828',
 			gray: {
 				100: '#939597',
-				200: '#797B7E'
+				200: '#797B7E',
+				300: '#4E4B66',
 			}
 		},
 		// Note: Sans will default for all text.
