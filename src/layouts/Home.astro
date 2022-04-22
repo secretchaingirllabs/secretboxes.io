@@ -16,13 +16,13 @@ const { title = 'Secret Boxes' } = Astro.props;
 <html lang="en">
     <Head title={title}></Head>
     
-    <body>
+    <body class="text-regular tracking-0.5">
         <header>
             <TopNotificationBar></TopNotificationBar>
             <TopNavigation></TopNavigation>
         </header>
 
-        <main>
+        <main class="mx-36">
             <slot />
         </main>
 

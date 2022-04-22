@@ -2,36 +2,44 @@
 import Logo from '../components/Logo.astro';
 import HomeLayout from '@layouts/Home.astro';
 import Button from '@components/Button.astro';
+import AttributeTag from '@components/AttributeTag.astro';
 import '../styles/global.css';
 
 let title = 'Home | Secret Boxes';
 ---
 <HomeLayout title={title}>
 	<!-- Home Page content goes here. -->
-	<div id="home-hero">
+	<!-- Note: The way we derive the height for the hero component is by subtracting -->
+	<!-- the height of the Nav and Notification component from the viewport height-->
+	<!-- May want to refactor later-->
+	<div id="home-hero" class="grid grid-cols-2 justify-items-center items-center h-[calc(100vh_-_2.75rem_-_7rem)]">
 		<!-- Note: Home Hero title is larger than H1 specified in typography (118px vs 96px) -->
-		<h1 class="text-yellow">Secret Boxes</h1>
-		<h2>The beautiful, fun and easy way to get started building Secret Apps</h2>
-		<Button kind="primary" route="/boxes" text="Start Unboxing"></Button>
-		<!-- 
-			<img src="alien.svg" alt="">
-		-->
+		<div>
+			<div class="text-[7.375rem] font-heading tracking-1.5">Secret Boxes</div>
+			<h5 class="font-semibold text-h5 w-[490px] mb-10">The beautiful, fun and easy way to get started building Secret Apps</h5>
+			<Button kind="primary" route="/boxes" text="Start Unboxing"></Button>
+		</div>
+		
+		<img src="alien_with_boxes.svg" alt="An illustration of an alien with floating boxes.">
+		<!--Down facing arrow here-->
+
 	</div>
 
 	<div id="home-description">
-		<div>
-			<h2>What Are Secret Boxes?</h2>
-			<p>Secret Boxes are quickstart to help you build <span class="font-bold">decentralized, privacy preserving dApps</span> on Secret Network.</p>
-			<p><span class="font-bold">Each box</span> comes with everything you need to start building and includes libraries, secret contracts and beautiful UI elements so you can focus on coding your functionality.</p>
-			<p><span class="font-bold">Secret Boxes</span> can be anything from use case blueprints to chain integrations, technical bootstraps and more.</p>
+		<div class="w-[484px]">
+			<h2 class="font-heading text-h2 mb-6">What Are Secret Boxes?</h2>
+			<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
+			<p class="leading-9 text-[1.313rem] mb-4">Secret Boxes are quickstart to help you build <span class="font-bold">decentralized, privacy preserving dApps</span> on Secret Network.</p>
+			<p class="leading-9 text-[1.313rem] mb-4"><span class="font-bold">Each box</span> comes with everything you need to start building and includes libraries, secret contracts and beautiful UI elements so you can focus on coding your functionality.</p>
+			<p class="leading-9 text-[1.313rem] mb-[4.75rem]"><span class="font-bold">Secret Boxes</span> can be anything from use case blueprints to chain integrations, technical bootstraps and more.</p>
 			<Button kind="primary" route="/tutorials" text="Learn more"></Button>
 		</div>	
 
 		<div>
 			<div>
 				<span>
-					<h3>Secret Counter</h3>
-					<div>New</div>
+					<h3 class="inline-block font-heading text-h3 tracking-1.5">Secret Counter</h3>
+					<AttributeTag attr="New"></AttributeTag>
 				</span>
 				<p>A simple counter illustrating the basics of working</p>
 				<Button kind="primary" route="/tutorials" text="Let's Go!"></Button>
@@ -44,7 +52,6 @@ let title = 'Home | Secret Boxes';
 			<div>
 				<span>
 					<h3>Figment Learn</h3>
-					<div>New</div>
 				</span>
 				<p>The learn pathway for devs using Figment's DataHub gateway to access the Secret Network and deploy secret contracts.</p>
 				<Button kind="primary" route="/" text="Let's Go!"></Button>
@@ -54,7 +61,7 @@ let title = 'Home | Secret Boxes';
 			<div>
 				<span>
 					<h3>Richie Rich</h3>
-					<div>Coming Soon</div>
+					<AttributeTag attr="Coming Soon"></AttributeTag>
 				</span>
 			</div>
 		</div>
