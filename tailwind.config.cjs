@@ -10,62 +10,65 @@ module.exports = {
 			'2xl': '1536px',
 		},
 		colors: {
-			yellow: '#F8D948',
-			green: '#48F881',
-			pink: '#F848BF',
-			blue: '#4867F8',
+			// Base
+			transparent: 'transparent',
+      		current: 'currentColor',
+
+			// Brand Colors
+			primary: '#F8D948',
+			secondary: '#939597',
+
+			// Buttons & Input Text
+			black: '#1B1B1B', // 
+			yellow: '#FFEC8B', // Secondary Button Hover
+			tan: 'rgba(255, 242, 183, 0.4)', // Button Focus
+			blue: {
+				200: '#7C93FF', // Linear Gradient 1 (ButtonCTA Hover)
+				300: '#6782FF', // Linear Gradient 1
+				400: '#5C79FF', // Linear Gradient 2 (ButtonCTA)
+				500: '#3A5DFF', // Linear Gradient 2
+				600: '#4261EE' // Button Text
+			},
+			gray: '#E3E3E3', // Button Disable Color
 			white: '#FFFFFF',
-			black: '#282828',
-			gray: {
-				100: '#939597',
-				200: '#797B7E',
-				300: '#4E4B66',
-			}
+			purple: {
+				100: '#4E4B66', // Primary Button Color
+				200: '#6E7191', // Primary Button Hover Color
+			},
+
+			// Icons
+			'icon-blue': '#4867F8',
+			'icon-orange': '#FF6A1E',
+			'icon-green': '#4DAE00',
+
+			// Dropdown
+			dropdown: '#FFED98'
 		},
-		// Note: Sans will default for all text.
 		fontFamily: {
-			sans: ['Source Sans Pro', 'sans-serif'],
-			heading: ['Gobold High', 'sans-serif'],
+			sans: ['Golos', 'Arial', 'sans-serif'],
+			display: ['Chaney Wide', 'Arial', 'sans-serif'],
 		},
 		fontSize: {
-				'h1': '6rem',
-				'h2': '3.75rem',
-				'h3': '3rem',
-				'h4': '2.125rem',
-				'h5': '1.5rem',
-				'h6': '1.25rem',
-				'large': '1.25rem',
-				'regular': '1rem',
-				'small': '0.875rem',
-				'xs': '0.75rem',
-				'2xs': '0.625rem',
-			},
-		borderRadius: {
-			'none': '0',
-      		'sm': '.125rem',
-      		DEFAULT: '.25rem',
-      		'lg': '.5rem',
-      		'full': '9999px',
+			// For display font (Chaney Wide)
+			display: ['4.25rem', '4.5rem'], // 68px, 72px
+			h1: ['4.25rem', '4.5rem'], // 68px, 72px
+			h2: ['2.625rem', '3rem'], // 42px, 48px
+			h3: ['1.625rem', '3rem'], // 26px, 48px
+			h4: ['1rem', '1.5rem'], // 16px, 24px
+
+			// For sans font (Golos)
+			lg: ['1.625rem', '3rem'], // 26px 48px
+			base: ['1rem', '1.5rem'], // 16px 24px
+			sm: ['0.875rem', '1.5rem'], // 14px 24px
+			xsm: ['0.75rem', '1rem'], // 12px 16px
 		},
 		extend: {
 			letterSpacing: {
-				'0': '0px',
-				'0.1': '0.1px',
-				'0.15': '0.15px',
+				DEFAULT: '0.0016em',
 				'0.5': '0.5px',
 				'1.25': '1.25px',
 				'1.5': '1.5px',
-				'2.5': '2.5px',
-
-				// Same sizes as before, but is relative to font-size of element
-				// 'tracking-0': '0em',
-				// 'tracking-0.1': '0.00625em',
-				// 'tracking-0.15': '0.009375em',
-				// 'tracking-0.5': '0.03125em',
-				// 'tracking-1.25': '0.078125em',
-				// 'tracking-1.5': '0.09375em',
-				// 'tracking-2.5': '0.15625em',
-
+				'2': '2px',
 			},
 		}
 	},

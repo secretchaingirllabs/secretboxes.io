@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    background-color: #FCFCFC;
+@font-face {
+    font-family: 'Golos';
+    src: url('/fonts/Golos-UI_VF.ttf');
+}
+
+@font-face {
+    font-family: 'Chaney Wide';
+    src: url('/fonts/Chaney_Wide_Bold.ttf');
 }
