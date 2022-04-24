@@ -8,63 +8,70 @@ import '../styles/global.css';
 let title = 'Home | Secret Boxes';
 ---
 <HomeLayout title={title}>
-	<!-- Home Page content goes here. -->
-	<!-- Note: The way we derive the height for the hero component is by subtracting -->
-	<!-- the height of the Nav and Notification component from the viewport height-->
-	<!-- May want to refactor later-->
-	<div id="home-hero" class="grid grid-cols-2 justify-items-center items-center h-[calc(100vh_-_2.75rem_-_7rem)]">
-		<!-- Note: Home Hero title is larger than H1 specified in typography (118px vs 96px) -->
-		<div>
-			<div class="text-[7.375rem] font-display tracking-1.5">Secret Boxes</div>
-			<h5 class="w-[490px] mb-10">The beautiful, fun and easy way to get started building Secret Apps</h5>
-			<Button kind="landing" size="lg" route="/boxes" text="Start Unboxing"></Button>
-		</div>
+	<div id="home-hero" class="grid grid-rows-4 justify-items-center items-center h-[calc(100vh_-_2.75rem_-_7rem)]">
+		<!--CSS Text strokes are inconsistent across browser. Import title as SVG -->
+		<h1 class="text-display font-display tracking-2">
+			Secret <span class="">Boxes</span>
+		</h1>
+		<h2 class="text-[#606060] font-medium text-lg">
+			The beautiful, fun and easy way to get started building 
+			<span>Secret Apps</span>
+		</h2>
+		<Button kind="landing" size="w-48 h-14" route="/boxes" text="Start Unboxing"></Button>
 		
-		<img src="alien_with_boxes.svg" alt="An illustration of an alien with floating boxes.">
 		<!--Down facing arrow here-->
 
 	</div>
 
 	<div id="how-it-works">
-		<div>HOW IT WORKS</div>
-		<div>START BUILDING</div>
+		<div class="text-[#528AD3] text-center text-xsm font-bold tracking-1.5">HOW IT WORKS</div>
+		<div class="font-display text-center text-h3 font-bold tracking-1.5">START BUILDING</div>
 
 		<div id="hello-world">
-			<div class="">Hello World</div>
-			<Tag attr="Beginner"></Tag>
+			<div class="inline-flex font-display tracking-1 text-[24px] leading-[27px]">Hello World</div>
+			<Tag text="beginner"></Tag>
 			<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
-			<p class="">A fun way for developers to quickly learn about working with secret contracts.</p>
-			<Button kind="primary" size="md" route="/tutorials" text="Launch">
-				<!-- Gitpod Icon -->
-				<img slot="pre" src="" alt="">
-			</Button>
-			<Button kind="secondary" size="md" route="/tutorials" text="Learn more"></Button>
+			<p class="flex">A fun way for developers to quickly learn about working with secret contracts.</p>
+			
+			<div class="flex">
+				<Button kind="primary" size="sm" route="/tutorials" text="Launch">
+					<!-- Gitpod Icon -->
+					<img slot="pre" src="" alt="">
+				</Button>
+				<Button kind="secondary" size="sm" route="/tutorials" text="Learn more"></Button>
+			</div>
 		</div>	
 		
 		<div id="secret-counter">
-			<div class="">Secret Counter</div>
-			<Tag attr="Beginner"></Tag>
+			<div class="inline-flex font-display tracking-1 text-[24px] leading-[27px]">Secret Counter</div>
+			<Tag text="beginner"></Tag>
 			<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
 			<p class="">Based on “simple counter,” the template for smart contract development on Secret, this box illustrates the basics of querying and modifying contract state using the “getCount” and “increment” messages.</p>
-			<Button kind="primary" size="md" route="/tutorials" text="">
-				<!-- Gitpod Icon -->
-				<img slot="pre" src="" alt="">
-			</Button>
+			<div class="flex">
+				<Button kind="primary" size="sm" route="/tutorials" text="Launch">
 
-			<Button kind="secondary" size="md" route="/tutorials" text="Learn more"></Button>
+					<!-- Gitpod Icon -->
+					<img slot="pre" src="" alt="">
+				</Button>
+
+				<Button kind="secondary" size="sm" route="/tutorials" text="Learn more"></Button>
+			</div>
 		</div>	
 
 		<div id="richie-rich">
-			<div class="">Richie Rich</div>
-			<Tag attr="Intermediate"></Tag>
+			<div class="inline-flex font-display tracking-1 text-[24px] leading-[27px]">Richie Rich</div>
+			<Tag text="intermediate"></Tag>
 			<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
 			<p class="">How do you find out who’s the richest without revealing your net worth to the world? This secret box, based on Yao’s Millionaires’ Problem, illustrates how that can be done on Secret.</p>
-			<Button kind="primary" size="md" route="/tutorials" text="">
-				<!-- Gitpod Icon -->
-				<img slot="pre" src="" alt="">
-			</Button>
 
-			<Button kind="secondary" size="md" route="/tutorials" text="Learn more"></Button>
+			<div class="flex">
+				<Button kind="primary" size="sm" route="/tutorials" text="Launch">
+					<!-- Gitpod Icon -->
+					<img slot="pre" src="" alt="">
+				</Button>
+
+				<Button kind="secondary" size="sm" route="/tutorials" text="Learn more"></Button>
+			</div>
 		</div>	
 	</div>
 </HomeLayout>

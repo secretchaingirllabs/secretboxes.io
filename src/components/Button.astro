@@ -1,7 +1,7 @@
 ---
 // 
 // Button.astro is a generic button component for
-// our three main buttons: primary, secondary, & tertiary.
+// our main button styles: primary, secondary, text, and landing.
 // This component contains shared and isolated styles for each
 // button. This interface can be made to give more granular
 // design freedom by extending Props further.
@@ -11,6 +11,7 @@ export interface Props {
     text: string,
     route: string,
     size: string,
+    styles?: string, // Used for arbitrary styling
 };
 
 const { 
@@ -18,21 +19,59 @@ const {
     text = '', 
     route = '', 
     size = '',
+    styles = '',
 } = Astro.props;
 
-const SHARED_STYLES = 'inline-flex justify-center items-center font-semibold'
-const PRIMARY_BUTTON_STYLES = 'bg-gray-300 text-white'
-const SECONDARY_BUTTON_STYLES = 'border-solid border-2 border-gray-300 text-gray-300'
-const TEXT_BUTTON_STYLES = 'text-gray-300'
-const LANDING_BUTTON_STYLES = ''
+const SHARED_STYLES = `
+    inline-flex 
+    items-center
+    font-semibold
+    tracking-1.25
+    rounded-lg
+    px-6
+`
+
+const PRIMARY_BUTTON_STYLES = `
+    text-white 
+    bg-purple-100 
+    hover:bg-purple-200 
+    focus:outline
+    focus:outline-4
+    focus:outline-yellow 
+    disabled:bg-gray
+`
+const SECONDARY_BUTTON_STYLES = `
+    text-purple-100
+    border
+    border-solid
+    border-purple-100
+    hover:bg-tan
+    focus:outline
+    focus:outline-4
+    focus:outline-[#D8D8D8]
+    disabled:border-gray
+    disabled:text-gray
+`
+const TEXT_BUTTON_STYLES = `
+    text-blue-600
+    hover:underline
+`
+const LANDING_BUTTON_STYLES = `
+    text-white
+    bg-gradient-to-b 
+    from-blue-400 
+    to-blue-500
+    hover:from-blue-200
+    hover:to-blue-300
+`
 
 function style() {
     switch(kind.toLowerCase()) {
-        case 'primary': return `${getPrimaryStyles()} ${getDimensions()}`;
-        case 'secondary': return `${getSecondaryStyles()} ${getDimensions()}`;
-        case 'text': return `${getTextStyles()} ${getDimensions()}`;
-        case 'landing': return `${getLandingStyles()} ${getDimensions()}`;
-        default: return `${getPrimaryStyles()} ${getDimensions()}`;
+        case 'primary': return `${getPrimaryStyles()} ${getHeight()} ${styles}`;
+        case 'secondary': return `${getSecondaryStyles()} ${getHeight()} ${styles}`;
+        case 'text': return `${getTextStyles()} ${getHeight()} ${styles}`;
+        case 'landing': return `${getLandingStyles()} ${getHeight()} ${styles}`;
+        default: return `${getPrimaryStyles()} ${getHeight()} ${styles}`;
     }
 }
 
@@ -52,12 +91,12 @@ function getLandingStyles() {
     return `${SHARED_STYLES} ${LANDING_BUTTON_STYLES}`;
 }
 
-function getDimensions() {
+function getHeight() {
     switch(size) {
-        case 'lg': return 'w-36 h-14'
-        case 'med': return 'w-36 h-12'
-        case 'sm': return 'w-36 h-10'
-        default: return size
+        case 'lg': return 'h-14' // 56px
+        case 'md': return 'h-12' // 48px
+        case 'sm': return 'h-10' // 40px
+        default: return 'h-14'
     }
 }
 ---
