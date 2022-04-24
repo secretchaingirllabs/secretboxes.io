@@ -12,7 +12,7 @@ module.exports = {
 		colors: {
 			// Base
 			transparent: 'transparent',
-      		current: 'currentColor',
+			current: 'currentColor',
 
 			// Brand Colors
 			primary: '#F8D948',

@@ -2,7 +2,7 @@
 import Logo from '../components/Logo.astro';
 import HomeLayout from '@layouts/Home.astro';
 import Button from '@components/Button.astro';
-import AttributeTag from '@components/AttributeTag.astro';
+import Tag from '@components/Tag.astro';
 import '../styles/global.css';
 
 let title = 'Home | Secret Boxes';
@@ -17,7 +17,7 @@ let title = 'Home | Secret Boxes';
 		<div>
 			<div class="text-[7.375rem] font-display tracking-1.5">Secret Boxes</div>
 			<h5 class="w-[490px] mb-10">The beautiful, fun and easy way to get started building Secret Apps</h5>
-			<Button kind="primary" route="/boxes" text="Start Unboxing"></Button>
+			<Button kind="landing" size="lg" route="/boxes" text="Start Unboxing"></Button>
 		</div>
 		
 		<img src="alien_with_boxes.svg" alt="An illustration of an alien with floating boxes.">
@@ -25,51 +25,46 @@ let title = 'Home | Secret Boxes';
 
 	</div>
 
-	<div id="home-description">
-		<div class="w-[484px]">
-			<h2 class="font-heading text-h2 mb-6">What Are Secret Boxes?</h2>
+	<div id="how-it-works">
+		<div>HOW IT WORKS</div>
+		<div>START BUILDING</div>
+
+		<div id="hello-world">
+			<div class="">Hello World</div>
+			<Tag attr="Beginner"></Tag>
 			<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
-			<p class="leading-9 text-[1.313rem] mb-4">Secret Boxes are quickstart to help you build <span class="font-bold">decentralized, privacy preserving dApps</span> on Secret Network.</p>
-			<p class="leading-9 text-[1.313rem] mb-4"><span class="font-bold">Each box</span> comes with everything you need to start building and includes libraries, secret contracts and beautiful UI elements so you can focus on coding your functionality.</p>
-			<p class="leading-9 text-[1.313rem] mb-[4.75rem]"><span class="font-bold">Secret Boxes</span> can be anything from use case blueprints to chain integrations, technical bootstraps and more.</p>
-			<Button kind="primary" route="/tutorials" text="Learn more"></Button>
+			<p class="">A fun way for developers to quickly learn about working with secret contracts.</p>
+			<Button kind="primary" size="md" route="/tutorials" text="Launch">
+				<!-- Gitpod Icon -->
+				<img slot="pre" src="" alt="">
+			</Button>
+			<Button kind="secondary" size="md" route="/tutorials" text="Learn more"></Button>
+		</div>	
+		
+		<div id="secret-counter">
+			<div class="">Secret Counter</div>
+			<Tag attr="Beginner"></Tag>
+			<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
+			<p class="">Based on “simple counter,” the template for smart contract development on Secret, this box illustrates the basics of querying and modifying contract state using the “getCount” and “increment” messages.</p>
+			<Button kind="primary" size="md" route="/tutorials" text="">
+				<!-- Gitpod Icon -->
+				<img slot="pre" src="" alt="">
+			</Button>
+
+			<Button kind="secondary" size="md" route="/tutorials" text="Learn more"></Button>
 		</div>	
 
-		<div>
-			<div>
-				<span class="flex">
-					<h3 class="inline-block font-heading text-h3 tracking-1.5">Secret Counter</h3>
-					<AttributeTag attr="New"></AttributeTag>
-				</span>
-				<p>A simple counter illustrating the basics of working</p>
-				<Button kind="primary" route="/tutorials" text="Let's Go!"></Button>
-				<Button kind="secondary" route="/docs" text="Docs"></Button>
-				<Button kind="secondary" route="/docs" text="Repo">
-					<!--Github logo svg goes here-->
-				</Button>
-			</div>
+		<div id="richie-rich">
+			<div class="">Richie Rich</div>
+			<Tag attr="Intermediate"></Tag>
+			<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
+			<p class="">How do you find out who’s the richest without revealing your net worth to the world? This secret box, based on Yao’s Millionaires’ Problem, illustrates how that can be done on Secret.</p>
+			<Button kind="primary" size="md" route="/tutorials" text="">
+				<!-- Gitpod Icon -->
+				<img slot="pre" src="" alt="">
+			</Button>
 
-			<div>
-				<span>
-					<h3>Figment Learn</h3>
-				</span>
-				<p>The learn pathway for devs using Figment's DataHub gateway to access the Secret Network and deploy secret contracts.</p>
-				<Button kind="primary" route="/" text="Let's Go!"></Button>
-				<Button kind="secondary" route="/docs" text="Docs"></Button>
-			</div>
-
-			<div>
-				<span>
-					<h3>Richie Rich</h3>
-					<AttributeTag attr="Coming Soon"></AttributeTag>
-				</span>
-			</div>
-		</div>
-	</div>
-
-	<div id="home-news">
-		<h1>News & Updates</h1>
-		<p>What's going on in the Secret Boxes univers? Here is where devs can find out about new Secret Boxess, launch announcements, protocol updates, developer working groups and more.</p>
-		<!-- Clickable images cards go here-->
+			<Button kind="secondary" size="md" route="/tutorials" text="Learn more"></Button>
+		</div>	
 	</div>
 </HomeLayout>

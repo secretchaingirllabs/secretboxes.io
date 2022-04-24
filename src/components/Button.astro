@@ -10,31 +10,29 @@ export interface Props {
     kind: string,
     text: string,
     route: string,
-    rounded?: boolean,
-    width?: string,
-    height?: string,
+    size: string,
 };
 
 const { 
     kind = '',
     text = '', 
     route = '', 
-    rounded = true, 
-    width = 'w-fit',
-    height = 'h-12',
+    size = '',
 } = Astro.props;
 
-const SHARED_STYLES = `inline-flex justify-center items-center px-11 py-7 font-bold ${height} ${width} ${rounded ? 'rounded-lg' : ''}`
+const SHARED_STYLES = 'inline-flex justify-center items-center font-semibold'
 const PRIMARY_BUTTON_STYLES = 'bg-gray-300 text-white'
 const SECONDARY_BUTTON_STYLES = 'border-solid border-2 border-gray-300 text-gray-300'
-const TERTIARY_BUTTON_STYLES = 'text-gray-300'
+const TEXT_BUTTON_STYLES = 'text-gray-300'
+const LANDING_BUTTON_STYLES = ''
 
 function style() {
     switch(kind.toLowerCase()) {
-        case 'primary': return getPrimaryStyles();
-        case 'secondary': return getSecondaryStyles();
-        case 'tertiary': return getTertiaryStyles();
-        default: return getPrimaryStyles();
+        case 'primary': return `${getPrimaryStyles()} ${getDimensions()}`;
+        case 'secondary': return `${getSecondaryStyles()} ${getDimensions()}`;
+        case 'text': return `${getTextStyles()} ${getDimensions()}`;
+        case 'landing': return `${getLandingStyles()} ${getDimensions()}`;
+        default: return `${getPrimaryStyles()} ${getDimensions()}`;
     }
 }
 
@@ -46,8 +44,21 @@ function getSecondaryStyles() {
     return `${SHARED_STYLES} ${SECONDARY_BUTTON_STYLES}`;
 }
 
-function getTertiaryStyles() {
-    return `${SHARED_STYLES} ${TERTIARY_BUTTON_STYLES}`;
+function getTextStyles() {
+    return `${SHARED_STYLES} ${TEXT_BUTTON_STYLES}`;
+}
+
+function getLandingStyles() {
+    return `${SHARED_STYLES} ${LANDING_BUTTON_STYLES}`;
+}
+
+function getDimensions() {
+    switch(size) {
+        case 'lg': return 'w-36 h-14'
+        case 'med': return 'w-36 h-12'
+        case 'sm': return 'w-36 h-10'
+        default: return size
+    }
 }
 ---
 <a 
