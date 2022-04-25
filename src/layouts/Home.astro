@@ -16,8 +16,17 @@ const { title = 'Secret Boxes' } = Astro.props;
     <Head title={title}></Head>
     
     <body class="min-h-screen">
-        <header class="min-h-[80px] mt-8">
-            <TopNav></TopNav>
+        <header class="grid gird-cols-2 min-h-[80px] mt-8">
+            <a class="inline" href="/">
+                <img class="inline" src="/logos/logo_48x48.svg" alt="Secret Boxes Logo">
+            </a>
+
+            <div>
+                <TopNav></TopNav>
+                <input type="search" placeholder="Search">
+                <!-- Search Box -->
+                <!-- Theme Toggle -->
+            </div>
         </header>
 
         <main class="mx-36">
@@ -46,15 +55,14 @@ const { title = 'Secret Boxes' } = Astro.props;
                 
                         <p class="w-96 mt-8 text-sm text-[#272727]">We’d love to hear from you! Feel free to contact us with your ideas or feedback.<br>
                         And check out our <span class="font-bold">Github</span> to see how you can contribute.</p>
-            
-                        <ul class="flex mt-10">
-                            <li><SocialButton img="/github_icon.svg" alt="Github Icon"></SocialButton></li>
-                            <li><SocialButton img="/telegram_icon.svg" alt="Telegram Icon"></SocialButton></li>
-                            <li><SocialButton img="/discord_icon.svg" alt="Discord Icon"></SocialButton></li>
-                            <li><SocialButton img="/twitter_icon.svg" alt="Twitter Icon"></SocialButton></li>
-                            <li><SocialButton img="/youtube_icon.svg" alt="Youtube Icon"></SocialButton></li>
-                        </ul>
 
+                        <div class="flex mt-10">
+                            <SocialButton img="/icons/github_icon.svg" route="/" alt="Github Icon"></SocialButton> 
+                            <SocialButton img="/icons/telegram_icon.svg" route="/" alt="Telegram Icon"></SocialButton> 
+                            <SocialButton img="/icons/discord_icon.svg" route="/" alt="Discord Icon"></SocialButton> 
+                            <SocialButton img="/icons/twitter_icon.svg" route="/" alt="Twitter Icon"></SocialButton> 
+                            <SocialButton img="/icons/youtube_icon.svg" route="/" alt="YouTube Icon"></SocialButton> 
+                        </div>
                     </div>
                                         
                     <div class="flex shrink text-purple-100">
