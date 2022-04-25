@@ -25,53 +25,63 @@ let title = 'Home | Secret Boxes';
 
 	<div id="how-it-works">
 		<div class="text-[#528AD3] text-center text-xsm font-bold tracking-1.5">HOW IT WORKS</div>
-		<div class="font-display text-center text-h3 font-bold tracking-1.5">START BUILDING</div>
+		<div class="font-display text-center text-h3 font-bold tracking-1.5 mb-20">START BUILDING</div>
 
-		<div id="hello-world">
-			<div class="inline-flex font-display tracking-1 text-[24px] leading-[27px]">Hello World</div>
-			<Tag text="beginner"></Tag>
-			<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
-			<p class="flex">A fun way for developers to quickly learn about working with secret contracts.</p>
-			
-			<div class="flex">
-				<Button kind="primary" size="sm" route="/tutorials" text="Launch">
-					<!-- Gitpod Icon -->
-					<img slot="pre" src="" alt="">
-				</Button>
-				<Button kind="secondary" size="sm" route="/tutorials" text="Learn more"></Button>
-			</div>
-		</div>	
-		
-		<div id="secret-counter">
-			<div class="inline-flex font-display tracking-1 text-[24px] leading-[27px]">Secret Counter</div>
-			<Tag text="beginner"></Tag>
-			<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
-			<p class="">Based on “simple counter,” the template for smart contract development on Secret, this box illustrates the basics of querying and modifying contract state using the “getCount” and “increment” messages.</p>
-			<div class="flex">
-				<Button kind="primary" size="sm" route="/tutorials" text="Launch">
+		<div id="showcase" class="grid grid-rows-3 min-h-[900px] justify-center">
 
-					<!-- Gitpod Icon -->
-					<img slot="pre" src="" alt="">
-				</Button>
+			<div id="hello-world" class="self-start">
+				<div class="pb-6">
+					<div class="inline-flex font-display tracking-1 text-[24px] leading-[27px]">Hello World</div>
+					<Tag text="beginner"></Tag>
+				</div>
 
-				<Button kind="secondary" size="sm" route="/tutorials" text="Learn more"></Button>
-			</div>
-		</div>	
+				<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
+				<p class="flex max-w-prose mb-6">A fun way for developers to quickly learn about working with secret contracts.</p>
 
-		<div id="richie-rich">
-			<div class="inline-flex font-display tracking-1 text-[24px] leading-[27px]">Richie Rich</div>
-			<Tag text="intermediate"></Tag>
-			<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
-			<p class="">How do you find out who’s the richest without revealing your net worth to the world? This secret box, based on Yao’s Millionaires’ Problem, illustrates how that can be done on Secret.</p>
+				<div class="flex">
+					<Button kind="primary" size="sm" route="/tutorials" text="Launch">
+						<!-- Gitpod Icon -->
+						<img slot="pre" src="" alt="">
+					</Button>
+					<Button kind="secondary" size="sm" route="/tutorials" text="Learn more"></Button>
+				</div>
+			</div>	
 
-			<div class="flex">
-				<Button kind="primary" size="sm" route="/tutorials" text="Launch">
-					<!-- Gitpod Icon -->
-					<img slot="pre" src="" alt="">
-				</Button>
+			<div id="secret-counter" class="self-center">
+				<div class="pb-6">
+					<div class="inline-flex font-display tracking-1 text-[24px] leading-[27px]">Secret Counter</div>
+					<Tag text="beginner"></Tag>
+				</div>
+				<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
+				<p class="max-w-prose mb-6">Based on “simple counter,” the template for smart contract development on Secret, this box illustrates the basics of querying and modifying contract state using the “getCount” and “increment” messages.</p>
+				<div class="flex">
+					<Button kind="primary" size="sm" route="/tutorials" text="Launch">
 
-				<Button kind="secondary" size="sm" route="/tutorials" text="Learn more"></Button>
-			</div>
-		</div>	
+						<!-- Gitpod Icon -->
+						<img slot="pre" src="" alt="">
+					</Button>
+
+					<Button kind="secondary" size="sm" route="/tutorials" text="Learn more"></Button>
+				</div>
+			</div>	
+
+			<div id="richie-rich" class="self-end">
+				<div class="pb-6">
+					<div class="inline-flex font-display tracking-1 text-[24px] leading-[27px]">Richie Rich</div>
+					<Tag text="intermediate"></Tag>
+				</div>
+				<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
+				<p class="max-w-prose mb-6">How do you find out who’s the richest without revealing your net worth to the world? This secret box, based on Yao’s Millionaires’ Problem, illustrates how that can be done on Secret.</p>
+
+				<div class="flex">
+					<Button kind="primary" size="sm" route="/tutorials" text="Launch">
+						<!-- Gitpod Icon -->
+						<img slot="pre" src="" alt="">
+					</Button>
+
+					<Button kind="secondary" size="sm" route="/tutorials" text="Learn more"></Button>
+				</div>
+			</div>	
+		</div>
 	</div>
 </HomeLayout>
