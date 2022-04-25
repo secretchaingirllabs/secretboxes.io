@@ -13,6 +13,7 @@ module.exports = {
 			// Base
 			transparent: 'transparent',
 			current: 'currentColor',
+			background: '#1E2022',
 
 			// Brand Colors
 			primary: '#F8D948',
@@ -60,7 +61,7 @@ module.exports = {
 			base: ['1rem', '1.5rem'], // 16px 24px
 			sm: ['0.875rem', '1.5rem'], // 14px 24px
 			xsm: ['0.75rem', '1rem'], // 12px 16px
-			xsm2: ['0.625rem', '1rem'],
+			xsm2: ['0.625rem', '1rem'], // 10px 16px
 		},
 		extend: {
 			letterSpacing: {
@@ -76,6 +77,13 @@ module.exports = {
 				'blue-rgba': 'rgba(82, 138, 211, 0.12)', // Beginner Tag BG
 				'green-rgba': 'rgba(77, 174, 0, 0.12)', // Advanced Tag BG
 				'orange-rgba': 'rgba(255, 116, 45, 0.12)', // Intermediate Tag BG
+			},
+			gridTemplateRows: {
+				'page': 'auto 1fr auto',
+				'footer-left': '5fr auto'
+			},
+			gridTemplateColumns: {
+				'footer': '2fr, minmax(0,1fr)'
 			}
 		}
 	},

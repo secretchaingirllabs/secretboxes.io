@@ -15,8 +15,8 @@ const { title = 'Secret Boxes' } = Astro.props;
 <html lang="en">
     <Head title={title}></Head>
     
-    <body class="">
-        <header>
+    <body class="min-h-screen">
+        <header class="min-h-[80px] mt-8">
             <TopNav></TopNav>
         </header>
 
@@ -25,46 +25,48 @@ const { title = 'Secret Boxes' } = Astro.props;
         </main>
 
         <!-- Note: Home page requires a special footer-->
-        <footer>
-            <div id="footer-left">
-                <h2>Sign Up For The Mailing List</h2>
-                <p>We don't send these very often so you know if you get an email from us, it's gonna be good and it's gonna be worth reading.</p>
+        <footer class="sticky top-[100vh] min-h-[450px] grid grid-cols-footer mt-80">
+            <div id="footer-left" class="bg-primary">
+                <div class="grid grid-rows-footer-left h-full w-[50%] m-auto">
+
+                    <div class="self-center">
+                        <label class="text-left text-background" for="newletter-input">STAY UP TO DATE</label>
+
+                        <div class="relative w-96 mt-2">
+                            <!-- TODO: Make custom input component for managing styles -->
+                            <input class="pl-4 w-full h-[52px] box-border rounded-lg outline-none border border-solid border-purple-100" type="email" id="newsletter-input" pattern=".+@globex\.com" placeholder="paul@altermail.com" required>
+                            <Button 
+                                styles="absolute top-1.5 right-0 cursor-pointer leading-none z-10 translate-x-2 tracking-0.5"
+                                kind="primary" 
+                                text="Subscribe" 
+                                route='' 
+                                size="sm">
+                            </Button>
+                        </div>
+                
+                        <p class="w-96 mt-8 text-sm text-[#272727]">We’d love to hear from you! Feel free to contact us with your ideas or feedback.<br>
+                        And check out our <span class="font-bold">Github</span> to see how you can contribute.</p>
             
-                <label for="footer-nickname">Nickname</label>
-                <input id="footer-nickname" type="text" placeholder="wumpus">
+                        <ul class="flex mt-10">
+                            <li><SocialButton img="/github_icon.svg" alt="Github Icon"></SocialButton></li>
+                            <li><SocialButton img="/telegram_icon.svg" alt="Telegram Icon"></SocialButton></li>
+                            <li><SocialButton img="/discord_icon.svg" alt="Discord Icon"></SocialButton></li>
+                            <li><SocialButton img="/twitter_icon.svg" alt="Twitter Icon"></SocialButton></li>
+                            <li><SocialButton img="/youtube_icon.svg" alt="Youtube Icon"></SocialButton></li>
+                        </ul>
 
-                <label for="footer-email">Email Address</label>
-                <input id="footer-email" type="text" placeholder="wumpus@email.com">
-
-                <input id="mailing-list-checkbox" type="checkbox">
-                <label for="mailing-list-checkbox">I agree to recieve cool stuff from the Secret Boxes Team!</label>
-
-                <Button kind="primary" route="/" size="w-[120px] h-10" text="Subscribe"></Button>
-
-                <ul>
-                    <li><SocialButton></SocialButton></li>
-                    <li><SocialButton></SocialButton></li>
-                    <li><SocialButton></SocialButton></li>
-                    <li><SocialButton></SocialButton></li>
-                </ul>
-
-                <ul>
-                    <li>SCG Foundation</li>
-                    <li>Contact</li>
-                    <li>Support</li>
-                </ul>
+                    </div>
+                                        
+                    <div class="flex shrink text-purple-100">
+                        <a class="self-end mb-9 mr-4" href="https://secretchaingirl.io/">SecretChainGirl.io</a>
+                        <a class="self-end mb-9 mr-4" href="/about">About</a>
+                        <a class="self-end mb-9 mr-4" href="/support">Support</a>
+                    </div>
+                </div>
             </div>
 
-            <div id="footer-right">
-                <h3>Contact Us</h3>
-                <h3>Team</h3>
-                <h3>Github</h3>
-
-                <p>We'd love to hear from you! Feel free to contact us with your ideas or feedback.</p>
-                <p>And cehckout our GitHub to see how you can contribute.</p>
-                <p class="font-bold">support@secretboxes.io</p>
-
-                <p>&#169; 2021 SecretChainGirl Foundation</p>
+            <div id="footer-right" class="bg-secondary flex text-white">
+                <p class="self-end mb-9 ml-6">© 2022 SecretChainGirl Foundation LLC</p>
             </div>
         </footer>
     </body>
