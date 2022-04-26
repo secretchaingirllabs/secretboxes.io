@@ -90,7 +90,8 @@ module.exports = {
 				'input-double': '0 0 0 1px #F8D948, 0 0 0 3px #ffec8b',
 			},
 			backgroundImage: {
-				'hero': "",
+				'hero': "url('/illustrations/home_illustration.svg')",
+				'hero-sky': "url('/illustrations/hero_sky_illustration.svg')",
 				'footer': "",
 				'search': "url('/icons/search_icon.svg')",
 			},
