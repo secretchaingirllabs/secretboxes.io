@@ -84,7 +84,11 @@ module.exports = {
 			},
 			gridTemplateColumns: {
 				'footer': '2fr, minmax(0,1fr)'
-			}
+			},
+			boxShadow: {
+				'input': '0 0 0 3px #ffec8b',
+				'input-double': '0 0 0 1px #F8D948, 0 0 0 3px #ffec8b',
+			},
 		}
 	},
 	plugins: [],

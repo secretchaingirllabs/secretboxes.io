@@ -1,0 +1,38 @@
+---
+export interface Props {
+    placeholder: string
+    width: string
+    type?: string
+}
+
+const {
+    placeholder = '',
+    type = 'text',
+    width = 'w-96',
+} = Astro.props;
+
+const BASE_WRAPPER_STYLES = `relative ${width}`
+const BASE_INPUT_STYLES = `
+    h-[52px] 
+    w-full 
+    pl-4
+    outline-none 
+    border 
+    border-solid 
+    border-purple-100 
+    box-border 
+    rounded-lg
+    hover:border-none
+    hover:shadow-input
+    focus:border-none
+    focus:shadow-input-double
+    disabled:bg-gray
+    disabled:text-[#83d7d8]
+    disabled:border-none
+`
+---
+
+<div class={BASE_WRAPPER_STYLES}>
+    <input class={BASE_INPUT_STYLES} type={type} placeholder={placeholder}>
+    <slot></slot>
+</div>

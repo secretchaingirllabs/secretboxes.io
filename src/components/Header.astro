@@ -1,0 +1,16 @@
+---
+import Input from '@components/Input.astro';
+import TopNav from '@components/TopNav.astro';
+---
+<header class="grid grid-cols-2 min-h-[80px]">
+    <a class="inline" href="/">
+        <img class="inline" src="/logos/logo_48x48.svg" alt="Secret Boxes Logo">
+    </a>
+
+    <div>
+        <TopNav></TopNav>
+        <Input width="w-40" type="search" placeholder="Search"></Input>
+        <input type="search" placeholder="Search">
+        <!-- Theme Toggle -->
+    </div>
+</header>
