@@ -29,10 +29,9 @@ const { title = 'Secret Boxes' } = Astro.props;
                 <div class="grid grid-rows-footer-left h-full w-[50%] m-auto">
 
                     <div class="self-center">
-                        <label class="text-left text-background" for="newletter-input">STAY UP TO DATE</label>
+                        <label class="block mb-2 text-left text-background" for="newletter-input">STAY UP TO DATE</label>
 
                         <Input width="w-96" placeholder="paul@altermail.com" type="search">
-                        <!--
                             <Button 
                                 styles="absolute top-1.5 right-0 cursor-pointer leading-none z-10 translate-x-2 tracking-0.5"
                                 kind="primary" 
@@ -40,21 +39,8 @@ const { title = 'Secret Boxes' } = Astro.props;
                                 route='' 
                                 size="sm">
                             </Button>
-                            -->
                         </Input>
 
-                        <div class="relative w-96 mt-2">
-                            <!-- TODO: Make custom input component for managing styles -->
-                            <input class="pl-4 w-full h-[52px] box-border rounded-lg outline-none border border-solid border-purple-100" type="email" id="newsletter-input" pattern=".+@globex\.com" placeholder="paul@altermail.com" required>
-                            <Button 
-                                styles="absolute top-1.5 right-0 cursor-pointer leading-none z-10 translate-x-2 tracking-0.5"
-                                kind="primary" 
-                                text="Subscribe" 
-                                route='' 
-                                size="sm">
-                            </Button>
-                        </div>
-                
                         <p class="w-96 mt-8 text-sm text-[#272727]">We’d love to hear from you! Feel free to contact us with your ideas or feedback.<br>
                         And check out our <span class="font-bold">Github</span> to see how you can contribute.</p>
 

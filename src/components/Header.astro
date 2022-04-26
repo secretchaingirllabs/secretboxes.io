@@ -1,16 +1,23 @@
 ---
 import Input from '@components/Input.astro';
+import ThemeToggle from '@components/ThemeToggle.astro';
 import TopNav from '@components/TopNav.astro';
 ---
-<header class="grid grid-cols-2 min-h-[80px]">
+<header class="grid grid-cols-2 min-h-[80px] items-center">
     <a class="inline" href="/">
         <img class="inline" src="/logos/logo_48x48.svg" alt="Secret Boxes Logo">
     </a>
 
-    <div>
+    <div class="inline-flex items-center space-x-4">
         <TopNav></TopNav>
-        <Input width="w-40" type="search" placeholder="Search"></Input>
-        <input type="search" placeholder="Search">
-        <!-- Theme Toggle -->
+        <Input 
+            styles="bg-search bg-no-repeat bg-left-center"
+            padding="pl-8"
+            height="h-[38px]" 
+            width="w-40" 
+            type="search" 
+            placeholder="Search">
+        </Input>
+        <ThemeToggle></ThemeToggle>
     </div>
 </header>

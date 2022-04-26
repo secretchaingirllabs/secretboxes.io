@@ -44,7 +44,7 @@ module.exports = {
 			dropdown: '#FFED98'
 		},
 		fontFamily: {
-			sans: ['Golos', 'Arial', 'sans-serif'],
+			sans: ['Golos'],
 			display: ['Chaney Wide', 'Arial', 'sans-serif'],
 		},
 		fontSize: {
@@ -88,6 +88,14 @@ module.exports = {
 			boxShadow: {
 				'input': '0 0 0 3px #ffec8b',
 				'input-double': '0 0 0 1px #F8D948, 0 0 0 3px #ffec8b',
+			},
+			backgroundImage: {
+				'hero': "",
+				'footer': "",
+				'search': "url('/icons/search_icon.svg')",
+			},
+			backgroundPosition: {
+				'left-center': 'left 8px center',
 			},
 		}
 	},

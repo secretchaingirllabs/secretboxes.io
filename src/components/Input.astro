@@ -1,27 +1,35 @@
 ---
+// May need to make Input.astro account for variable widths in some situations.
 export interface Props {
-    placeholder: string
-    width: string
-    type?: string
+    placeholder: string,
+    width: string,
+    padding?: string,
+    type?: string,
+    height?: string,
+    styles?: string,
 }
 
 const {
     placeholder = '',
-    type = 'text',
     width = 'w-96',
+    padding = 'pl-4',
+    type = 'text',
+    height = 'h-[52px]',
+    styles = ''
 } = Astro.props;
 
-const BASE_WRAPPER_STYLES = `relative ${width}`
+const BASE_WRAPPER_STYLES = `relative ${height} ${width}`
 const BASE_INPUT_STYLES = `
-    h-[52px] 
+    h-full
     w-full 
-    pl-4
+    ${padding} 
     outline-none 
     border 
     border-solid 
     border-purple-100 
     box-border 
     rounded-lg
+    ${styles}
     hover:border-none
     hover:shadow-input
     focus:border-none
