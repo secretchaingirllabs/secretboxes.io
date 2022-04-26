@@ -1,0 +1,41 @@
+---
+import Input from '@components/Input.astro';
+---
+
+<!--Note: Basic Form action would be a mailto:address@email-->
+<!--But we may want a better integration-->
+<form class="flex flex-col space-y-5">
+    <label for="support-form-email">Email Address</label>
+    <Input placeholder="wumpus@foo.com" width="w-96" height="h-[45px]"></Input>
+
+    <label for="support-form-subject">Subject</label>
+    <Input placeholder="setting up validator nodes" width="w-96" height="h-[45px]"></Input>
+
+    <!-- HTML select & option tag do not enable enough styling options -->
+    <!-- in order to reproduce the designs in Figma. A custom select -->
+    <!-- component would be required. -->
+    <div class="flex h-[45px]">
+        <select class="outline-none border border-solid border-[#9EA3BD] selected mr-4 rounded-lg px-4 text-center" name="support-form-topic" id="support-form-topic">
+            <!--Note: These options need to be dynamically found based on Markdown files -->
+            <option value="secret-counter">Secret Counter</option>
+            <option value="hello-world">Hello World</option>
+            <option value="Richie Rich">Richie Rich</option>
+        </select>
+
+        <select class="outline-none border border-solid border-[#9EA3BD] mr-4 rounded-lg px-4 text-center" name="support-form-os" id="support-form-os">
+            <option value="mac-os">Mac OS</option>
+            <option value="Windows">Windows</option>
+            <option value="Linux">Linux</option>
+            <option value="Ubuntu">Ubuntu</option>
+        </select>
+    </div>
+
+    <textarea class="p-2 w-3/5 h-40 outline-none rounded-lg border border-solid border-purple-100" placeholder="I need help with getting my environment setup." name="support-form-message" id="support-form-message"></textarea>
+
+    <label for="support-form-attachments">Attachments (optional)</label>
+
+    <!-- Will also need a bit of a hacky solution to style this file input -->
+    <input class="" type="file" title="">
+
+    <input class="font-semibold tracking-1.25 w-fit px-6 text-center h-[45px] rounded-lg text-white bg-purple-100 hover:bg-purple-200 focus:outline focus:outline-4 focus:outline-yellow disabled:bg-gray" type="submit" value="Submit a request">
+</form>

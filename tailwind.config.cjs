@@ -38,13 +38,16 @@ module.exports = {
 				100: '#4E4B66', // Primary Button Color
 				200: '#6E7191', // Primary Button Hover Color
 			},
-			orange: '#FF6A1E', // Intermidate Tag Text + Icon
+			orange: {
+				100: '#FF6A1E', // Intermidate Tag Text + Icon
+				200: '#FF7A00' // Used for text sometimes
+			},
 			green: '#4DAE00', // Advanced Tag Text + Icon
 			// Dropdown
 			dropdown: '#FFED98'
 		},
 		fontFamily: {
-			sans: ['Golos'],
+			sans: ['Golos', 'Arial', 'sans-serif'],
 			display: ['Chaney Wide', 'Arial', 'sans-serif'],
 		},
 		fontSize: {
@@ -58,7 +61,7 @@ module.exports = {
 
 			// For sans font (Golos)
 			lg: ['1.625rem', '3rem'], // 26px 48px
-			base: ['1rem', '1.5rem'], // 16px 24px
+			DEFAULT: ['1rem', '1.5rem'], // 16px 24px
 			sm: ['0.875rem', '1.5rem'], // 14px 24px
 			xsm: ['0.75rem', '1rem'], // 12px 16px
 			xsm2: ['0.625rem', '1rem'], // 10px 16px
@@ -84,6 +87,9 @@ module.exports = {
 			},
 			gridTemplateColumns: {
 				'footer': '2fr, minmax(0,1fr)'
+			},
+			gridAutoRows: {
+				'fit': 'minmax(min-content, max-content)'
 			},
 			boxShadow: {
 				'input': '0 0 0 3px #ffec8b',

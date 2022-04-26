@@ -1,46 +1,64 @@
 ---
 import DefaultLayout from '@layouts/Default.astro';
 import Button from '@components/Button.astro';
-import SupportForm from '@components/FormSupport.svelte';
+import SupportForm from '@components/FormSupport.astro';
 import '../styles/global.css';
 
 let title = 'Support | Secret Boxes';
 ---
 <DefaultLayout title={title}>
-    <h2>Support & Community</h2>
-    <p>We're here to support you and help you get going with Secret Boxes as part of your path to building dApps on the Secret Network. We have an awesome community of developers so come chat with us about use cases, suggestions, ideas, and more!</p>
+    <div id="support-hero" class="flex items-center w-3/5 mx-auto mt-36">
+        <div class="inline-flex flex-col w-full">
+            <div class="text-xsm text-orange-200 tracking-0.5 mb-1">SUPPORT & COMMUNITY</div>
 
-    <div>
-        <!--Discord logo here. Note: Logo has a wrapper in Figma -->
-        <h5>Chat on Discord</h5>
-        <p>If you're looking for real-time discussions, check out the Secret Network discord. This is the best place to chat, get help or make suggestions!</p>
-        <!-- There are different buttons on this page. I'm going to assume we are reusing the style previously defined -->
-        <Button kind="primary" route="/" text="Check Discord">
-            <!-- Right facing arrow svg here -->
-        </Button>
+            <h1 class="text-[#121212] text-h1 font-display tracking-1.25 mb-2.5">We're Here To Support <span class="text-orange-200">You</span></h1>
+            <p class="text-[#14142B] mb-8">We will help you get going with Secret Boxes as part of your path to building dApps on the Secret Network.</p>
+
+            <Button styles="px-0 m-0 h-8" kind="text" route="#support-ticket" text="Make a support ticket" size="sm"></Button>
+            <Button styles="px-0 m-0 h-8" kind="text" route="#support-ticket" text="Seek help from the community" size="sm"></Button>
+        </div>
+
+        <img class="inline-flex" src="/illustrations/support_illustration.svg" alt="Tech support illustration"> 
     </div>
 
-    <div>
-        <!--Secret Network logo here. Note: Logo has a wrapper in Figma -->
-        <h5>Post on the Forum</h5>
-        <p>The Secret Network froum is where you can participate in more thoughtful discussions, ideas and more.</p>
-        <!-- There are different buttons on this page. I'm going to assume we are reusing the style previously defined -->
-        <Button kind="primary" route="/" text="Check Forum">
-            <!-- Right facing arrow svg here -->
-        </Button>
+    <div id="support-ticket" class="mt-80 w-3/5 mx-auto">
+        <h2 class="text-h2 font-display tracking-1.5">Support Ticket</h2>
+        <p>Open a support ticket to start a conversation with us. <br>
+        This will help us in building our FAQ to assist future Secret Box users!</p>
+        <SupportForm></SupportForm>
     </div>
 
-    <div>
-        <!--Secret Network logo here. Note: Logo has a wrapper in Figma -->
-        <h5>Find us on Github</h5>
-        <p>If you want to report an issue or make a suggestion, come find us. We welcome your feedback!</p>
-        <!-- There are different buttons on this page. I'm going to assume we are reusing the style previously defined -->
-        <Button kind="primary" route="/" text="Open An Issue">
-            <!-- Right facing arrow svg here -->
-        </Button>
-    </div>
+    <div id="secret-community" class="w-2/5 mx-auto mt-44">
+        <h2 class="text-h2 font-display tracking-1.5 text-center mb-4">Secret Community</h2>
+        <p class="text-center w-[55%] mx-auto mb-24">We have an awesome community of developers so come chat with us about use cases, suggestions and ideas, and more!</p>
 
-    <h3>Support Ticket</h3>
-    <p>The best way to get support directly from SecretChainGirl Foundation! Open a support ticket to start a conversation with us. This will help us in building our FAQ to assit future Secret Boxers!</p>
-    <SupportForm></SupportForm>
+        <div class="grid grid-cols-3 auto-rows-fit items-center justify-items-center gap-y-4 gap-x-0">
+            <img class="" src="/icons/discord_lg_icon.svg" alt="Large Discord icon">
+            <img class="" src="/icons/secret_lg_icon.svg" alt="Secret Network icon">
+            <img class="" src="/icons/github_lg_icon.svg" alt="GitHub icon">
+
+            <p class="font-semibold">Chat on Discord</p>
+            <p class="font-semibold">Post on Forum</p>
+            <p class="font-semibold">Find us on Github</p>
+
+            <p class="w-52 text-center">This is the best place to chat, have real time discussions, get help or make suggestions!</p>
+            <p class="w-52 text-center">Where you can participate in more thoughtful discussions, ideas and more. </p>
+            <p class="w-52 text-center">If you want to report an issue or make a suggestion, come find us. We welcome your feedback!</p>
+
+            <span class="">
+            <Button styles="" size="sm" kind="primary" route="" text="Check Discord">
+                <!--Find out if right facing arrow should go here. It's inconsistent in the designs-->
+            </Button>
+
+            </span>
+            
+            <Button size="sm" kind="primary" route="" text="Check Forum">
+                <!--Find out if right facing arrow should go here. It's inconsistent in the designs-->
+            </Button>
+
+            <Button size="sm" kind="primary" route="" text="Open An Issue">
+                <!--Find out if right facing arrow should go here. It's inconsistent in the designs-->
+            </Button>
+        </div>
+    </div>
 </DefaultLayout>
