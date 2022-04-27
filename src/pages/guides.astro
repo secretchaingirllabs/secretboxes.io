@@ -1,0 +1,28 @@
+---
+import DefaultLayout from '@layouts/Default.astro'
+import Button from '@components/Button.astro'
+import Input from '@components/Input.astro';
+
+const title = 'Guides | Secret Boxes'
+---
+<DefaultLayout title={title}>
+    <div class="flex flex-col justify-items-center items-center">
+        <!-- TODO: This image is a lottie file and needs to implemented-->
+        <img src="/illustrations/rocket_illustration.svg" alt="A rocketship illustration">
+        <div class="mt-5 text-lg text-purple-100 font-semibold">Coming Soon</div>
+        <p class="mt-2 mb-6 text-center text-sm text-[#A5A4B1]">To make sure you don't miss out on anything, sign up for our newsletter.<br> 
+        We won't email more than once a week.</p>
+
+        <Input width="w-96" placeholder="paul@altermail.com" type="search">
+            <Button 
+                styles="absolute top-1.5 right-0 mr-4 cursor-pointer leading-none z-10 translate-x-2 tracking-0.5"
+                kind="primary" 
+                text="Subscribe" 
+                route='' 
+                size="sm">
+            </Button>
+        </Input>
+
+        <Button styles="mt-6" kind="text" route="/" size="sm" text="Go Back"></Button>
+    </div>
+</DefaultLayout>
