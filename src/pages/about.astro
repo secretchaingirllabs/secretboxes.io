@@ -1,0 +1,88 @@
+---
+import DefaultLayout from '@layouts/Default.astro';
+
+const title = 'About | Secret Boxes';
+---
+<DefaultLayout title={title}>
+    <div class="flex flex-col justify-items-center items-center">
+        <h2 class="mt-32 text-center font-display text-h2 text-[#091133] tracking-1.5">What are secret boxes?</h2>
+        <p class="max-w-[615px] text-center text-[#3A3A3A]">Secret Boxes give you the basics to quickly start developing on Secret.<br>
+        Part of a series of developer resources we're building to supercharge your dev experience.</p>
+    </div>
+
+    
+    <div class="flex relative justify-items-center items-center w-2/5 mx-auto space-x-[5.375rem] mt-32">
+        <img src="/illustrations/ufo_illustration.svg" alt="illustration of a ufo"> 
+        <div>
+            <p class="tracking-0.5 text-[#121212] font-semibold">Help you build for the <span class="text-orange-300">real world</span></p>
+            <p class="text-background">Secret Boxes are quickstarts to help you build decentralized dApps on Secret using customizable privacy.</p>
+        </div>
+
+        <img class="absolute !m-0 left-0 -translate-x-48" src="/illustrations/planet_stars_1.svg" alt="Illustration of a planet and stars">
+    </div>
+
+
+    <img class="absolute left-1/2 -translate-x-1/2" src="/illustrations/ufo_trail_1.svg" alt="First dashed trail leading from a UFO"> 
+
+    <div class="flex items-center w-2/5 mx-auto space-x-[5.375rem] mt-32">
+        <div>
+            <p class="tracking-0.5 text-[#121212] font-semibold">Complete package for <span class="text-orange-300">developers</span></p>
+            <p class="text-background mb-6">Each box comes with everything you need to start building and includes:</p>
+
+            <div class="flex flex-col space-y-3">
+                <div class="inline-flex">
+                    <img src="/icons/circled_checkmark_icon.svg" alt="A circled checkmark icon"> 
+                    <p class="text-[#4d4d4d]">Local Blockchain</p>
+                </div>
+
+                <div class="inline-flex">
+                    <img src="/icons/circled_checkmark_icon.svg" alt="A circled checkmark icon"> 
+                    <p class="text-[#4d4d4d]">Secret contracts</p>
+                </div>
+
+                <div class="inline-flex">
+                    <img src="/icons/circled_checkmark_icon.svg" alt="A circled checkmark icon"> 
+                    <p class="text-[#4d4d4d]">Beautiful UI</p>
+                </div>
+
+                <div class="inline-flex">
+                    <img src="/icons/circled_checkmark_icon.svg" alt="A circled checkmark icon"> 
+                    <p class="text-[#4d4d4d]">Tutorials</p>
+                </div>
+            </div>
+        </div>
+        
+        <img src="/illustrations/ufo_illustration.svg" alt="illustration of a ufo"> 
+    </div>
+
+    <img class="absolute left-1/2 -translate-x-1/2" src="/illustrations/ufo_trail_2.svg" alt="Second dashed trail leading from a UFO"> 
+
+    <div class="flex relative items-center w-2/5 mx-auto space-x-[5.375rem] mt-32 pb-32">
+        <img src="/illustrations/ufo_illustration.svg" alt="illustration of a ufo"> 
+
+        <div>
+            <p class="tracking-0.5 text-[#121212] font-semibold">We have the best boxes for <span class="text-orange-300">web3 and privacy</span></p>
+            <p class="text-background">Secret Boxes can be anything from use case blueprints to chain integrations, technical bootstraps and more.</p>
+        </div>
+
+        <img class="absolute left-20 -bottom-20" src="/illustrations/ufo_trail_3.svg" alt="Third dashed trail leading from a UFO"> 
+    </div>
+
+    <div class="grid w-full justify-items-center relative">
+        <img class="absolute !m-0 right-0 top-0 -translate-x-[102%] -translate-y-[52%]" src="/illustrations/planet_stars_2.svg" alt="Illustration of a planet and stars">
+        <img class="pb-6" src="/illustrations/ufo_end_illustration.svg" alt="An illustration of a UFO">
+
+        <div class="absolute inset-x-0 bottom-0 w-full z-10">
+            <p class="text-center tracking-0.5 text-[#121212] font-semibold">Connect with <span class="text-orange-300">amazing people!</span></p>
+            <p class="text-center text-background mb-6">Join the community, with 2000+ members<br> and growing.</p>
+        </div>
+    </div>
+
+    <!-- Forest BG -->
+        <div class="flex justify-center mt-6 pb-36 relative">
+            <img src="/icons/telegram_icon.svg" alt="Telegram Icon"> 
+            <img src="/icons/discord_icon.svg" alt="Discord Icon"> 
+            <img class="absolute top-20 -translate-y-full" src="/illustrations/forest_illustration.svg" alt="Illustration of a forest with yellow trees">
+        </div>
+
+</DefaultLayout>

@@ -40,7 +40,8 @@ module.exports = {
 			},
 			orange: {
 				100: '#FF6A1E', // Intermidate Tag Text + Icon
-				200: '#FF7A00' // Used for text sometimes
+				200: '#FF7A00', // Used for text sometimes
+				300: '#E96930',
 			},
 			green: '#4DAE00', // Advanced Tag Text + Icon
 			// Dropdown
@@ -100,6 +101,7 @@ module.exports = {
 				'hero-sky': "url('/illustrations/hero_sky_illustration.svg')",
 				'footer': "",
 				'search': "url('/icons/search_icon.svg')",
+				'forest': "url('/illustrations/forest_illustration.svg')"
 			},
 			backgroundPosition: {
 				'left-center': 'left 8px center',
