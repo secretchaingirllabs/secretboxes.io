@@ -1,55 +1,42 @@
 ---
 import DefaultLayout from '@layouts/Default.astro';
-import AttributeTag from '@components/AttributeTag.astro';
 import Button from '@components/Button.astro';
+import BoxCardGroup from '@components/BoxCardGroup.svelte';
+import { BoxPostFrontmatter } from '../lib/Boxes';
 import '../styles/global.css';
 
-let title = 'Boxes | Secret Boxes';
+const title = 'Boxes | Secret Boxes';
+
+const posts = await Astro.glob<BoxPostFrontmatter>('../content/*.md');
+
+// First filter remove falsey values
+// Map gives us the BoxMetadata from the post frontmatter
+// Second filter removes Boxes with the same title
+const boxesData = posts
+    .filter(p => p.frontmatter.box)
+    .map(p => p.frontmatter.box)
+    .filter((p, index, self) => {
+       return index === self.findIndex((t) => {
+           return t.title === p.title
+       })
+    })
+
+console.log(boxesData)
 ---
 <DefaultLayout title={title}>
-    <div>
-        <h2>Secret Counter</h2>
-        <p>This is the starting point for learning about Secret Contracts. Based on the "simple counter" secret contract this box illustrates the basics of querying and modifying contract state using the <span class="font-bold">"getCount"</span> and <span class="font-bold">"increment"</span> messages</p>
-        <Button kind="primary" route="/" text="Learn More"></Button>
-        <Button kind="secondary" route="/" text="Repo">
-            <!-- Github Logo Here -->
-        </Button>
-        <Button kind="secondary" route="/docs" text="Docs"></Button>
-        <!-- img or svg goes here-->
+    <div class="w-3/5 mx-auto">
+        <h2 class="font-display text-h2 tracking-1.5 mt-32 mb-2">Secrets in the box</h2>
+        <p class="font-semibold tracking-0.5 text-[#575757] mb-5">Let's do this!</p>
+        <p class="text-purple-100 mb-9">Secret Boxes contain the essential components for building Secret Applications.<br> 
+        They include a simple web interface, a secret contract boilerplate and step-by-step tutorial!</p>
     </div>
 
-    <div>
-        <!-- img or svg goes here-->
-
-        <h2>Figment Learn</h2>
-        <p>Figment Learn is a fun learning pathway to help developers quickly learn about working with Secret Network. Using the DataHub gateway, you'll be taken through the steps to deploy a secret contract to the testnet, and even get some SCRT tokens for your efforts!</p>
-        <Button kind="primary" route="/" text="Learn More"></Button>
+    <div class="flex items-center justify-start w-3/5 mx-auto space-x-3 mb-4">
+        <Button text="Create Boxes" route="" size="sm" kind="primary"></Button>
+        <p class="text-xsm2 text-[#E3662f] tracking-[0.4px]">COMING SOON</p>
+        <div class="grow text-right justify-self-end">Filter & Sort</div>
+        <!-- Still need to make dropdown component! -->
     </div>
 
-    <div>
-        <h2>Richie Rich</h2>
-        <AttributeTag attr='Coming Soon'></AttributeTag>
-        <p>Figment Learn is a fun learning pathway to help developers quickly learn about working with Secret Network. Using the DataHub gateway, you'll be taken through the steps to deploy a secret contract to the testnet, and even get some SCRT tokens for your efforts!</p>
-        <Button kind="primary" route="/" text="Subscribe"></Button>
-        <!-- img or svg goes here-->
-    </div>
-
-    <Button kind="tertiary" route="/" text="Explore More Boxes">
-        <!-- Fill slot post-text with right facing arrow -->
-    </Button>
-
-    <div id="mailing-list-forum">
-        <h1>Sign up for the Mailing List</h1>
-        <p>Sign up today to be on the Secret Boxes mailing list. We;ll let you know about new boxes, coming launches and other developments in the Secret Network universe.</p>
-
-        <!-- This combined form input element could be it's own component, but I only see this one instance, so for now I'll wait -->
-        <div>
-            <!-- img or svg goes here-->
-            <input type="text">
-            <button>Subscribe</button>
-
-            <input id="newsletter-checkbox" type="checkbox">
-            <label for="newsletter-checkbox">I agree to recieve cool stuffs from Secret Boxes Team</label>
-        </div>
-    </div>
+    <BoxCardGroup data={boxesData}></BoxCardGroup> 
 </DefaultLayout>
