@@ -11,3 +11,6 @@ box: {
 index: 1
 lotti: https://assets5.lottiefiles.com/private_files/lf30_0vbtxqrd.json
 ---
+This tutorial is for developers to get started with development on the Secret Network. The local blockchain runs in a docker container and simulates the Intel SGX (TEE) that is a requirement for the Holodeck testnet and mainnet.
+
+It's super easy and quick, once you have `docker` installed. Just a few commands!

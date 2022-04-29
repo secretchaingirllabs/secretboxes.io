@@ -1,5 +1,7 @@
 <script lang="ts">
     import { BoxMetadata } from "src/lib/Boxes";
+    import { toKebabCase } from "src/lib/utils";
+
     export let data: BoxMetadata[]
 </script>
 
@@ -13,7 +15,7 @@
 
             <div class="space-x-4">
                 <button>Launch</button>
-                <button>Learn More</button>
+                <a href={`boxes/${toKebabCase(d.title)}/1`}>Learn More</a>
             </div>
         </div>
     {/each}
