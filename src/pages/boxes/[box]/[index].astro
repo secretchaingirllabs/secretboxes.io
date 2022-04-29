@@ -29,22 +29,22 @@ console.log(await post.default());
 ---
 <DefaultLayout title={title}>
     <div class="w-1/2 mx-auto mt-24">
-        <div class="flex items-center">
-            <div class="w-[60%]">
+        <div class="flex w-5/6 mx-auto items-center mb-40">
+            <div class="w-[65%]">
                 <h2 class="font-display text-h2 mb-5">{post.frontmatter.box.title}</h2>
                 <p>{post.frontmatter.box.description}</p>
             </div>
             
             <!-- This is a lotti animation -->
             <div class="flex grow justify-end">
-                <img src={post.frontmatter.box.image} alt={`Illustration for ${post.frontmatter.box.title} box`}>
+                <img class="scale-125" src={post.frontmatter.box.image} alt={`Illustration for ${post.frontmatter.box.title} box`}>
             </div>
 
             <!-- Need a BoxPostProgressBar component that knows the number of posts -->
             <!-- related to a particular box and the titles of each of those posts -->
         </div>
         
-        <div class="flex items-center border border-solid border-[#e7e7e7] rounded-2xl p-7 mb-16 max-w-[60%]">
+        <div class="flex float-left items-center border border-solid border-[#e7e7e7] rounded-2xl p-7 mb-16 max-w-[70%]">
             <div class="flex items-center justify-center tracking-0.5 font-semibold self-center bg-[#00a991] min-w-[35px] min-h-[35px] text-white rounded-full mr-7">
                 <div>{post.frontmatter.index}</div>
             </div>
@@ -55,7 +55,7 @@ console.log(await post.default());
         </div>
     
         <!-- Below should be the rest of the markdown content-->
-        <div class="markdown max-w-[704px]">
+        <div class="markdown">
             <post.Content></post.Content>
         </div>
     </div>

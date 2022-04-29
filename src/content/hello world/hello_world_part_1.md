@@ -11,7 +11,7 @@ box: {
 index: 1
 lotti: https://assets5.lottiefiles.com/private_files/lf30_0vbtxqrd.json
 ---
-# Table of contents
+### Table of Contents
 1. [Setup Your Environment](#setup-your-environment)
 2. [Query the latest block](#query-the-latest-block)
 3. [Use the CLI to Interact with the Network](#query-the-latest-block)
@@ -22,7 +22,9 @@ It's super easy and quick, once you have `docker` installed. Just a few commands
 
 ## Setup Your Environment
 
-- Install Docker for your environment (Mac, Windows, Linux).
+- Install [Docker](https://docs.docker.com/get-docker/) for your environment (Mac, Windows, Linux).
+
+<div class="gray">
 
 In a terminal window start the Secret Network by running the docker container named secretdev:
 
@@ -46,7 +48,9 @@ After initializing and validating the genesis file you can see the network start
 
 Use the REST API to view the latest block information.
 
-`curl http://localhost:1337/blocks/latest`
+```
+curl http://localhost:1337/blocks/latest
+```
 
 ![Secret Blockchain Instance](/boxes/hello%20world/rest-blocks.jpg)
 
@@ -69,3 +73,5 @@ secretcli keys list
 ![Secret Blockchain Instance](/boxes/hello%20world/secretdev-keys.jpg)
 
 Use exit to `quit` your interactive Docker session.
+
+</div>

@@ -30,8 +30,84 @@ select {
 /* 
     Markdown specific styles 
     Note: Markdown is dynamically rendered, so there's not a good way to add
-    CSS using Tailwind's normal deterministic style
+    CSS using Tailwind's normal deterministic style unless opting for
+    @tailwindcss/typography plugin
 */
-.markdown > p {
+
+.markdown > :first-child, .markdown > :nth-child(2) {
+    width: 26%;
+    float: right;
+    clear: right;
+    padding-left: 2.25rem;
+}
+
+.markdown > :nth-child(n+3) {
+    width: 74%;
+    clear: left;
+}
+
+.markdown > :first-child {
+    @apply font-semibold mb-3
+}
+
+
+.markdown p {
     margin-bottom: 1.5rem;
+}
+
+.markdown p > code {
+}
+
+.markdown h2 {
+    font-family: 'Golos';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 48px;
+    margin-bottom: 1rem;
+}
+
+.markdown h2:first-of-type {
+    border-top: 0.5px solid #d6d6d6;
+    padding-top: 1rem;
+}
+
+.markdown ul {
+    list-style-image: url('/icons/list_icon.svg');
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.markdown a {
+    color: #4867f8
+}
+
+.markdown ol > li > a {
+    @apply inline-block text-black hover:text-[#FF8A00] mb-2.5 tracking-0.5
+}
+.markdown .gray {
+    background-color: #f2f2f2;
+    border-radius: 8px; 
+    padding: 2.25rem 3.5rem
+}
+
+.markdown mark {
+    @apply bg-primary block py-4 px-6 my-6 rounded-lg;
+}
+
+.markdown mark > code {
+    @apply inline-block text-primary bg-[#14142B] px-0.5;
+}
+
+.astro-code {
+    background-color: #fff !important;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    border-radius: 8px;
+}
+
+.astro-code span span {
+    color: #14142B !important;
 }
