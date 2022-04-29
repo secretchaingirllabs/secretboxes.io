@@ -26,3 +26,12 @@ select {
     -webkit-appearance: none;
     appearance: none;
 }
+
+/* 
+    Markdown specific styles 
+    Note: Markdown is dynamically rendered, so there's not a good way to add
+    CSS using Tailwind's normal deterministic style
+*/
+.markdown > p {
+    margin-bottom: 1.5rem;
+}

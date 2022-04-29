@@ -28,21 +28,35 @@ const title = `${post.frontmatter.title} | Secret Boxes`
 console.log(await post.default());
 ---
 <DefaultLayout title={title}>
-    <h2 class="font-display text-h2">{post.frontmatter.box.title}</h2>
-    <p>{post.frontmatter.box.description}</p>
+    <div class="w-1/2 mx-auto mt-24">
+        <div class="flex items-center">
+            <div class="w-[60%]">
+                <h2 class="font-display text-h2 mb-5">{post.frontmatter.box.title}</h2>
+                <p>{post.frontmatter.box.description}</p>
+            </div>
+            
+            <!-- This is a lotti animation -->
+            <div class="flex grow justify-end">
+                <img src={post.frontmatter.box.image} alt={`Illustration for ${post.frontmatter.box.title} box`}>
+            </div>
 
-    <!-- This is a lotti animation -->
-    <img src={post.frontmatter.box.image} alt={`Illustration for ${post.frontmatter.box.title} box`}>
-
-    <!-- Need a BoxPostProgressBar component that knows the number of posts -->
-    <!-- related to a particular box and the titles of each of those posts -->
-
-    <div>
-        <div>{post.frontmatter.index}</div>
-        <p>{post.frontmatter.title}</p> 
-        <p>{post.frontmatter.description}</p>
-    </div>
+            <!-- Need a BoxPostProgressBar component that knows the number of posts -->
+            <!-- related to a particular box and the titles of each of those posts -->
+        </div>
+        
+        <div class="flex items-center border border-solid border-[#e7e7e7] rounded-2xl p-7 mb-16 max-w-[60%]">
+            <div class="flex items-center justify-center tracking-0.5 font-semibold self-center bg-[#00a991] min-w-[35px] min-h-[35px] text-white rounded-full mr-7">
+                <div>{post.frontmatter.index}</div>
+            </div>
+            <div class="">
+                <p class="font-semibold tracking-0.5">{post.frontmatter.title}</p> 
+                <p class="text-[#6e7191]">{post.frontmatter.description}</p>
+            </div>
+        </div>
     
-    <!-- Below should be the rest of the markdown content-->
-    <post.Content></post.Content>
+        <!-- Below should be the rest of the markdown content-->
+        <div class="markdown max-w-[704px]">
+            <post.Content></post.Content>
+        </div>
+    </div>
 </DefaultLayout>
