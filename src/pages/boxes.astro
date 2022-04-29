@@ -7,7 +7,7 @@ import '../styles/global.css';
 
 const title = 'Boxes | Secret Boxes';
 
-const posts = await Astro.glob<BoxPostFrontmatter>('../content/*.md');
+const posts = await Astro.glob<BoxPostFrontmatter>('../content/**/*.md');
 
 // First filter remove falsey values
 // Map gives us the BoxMetadata from the post frontmatter
@@ -20,8 +20,6 @@ const boxesData = posts
            return t.title === p.title
        })
     })
-
-console.log(boxesData)
 ---
 <DefaultLayout title={title}>
     <div class="w-3/5 mx-auto">

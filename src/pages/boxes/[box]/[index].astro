@@ -1,0 +1,27 @@
+---
+import { BoxPostFrontmatter } from '../../../lib/Boxes';
+import { toKebabCase } from '../../../lib/utils';
+
+export async function getStaticPaths() {
+    const boxesPosts = await Astro.glob('../../../content/**/*.md')
+
+    // Each post must map to an array of objects containing:
+    // { params: { box: '', index: '', slug: '' } }
+    // This is how dynamic routing works in Astro.
+
+    const paths = boxesPosts.map((post) => {
+        return {
+            params: {
+                box: toKebabCase(post.frontmatter.box.title),
+                index: post.frontmatter.index.toString(),
+            },
+            props: { post }
+        }
+    })
+
+    return paths;
+}
+
+const { post } = Astro.props;
+---
+<h1>{post.frontmatter.title}</h1>
