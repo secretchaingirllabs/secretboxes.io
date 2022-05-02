@@ -11,6 +11,6 @@ export interface BoxMetadata {
     title: string,
     description: string,
     prelude: string,
-    difficultly: string,
+    difficulty: string,
     image: string,
 }
