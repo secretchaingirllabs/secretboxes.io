@@ -1,9 +1,11 @@
 import { defineConfig } from 'astro/config';
+import { astroImageTools } from 'astro-imagetools';
+import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
-
 import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), svelte()]
+  site: 'https://snazzy-conkies-d2e682.netlify.app',
+  integrations: [tailwind(), svelte(), astroImageTools, sitemap()]
 });
