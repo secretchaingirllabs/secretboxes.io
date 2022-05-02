@@ -1,6 +1,6 @@
 ---
 import DefaultLayout from '@layouts/Default.astro';
-import Button from '@components/Button.astro';
+import Button from '@components/RouteButton.svelte';
 import SupportForm from '@components/FormSupport.astro';
 import '../styles/global.css';
 
@@ -14,8 +14,8 @@ let title = 'Support | Secret Boxes';
             <h1 class="text-[#121212] text-h1 font-display tracking-1.25 mb-2.5">We're Here To Support <span class="text-orange-200">You</span></h1>
             <p class="text-[#14142B] mb-8">We will help you get going with Secret Boxes as part of your path to building dApps on the Secret Network.</p>
 
-            <Button styles="px-0 m-0 h-8" kind="text" route="#support-ticket" text="Make a support ticket" size="sm"></Button>
-            <Button styles="px-0 m-0 h-8" kind="text" route="#support-ticket" text="Seek help from the community" size="sm"></Button>
+            <Button styles="px-0 m-0 h-8" kind="text" route="#support-ticket" size="sm">Make a support ticket</Button>
+            <Button styles="px-0 m-0 h-8" kind="text" route="#support-ticket" size="sm">Seek help from the community</Button>
         </div>
 
         <img class="inline-flex" src="/illustrations/support_illustration.svg" alt="Tech support illustration"> 
@@ -46,18 +46,21 @@ let title = 'Support | Secret Boxes';
             <p class="w-52 text-center">If you want to report an issue or make a suggestion, come find us. We welcome your feedback!</p>
 
             <span class="">
-            <Button styles="" size="sm" kind="primary" route="" text="Check Discord">
+            <Button styles="" size="sm" kind="primary" route="">
                 <!--Find out if right facing arrow should go here. It's inconsistent in the designs-->
+                Check Discord
             </Button>
 
             </span>
             
-            <Button size="sm" kind="primary" route="" text="Check Forum">
+            <Button styles="" size="sm" kind="primary" route="">
                 <!--Find out if right facing arrow should go here. It's inconsistent in the designs-->
+                Check Forum
             </Button>
 
-            <Button size="sm" kind="primary" route="" text="Open An Issue">
+            <Button styles="" size="sm" kind="primary" route="">
                 <!--Find out if right facing arrow should go here. It's inconsistent in the designs-->
+                Open An Issu
             </Button>
         </div>
     </div>

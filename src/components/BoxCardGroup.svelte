@@ -1,6 +1,7 @@
 <script lang="ts">
     import { BoxMetadata } from "src/lib/Boxes";
     import { toKebabCase } from "src/lib/utils";
+    import Button from '@components/RouteButton.svelte'
 
     export let data: BoxMetadata[]
 </script>
@@ -13,9 +14,15 @@
             <p class="mb-3.5 font-display tacking-1 text-[24px] leading-[27px] text-center">{d.title}</p>
             <p class="mb-4 text-sm text-[#6E7191] text-center">{d.prelude}</p>
 
-            <div class="space-x-4">
-                <button>Launch</button>
-                <a href={`boxes/${toKebabCase(d.title)}/1`}>Learn More</a>
+            <div class="flex space-x-4">
+                <Button kind="primary" size="sm" route="/">
+					<img class="mr-2" src="/icons/gitpod_icon.svg" alt="">
+                    Launch
+                </Button>
+
+                <Button kind="secondary" size="sm" route={`boxes/${toKebabCase(d.title)}/1`}>
+                    Learn More
+                </Button>
             </div>
         </div>
     {/each}

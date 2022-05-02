@@ -1,6 +1,6 @@
 ---
 import DefaultLayout from '@layouts/Default.astro'
-import Button from '@components/Button.astro'
+import Button from '@components/RouteButton.svelte'
 import Input from '@components/Input.astro';
 
 const title = 'Guides | Secret Boxes'
@@ -17,12 +17,12 @@ const title = 'Guides | Secret Boxes'
             <Button 
                 styles="absolute top-1.5 right-0 mr-4 cursor-pointer leading-none z-10 translate-x-2 tracking-0.5"
                 kind="primary" 
-                text="Subscribe" 
                 route='' 
                 size="sm">
+                Subscribe
             </Button>
         </Input>
 
-        <Button styles="mt-6" kind="text" route="/" size="sm" text="Go Back"></Button>
+        <Button styles="mt-6" kind="text" route="/" size="sm">Go Back</Button>
     </div>
 </DefaultLayout>

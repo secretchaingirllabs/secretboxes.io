@@ -1,27 +1,9 @@
----
+<script lang="ts">
 // 
-// Button.astro is a generic button component for
-// our main button styles: primary, secondary, text, and landing.
-// This component contains shared and isolated styles for each
-// button. This interface can be made to give more granular
-// design freedom by extending Props further.
+// RouteButton.svelte is a  button component for used for routing to
+// internal and external pages. It contains our main button styles: 
+// primary, secondary, text, and landing.
 // 
-export interface Props {
-    kind: string,
-    text: string,
-    route: string,
-    size: string,
-    styles?: string, // Used for arbitrary styling
-};
-
-const { 
-    kind = '',
-    text = '', 
-    route = '', 
-    size = '',
-    styles = '',
-} = Astro.props;
-
 const SHARED_STYLES = `
     inline-flex 
     items-center
@@ -65,6 +47,10 @@ const LANDING_BUTTON_STYLES = `
     hover:from-blue-200
     hover:to-blue-300
 `
+export let kind: string;
+export let route: string;
+export let size: string;
+export let styles: string = ''; // Used for arbitrary styling
 
 function style() {
     switch(kind.toLowerCase()) {
@@ -100,12 +86,8 @@ function getHeight() {
         default: return 'h-14'
     }
 }
----
-<a 
-    class={style()}
-    href={route}>
-    <slot name="pre" />
-    {text}
-    <slot name="post" />
+</script>
+
+<a class={style()} href={route}>
     <slot />
 </a>

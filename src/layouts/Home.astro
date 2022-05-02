@@ -3,7 +3,7 @@
 // Specifically, the home page requires a custom footer.
 import Head from '@components/Head.astro';
 import Header from '@components/Header.astro';
-import Button from '@components/Button.astro';
+import Button from '@components/RouteButton.svelte';
 import Input from '@components/Input.astro';
 import SocialButton from '@components/SocialButton.astro';
 
@@ -39,9 +39,9 @@ const { title = 'Secret Boxes' } = Astro.props;
                             <Button 
                                 styles="absolute top-1.5 right-3.5 cursor-pointer leading-none z-10 translate-x-2 tracking-0.5"
                                 kind="primary" 
-                                text="Subscribe" 
                                 route='' 
                                 size="sm">
+                                Subscribe
                             </Button>
                         </Input>
 

@@ -1,6 +1,6 @@
 ---
 import HomeLayout from '@layouts/Home.astro';
-import Button from '@components/Button.astro';
+import Button from '@components/RouteButton.svelte';
 import Tag from '@components/Tag.astro';
 import '../styles/global.css';
 
@@ -15,7 +15,9 @@ let title = 'Home | Secret Boxes';
 				The beautiful, fun and easy way to get started building 
 				<span class="text-[#E96930]">Secret Apps</span>
 			</h2>
-			<Button kind="landing" size="w-48 h-14" route="/boxes" text="Start Unboxing"></Button>
+			<Button styles="" kind="landing" size="w-48 h-14" route="/boxes">
+				Start Unboxing
+			</Button>
 			<a href="#how-it-works" class="self-start">
 				<img height="22px" width="22px" src="/icons/down_arrow_icon.svg" alt="Home page down arrow">
 			</a>
@@ -44,11 +46,14 @@ let title = 'Home | Secret Boxes';
 					<p class="flex mb-6">A fun way for developers to quickly learn about working with secret contracts.</p>
 
 					<div class="flex space-x-4">
-						<Button kind="primary" size="sm" route="/boxes" text="Launch">
+						<Button styles="" kind="primary" size="sm" route="https://gitpod.io/#https://github.com/gitpod-io/sveltejs-template">
 							<!-- Gitpod Icon -->
-							<img class="mr-2" slot="pre" src="/icons/gitpod_icon.svg" alt="">
+							<img class="mr-2" src="/icons/gitpod_icon.svg" alt="">
+							<span>Launch</span>
 						</Button>
-						<Button kind="secondary" size="sm" route="/boxes/hello-world/1" text="Learn more"></Button>
+						<Button styles="" kind="secondary" size="sm" route="/boxes/hello-world/1">
+							Learn more	
+						</Button>
 					</div>
 				</div>
 			</div>	
@@ -65,11 +70,15 @@ let title = 'Home | Secret Boxes';
 					<p class="flex mb-6">Based on “simple counter,” the template for smart contract development on Secret, this box illustrates the basics of querying and modifying contract state using the “getCount” and “increment” messages.</p>
 
 					<div class="flex space-x-4">
-						<Button kind="primary" size="sm" route="/boxes" text="Launch">
+						<Button styles="" kind="primary" size="sm" route="/boxes">
 							<!-- Gitpod Icon -->
-							<img class="mr-2" slot="pre" src="/icons/gitpod_icon.svg" alt="">
+							<img class="mr-2" src="/icons/gitpod_icon.svg" alt="">
+							Launch
 						</Button>
-						<Button kind="secondary" size="sm" route="/boxes/secret-counter/1" text="Learn more"></Button>
+						
+						<Button styles="" kind="secondary" size="sm" route="/boxes/secret-counter/1">
+							Learn more
+						</Button>
 					</div>
 				</div>
 
@@ -92,11 +101,14 @@ let title = 'Home | Secret Boxes';
 					<p class="flex mb-6">How do you find out who’s the richest without revealing your net worth to the world? This secret box, based on Yao’s Millionaires’ Problem, illustrates how that can be done on Secret.</p>
 
 					<div class="flex space-x-4">
-						<Button kind="primary" size="sm" route="/boxes" text="Launch">
+						<Button styles="" kind="primary" size="sm" route="/boxes">
 							<!-- Gitpod Icon -->
-							<img class="mr-2" slot="pre" src="/icons/gitpod_icon.svg" alt="">
+							<img class="mr-2" src="/icons/gitpod_icon.svg" alt="">
+							Launch
 						</Button>
-						<Button kind="secondary" size="sm" route="/boxes/richie-rich/1" text="Learn more"></Button>
+						<Button styles="" kind="secondary" size="sm" route="/boxes/richie-rich/1">
+							Learn more
+						</Button>
 					</div>
 				</div>
 			</div>	
