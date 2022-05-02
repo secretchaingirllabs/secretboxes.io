@@ -24,7 +24,7 @@
                     Launch
                 </Button>
 
-                <Button kind="secondary" size="sm" route={`boxes/${toKebabCase(d.title)}/1`}>
+                <Button kind="secondary" size="sm" route={`/boxes/${toKebabCase(d.title)}/1`}>
                     Learn More
                 </Button>
             </div>
