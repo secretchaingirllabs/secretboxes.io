@@ -7,12 +7,10 @@ import '../styles/global.css';
 let title = 'Home | Secret Boxes';
 ---
 <HomeLayout title={title}>
-	<div id="hero" class="h-[calc(100vh_-_5rem)]">
+	<div id="hero" class="h-[calc(100vh_-_5rem)] relative">
 		<div id="hero-content" class="grid grid-rows-4 pt-48 items-center justify-items-center">
 			<!--CSS Text strokes are inconsistent across browser. Import title as SVG -->
-			<h1 class="text-display font-display tracking-2">
-				Secret <span class="">Boxes</span>
-			</h1>
+			<img src="/title.svg" alt="Secret Boxes hero title">	
 			<h2 class="max-w-[450px] text-center text-[#606060] font-medium text-lg">
 				The beautiful, fun and easy way to get started building 
 				<span class="text-[#E96930]">Secret Apps</span>
@@ -43,14 +41,14 @@ let title = 'Home | Secret Boxes';
 					</div>
 
 					<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
-					<p class="flex max-w-prose mb-6">A fun way for developers to quickly learn about working with secret contracts.</p>
+					<p class="flex mb-6">A fun way for developers to quickly learn about working with secret contracts.</p>
 
 					<div class="flex space-x-4">
-						<Button kind="primary" size="sm" route="/tutorials" text="Launch">
+						<Button kind="primary" size="sm" route="/boxes" text="Launch">
 							<!-- Gitpod Icon -->
 							<img class="mr-2" slot="pre" src="/icons/gitpod_icon.svg" alt="">
 						</Button>
-						<Button kind="secondary" size="sm" route="/tutorials" text="Learn more"></Button>
+						<Button kind="secondary" size="sm" route="/boxes/hello-world/1" text="Learn more"></Button>
 					</div>
 				</div>
 			</div>	
@@ -64,14 +62,14 @@ let title = 'Home | Secret Boxes';
 					</div>
 
 					<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
-					<p class="flex max-w-prose mb-6">Based on “simple counter,” the template for smart contract development on Secret, this box illustrates the basics of querying and modifying contract state using the “getCount” and “increment” messages.</p>
+					<p class="flex mb-6">Based on “simple counter,” the template for smart contract development on Secret, this box illustrates the basics of querying and modifying contract state using the “getCount” and “increment” messages.</p>
 
 					<div class="flex space-x-4">
-						<Button kind="primary" size="sm" route="/tutorials" text="Launch">
+						<Button kind="primary" size="sm" route="/boxes" text="Launch">
 							<!-- Gitpod Icon -->
 							<img class="mr-2" slot="pre" src="/icons/gitpod_icon.svg" alt="">
 						</Button>
-						<Button kind="secondary" size="sm" route="/tutorials" text="Learn more"></Button>
+						<Button kind="secondary" size="sm" route="/boxes/secret-counter/1" text="Learn more"></Button>
 					</div>
 				</div>
 
@@ -91,14 +89,14 @@ let title = 'Home | Secret Boxes';
 					</div>
 
 					<!-- Text size not found in typography of design. Size is 21px = 1.313rem -->
-					<p class="flex max-w-prose mb-6">How do you find out who’s the richest without revealing your net worth to the world? This secret box, based on Yao’s Millionaires’ Problem, illustrates how that can be done on Secret.</p>
+					<p class="flex mb-6">How do you find out who’s the richest without revealing your net worth to the world? This secret box, based on Yao’s Millionaires’ Problem, illustrates how that can be done on Secret.</p>
 
 					<div class="flex space-x-4">
-						<Button kind="primary" size="sm" route="/tutorials" text="Launch">
+						<Button kind="primary" size="sm" route="/boxes" text="Launch">
 							<!-- Gitpod Icon -->
 							<img class="mr-2" slot="pre" src="/icons/gitpod_icon.svg" alt="">
 						</Button>
-						<Button kind="secondary" size="sm" route="/tutorials" text="Learn more"></Button>
+						<Button kind="secondary" size="sm" route="/boxes/richie-rich/1" text="Learn more"></Button>
 					</div>
 				</div>
 			</div>	

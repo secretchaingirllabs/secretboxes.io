@@ -99,12 +99,13 @@ module.exports = {
 			backgroundImage: {
 				'hero': "url('/illustrations/home_illustration.svg')",
 				'hero-sky': "url('/illustrations/hero_sky_illustration.svg')",
-				'footer': "",
+				'footer': "url('/illustrations/footer_illustration.svg')",
 				'search': "url('/icons/search_icon.svg')",
 				'forest': "url('/illustrations/forest_illustration.svg')"
 			},
 			backgroundPosition: {
 				'left-center': 'left 8px center',
+				'footer-offset': '76%, 50%',
 			},
 		}
 	},

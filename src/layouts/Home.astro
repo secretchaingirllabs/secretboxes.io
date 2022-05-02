@@ -17,8 +17,8 @@ const { title = 'Secret Boxes' } = Astro.props;
     <Head title={title}></Head>
     
     <body class="min-h-screen">
-	    <div class="absolute w-full h-screen pointer-events-none bg-hero-sky bg-no-repeat bg-local bg-center"></div>
-	    <div class="absolute w-full h-screen pointer-events-none bg-hero bg-no-repeat bg-local bg-center"></div>
+	    <div class="absolute w-full h-full pointer-events-none bg-hero-sky bg-no-repeat bg-auto bg-center z-0"></div>
+	    <div class="absolute w-full h-full pointer-events-none bg-hero bg-no-repeat bg-auto bg-center z-10"></div>
 
         <Header></Header> 
 
@@ -28,15 +28,16 @@ const { title = 'Secret Boxes' } = Astro.props;
 
         <!-- Note: Home page requires a special footer-->
         <footer class="sticky top-[100vh] min-h-[450px] grid grid-cols-footer mt-80">
+            <div class="absolute w-full h-full pointer-events-none bg-footer bg-no-repeat bg-auto bg-footer-offset"></div>
             <div id="footer-left" class="bg-primary">
                 <div class="grid grid-rows-footer-left h-full w-[50%] m-auto">
 
                     <div class="self-center">
                         <label class="block mb-2 text-left text-background" for="newletter-input">STAY UP TO DATE</label>
 
-                        <Input width="w-96" placeholder="paul@altermail.com" type="search">
+                        <Input styles="pr-36" width="w-96" placeholder="paul@altermail.com" type="search">
                             <Button 
-                                styles="absolute top-1.5 right-0 cursor-pointer leading-none z-10 translate-x-2 tracking-0.5"
+                                styles="absolute top-1.5 right-3.5 cursor-pointer leading-none z-10 translate-x-2 tracking-0.5"
                                 kind="primary" 
                                 text="Subscribe" 
                                 route='' 
@@ -48,10 +49,10 @@ const { title = 'Secret Boxes' } = Astro.props;
                         And check out our <span class="font-bold">Github</span> to see how you can contribute.</p>
 
                         <div class="flex mt-10">
-                            <SocialButton img="/icons/github_icon.svg" route="/" alt="Github Icon"></SocialButton> 
+                            <SocialButton img="/icons/github_icon.svg" route="https://github.com/secretchaingirl" alt="Github Icon"></SocialButton> 
                             <SocialButton img="/icons/telegram_icon.svg" route="/" alt="Telegram Icon"></SocialButton> 
                             <SocialButton img="/icons/discord_icon.svg" route="/" alt="Discord Icon"></SocialButton> 
-                            <SocialButton img="/icons/twitter_icon.svg" route="/" alt="Twitter Icon"></SocialButton> 
+                            <SocialButton img="/icons/twitter_icon.svg" route="https://twitter.com/secretchaingirl" alt="Twitter Icon"></SocialButton> 
                             <SocialButton img="/icons/youtube_icon.svg" route="/" alt="YouTube Icon"></SocialButton> 
                         </div>
                     </div>
