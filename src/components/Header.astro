@@ -1,5 +1,5 @@
 ---
-import Input from '@components/Input.astro';
+import Input from '@components/Input.svelte';
 import ThemeToggle from '@components/ThemeToggle.astro';
 import TopNav from '@components/TopNav.svelte';
 ---
@@ -11,6 +11,7 @@ import TopNav from '@components/TopNav.svelte';
     <div class="inline-flex items-center space-x-4">
         <TopNav client:load></TopNav>
         <Input 
+            name=""
             styles="bg-search bg-no-repeat bg-left-center"
             padding="pl-8"
             height="h-[38px]" 

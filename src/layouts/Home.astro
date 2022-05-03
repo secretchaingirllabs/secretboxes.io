@@ -3,7 +3,7 @@
 // Specifically, the home page requires a custom footer.
 import Header from '@components/Header.astro';
 import Button from '@components/RouteButton.svelte';
-import Input from '@components/Input.astro';
+import Input from '@components/Input.svelte';
 import SocialButton from '@components/SocialButton.astro';
 
 export interface Props {
@@ -36,9 +36,16 @@ const { title = 'Secret Boxes' } = Astro.props;
                 <div class="grid grid-rows-footer-left h-full w-[50%] m-auto">
 
                     <div class="self-center">
-                        <label class="block mb-2 text-left text-background" for="newletter-input">STAY UP TO DATE</label>
+                        <label class="block mb-2 text-left text-background" for="newletter">STAY UP TO DATE</label>
 
-                        <Input styles="pr-36" width="w-96" placeholder="paul@altermail.com" type="search">
+                        <Input 
+                            name="newsletter" 
+                            styles="pr-36" 
+                            width="w-96" 
+                            height=""
+                            padding=""
+                            placeholder="paul@altermail.com" 
+                            type="search">
                             <Button 
                                 styles="absolute top-1.5 right-3.5 cursor-pointer leading-none z-10 translate-x-2 tracking-0.5"
                                 kind="primary" 

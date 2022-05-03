@@ -1,7 +1,7 @@
 ---
 import DefaultLayout from '@layouts/Default.astro';
 import Button from '@components/RouteButton.svelte';
-import SupportForm from '@components/FormSupport.astro';
+import SupportForm from '@components/FormSupport.svelte';
 import '../styles/global.css';
 
 let title = 'Support | Secret Boxes';
@@ -25,7 +25,7 @@ let title = 'Support | Secret Boxes';
         <h2 class="text-h2 font-display tracking-1.5">Support Ticket</h2>
         <p>Open a support ticket to start a conversation with us. <br>
         This will help us in building our FAQ to assist future Secret Box users!</p>
-        <SupportForm></SupportForm>
+        <SupportForm client:load></SupportForm>
     </div>
 
     <div id="secret-community" class="w-2/5 mx-auto mt-44 mb-96">
@@ -60,7 +60,7 @@ let title = 'Support | Secret Boxes';
 
             <Button styles="" size="sm" kind="primary" route="">
                 <!--Find out if right facing arrow should go here. It's inconsistent in the designs-->
-                Open An Issu
+                Open An Issue
             </Button>
         </div>
     </div>
