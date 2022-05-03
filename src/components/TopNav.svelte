@@ -1,6 +1,12 @@
-<!-- May want to move dropdown icons to a seperate component -->
+<script>
+    import NavDropdown from "@components/NavDropdown.svelte";
+</script>
+
 <nav class="text-sm font-medium tracking-0.5 text-purple-100">
-    <a class="mx-2" href="/boxes">Boxes<img class="inline ml-2" src="/icons/down_arrow_icon.svg" alt="Dropdown Icon"></a>
+    <span class="mx-2">
+        <a href="/boxes">Boxes</a>
+        <NavDropdown></NavDropdown>
+    </span>
     <a class="mx-2" href="/guides">Guides</a>
     <a class="mx-2" href="/about">About</a>
     <a class="mx-2" href="/support">Support</a>

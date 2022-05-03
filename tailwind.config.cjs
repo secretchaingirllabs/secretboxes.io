@@ -66,6 +66,8 @@ module.exports = {
 			sm: ['0.875rem', '1.5rem'], // 14px 24px
 			xsm: ['0.75rem', '1rem'], // 12px 16px
 			xsm2: ['0.625rem', '1rem'], // 10px 16px
+			xsm3: ['0.75rem', '0.875rem'], // 12px 14px
+			xsm4: ['0.625rem', '0.75rem'], // 10px 12px
 		},
 		extend: {
 			letterSpacing: {

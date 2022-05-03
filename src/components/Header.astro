@@ -1,7 +1,7 @@
 ---
 import Input from '@components/Input.astro';
 import ThemeToggle from '@components/ThemeToggle.astro';
-import TopNav from '@components/TopNav.astro';
+import TopNav from '@components/TopNav.svelte';
 ---
 <header class="grid grid-cols-2 h-20 items-center">
     <a class="inline justify-self-center" href="/">
@@ -9,7 +9,7 @@ import TopNav from '@components/TopNav.astro';
     </a>
 
     <div class="inline-flex items-center space-x-4">
-        <TopNav></TopNav>
+        <TopNav client:load></TopNav>
         <Input 
             styles="bg-search bg-no-repeat bg-left-center"
             padding="pl-8"
