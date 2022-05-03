@@ -3,6 +3,8 @@ import DefaultLayout from '@layouts/Default.astro';
 import { Markdown } from 'astro/components';
 import { toKebabCase } from '../../../lib/utils';
 
+import '../../../styles/global.css';
+
 export async function getStaticPaths() {
     const boxesPosts = await Astro.glob('../../../content/**/*.md')
 
