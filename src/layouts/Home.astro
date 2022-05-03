@@ -1,7 +1,6 @@
 ---
 // Home.astro defines a generic layout for the index.astro page to use. 
 // Specifically, the home page requires a custom footer.
-import Head from '@components/Head.astro';
 import Header from '@components/Header.astro';
 import Button from '@components/RouteButton.svelte';
 import Input from '@components/Input.astro';
@@ -14,8 +13,12 @@ export interface Props {
 const { title = 'Secret Boxes' } = Astro.props;
 ---
 <html lang="en">
-    <Head title={title}></Head>
-    
+    <head>
+        <meta charset="UTF-8">                                                                          
+        <meta name="viewport" content="width=device-width" />
+        <title>{title}</title>   
+    </head>
+
     <body class="min-h-screen">
 	    <div class="absolute w-full h-full pointer-events-none bg-hero-sky bg-no-repeat bg-auto bg-center z-0"></div>
 	    <div class="absolute w-full h-full pointer-events-none bg-hero bg-no-repeat bg-auto bg-center z-10"></div>
