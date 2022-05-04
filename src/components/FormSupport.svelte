@@ -1,6 +1,8 @@
 <script>
     import Input from '@components/Input.svelte'
     import CustomSelect from '@components/CustomSelect.svelte';
+    import GenericModal from '@components/GenericModal.svelte';
+    import Button from '@components/Button.svelte'
 
     export let boxOptions;
     let osOptions = ['Mac OS', 'Windows', 'Linux', 'Ubunutu'];
@@ -18,6 +20,8 @@
     let hasOsError = false;
     let hasFilesError = false;
     let hasMessageError = false;
+
+    let modalIsActive = false;
 
     function handleSubmit(e) {
         if (validateForm()) {
@@ -40,7 +44,7 @@
             })
             .then(() => { 
                 clearForm();
-                // Show success modal
+                modalIsActive = true;
             })
             .catch((err) => alert(err));
         }
@@ -97,8 +101,22 @@
     }
 </script>
 
-<!--Note: Basic Form action would be a mailto:address@email-->
-<!--But we may want a better integration-->
+{#if modalIsActive}
+<GenericModal>
+    <div class="font-display text-center text-h4 tracking-1.25 font-bold">Request Submitted</div>
+    <div class="text-sm text-center mb-4">Our team will get back to you as soon as possible.</div>
+    <div class="flex justify-center">
+        <Button
+            kind="primary"
+            size="sm"
+            styles=""
+            disabled={false}
+            handler={{ action: '/support' }}>Ok
+        </Button>
+    </div>
+</GenericModal>
+{/if}
+
 <form name="support" netlify enctype="multipart/form-data" on:submit|preventDefault={handleSubmit} class="flex flex-col mt-11">
     <label for="email">Email Address</label>
     <div class="relative w-96 h-[45px] mb-5 {hasEmailError ? 'border-b-2 border-solid rounded-lg border-[#e8101f]' : ''}">

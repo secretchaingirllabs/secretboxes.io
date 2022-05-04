@@ -1,9 +1,11 @@
 <script>
     import Input from '@components/Input.svelte';
     import Button from '@components/Button.svelte';
+    import GenericModal from '@components/GenericModal.svelte';
 
     let email;
     let hasEmailError = false;
+    let modalIsActive = false;
 
     function handleSignup() {
         if (validateEmail()) {
@@ -18,7 +20,7 @@
                 method: 'POST',
                 body: formData,
             })
-            .then(() => console.log('Newsletter form submitted'))
+            .then(() => modalIsActive = true)
             .catch((err) => alert(err));
         } else {
             hasEmailError = true;
@@ -36,6 +38,21 @@
     };
 </script>
 
+{#if modalIsActive}
+<GenericModal>
+    <div class="font-display text-center text-h4 tracking-1.25 font-bold">Request Submitted</div>
+    <div class="text-sm text-center mb-4">Thanks for joining our newsletter! We promise to send you only high quality alpha 😎</div>
+    <div class="flex justify-center">
+        <Button
+            kind="primary"
+            size="sm"
+            styles=""
+            disabled={false}
+            handler={{ action: '/' }}>Ok
+        </Button>
+    </div>
+</GenericModal>
+{/if}
 <form name="newsletter" netlify class="relative w-96 h-[52px]">
     <Input 
         on:update={updateEmail}
@@ -44,7 +61,7 @@
         styles="pr-36 pl-4" 
         placeholder="paul@altermail.com">
             <Button 
-                styles="absolute top-1.5 right-3.5 cursor-pointer leading-none z-10 translate-x-2 tracking-0.5"
+                styles="absolute top-1.5 right-3.5 cursor-pointer leading-none translate-x-2 tracking-0.5"
                 kind="primary" 
                 disabled={false}
                 handler={{ action: handleSignup }}
