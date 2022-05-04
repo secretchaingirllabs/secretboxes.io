@@ -11,3 +11,4 @@
     <a class="mx-2" href="/about">About</a>
     <a class="mx-2" href="/support">Support</a>
 </nav>
+<slot></slot>

@@ -27,6 +27,7 @@
     <Input 
         on:update={updateEmail}
         name="email" 
+        text=""
         styles="pr-36 pl-4" 
         placeholder="paul@altermail.com">
             <Button 
@@ -39,5 +40,6 @@
             </Button>
     </Input>
 </form>
+<slot></slot>
 
 
