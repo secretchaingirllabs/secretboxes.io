@@ -10,14 +10,15 @@ import TopNav from '@components/TopNav.svelte';
 
     <div class="inline-flex items-center space-x-4">
         <TopNav client:load></TopNav>
-        <Input 
-            name=""
-            styles="bg-search bg-no-repeat bg-left-center"
-            padding="pl-8"
-            height="h-[38px]" 
-            width="w-40" 
-            placeholder="Search">
-        </Input>
+
+        <div class="relative h-[38px] w-40">
+            <Input 
+                name="top-search"
+                styles="bg-search bg-no-repeat bg-left-center pl-8 pr-2"
+                placeholder="Search">
+            </Input>
+        </div>
+
         <ThemeToggle></ThemeToggle>
     </div>
 </header>

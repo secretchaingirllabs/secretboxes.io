@@ -2,8 +2,7 @@
 // Home.astro defines a generic layout for the index.astro page to use. 
 // Specifically, the home page requires a custom footer.
 import Header from '@components/Header.astro';
-import Button from '@components/Button.svelte';
-import Input from '@components/Input.svelte';
+import NewsletterSignup from '@components/NewsletterSignup.svelte';
 import SocialButton from '@components/SocialButton.astro';
 
 export interface Props {
@@ -38,21 +37,7 @@ const { title = 'Secret Boxes' } = Astro.props;
                     <div class="self-center">
                         <label class="block mb-2 text-left text-background" for="newletter">STAY UP TO DATE</label>
 
-                        <!-- <Input 
-                            name="newsletter" 
-                            styles="pr-36" 
-                            width="w-96" 
-                            height="h-[52px]"
-                            padding=""
-                            placeholder="paul@altermail.com" >
-                            <Button 
-                                styles="absolute top-1.5 right-3.5 cursor-pointer leading-none z-10 translate-x-2 tracking-0.5"
-                                kind="primary" 
-                                route='' 
-                                size="sm">
-                                Subscribe
-                            </Button>
-                        </Input> -->
+                        <NewsletterSignup client:visible></NewsletterSignup>
 
                         <p class="w-96 mt-8 text-sm text-[#272727]">We’d love to hear from you! Feel free to contact us with your ideas or feedback.<br>
                         And check out our <span class="font-bold">Github</span> to see how you can contribute.</p>
