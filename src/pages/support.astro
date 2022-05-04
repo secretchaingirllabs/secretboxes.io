@@ -2,9 +2,25 @@
 import DefaultLayout from '@layouts/Default.astro';
 import Button from '@components/Button.svelte';
 import SupportForm from '@components/FormSupport.svelte';
+import { BoxPostFrontmatter } from '../lib/Boxes';
 import '../styles/global.css';
 
 let title = 'Support | Secret Boxes';
+
+const posts = await Astro.glob<BoxPostFrontmatter>('../content/**/*.md');
+
+// First filter remove falsey values
+// Map gives us the BoxMetadata from the post frontmatter
+// Second filter removes Boxes with the same title
+const boxNames = posts
+    .filter(p => p.frontmatter.box)
+    .map(p => p.frontmatter.box)
+    .filter((p, index, self) => {
+       return index === self.findIndex((t) => {
+           return t.title === p.title
+       })
+    }).map((box) => box.title);
+
 ---
 <DefaultLayout title={title}>
     <div id="support-hero" class="flex items-center w-3/5 mx-auto mt-36">
@@ -37,7 +53,7 @@ let title = 'Support | Secret Boxes';
         <h2 class="text-h2 font-display tracking-1.5">Support Ticket</h2>
         <p>Open a support ticket to start a conversation with us. <br>
         This will help us in building our FAQ to assist future Secret Box users!</p>
-        <SupportForm client:load></SupportForm>
+        <SupportForm client:load boxOptions={boxNames}></SupportForm>
     </div>
 
     <div id="secret-community" class="w-2/5 mx-auto mt-44 mb-96">

@@ -2,7 +2,7 @@
     import Input from '@components/Input.svelte'
     import CustomSelect from '@components/CustomSelect.svelte';
 
-    let boxOptions = ['Hello World', 'Secret Counter', 'Richie Rich'];
+    export let boxOptions;
     let osOptions = ['Mac OS', 'Windows', 'Linux', 'Ubunutu'];
 
     let email;
