@@ -1,7 +1,7 @@
 <script lang="ts">
     import { BoxMetadata } from "src/lib/Boxes";
     import { toKebabCase } from "src/lib/utils";
-    import Button from '@components/RouteButton.svelte'
+    import Button from '@components/Button.svelte'
     import Tag from '@components/Tag.svelte';
 
     export let data: BoxMetadata[]
@@ -19,12 +19,22 @@
             <p class="mb-4 text-sm text-[#6E7191] text-center">{d.prelude}</p>
 
             <div class="flex space-x-4">
-                <Button kind="primary" size="sm" route="/">
+                <Button 
+                    kind="primary" 
+                    size="sm" 
+                    styles=""
+                    disabled={false}
+                    handler={{ action: '/' }}>
 					<img class="mr-2" src="/icons/gitpod_icon.svg" alt="">
                     Launch
                 </Button>
 
-                <Button kind="secondary" size="sm" route={`/boxes/${toKebabCase(d.title)}/1`}>
+                <Button 
+                    kind="secondary" 
+                    size="sm" 
+                    styles=""
+                    disabled={false}
+                    handler={{ action: `/boxes/${toKebabCase(d.title)}/1` }}>
                     Learn More
                 </Button>
             </div>

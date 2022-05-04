@@ -1,6 +1,6 @@
 ---
 import DefaultLayout from '@layouts/Default.astro';
-import Button from '@components/RouteButton.svelte';
+import Button from '@components/Button.svelte';
 import BoxCardGroup from '@components/BoxCardGroup.svelte';
 import { BoxPostFrontmatter } from '../lib/Boxes';
 import '../styles/global.css';
@@ -30,7 +30,13 @@ const boxesData = posts
     </div>
 
     <div class="flex items-center justify-start w-3/5 mx-auto space-x-3 mb-4">
-        <Button styles="" route="" size="sm" kind="primary">
+        <Button 
+            client:idle
+            styles="" 
+            disabled={true}
+            handler={{ action: '/' }}
+            size="sm" 
+            kind="primary">
             Create Boxes
         </Button>
         <p class="text-xsm2 text-[#E3662f] tracking-[0.4px]">COMING SOON</p>

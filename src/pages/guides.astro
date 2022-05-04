@@ -1,6 +1,6 @@
 ---
 import DefaultLayout from '@layouts/Default.astro'
-import Button from '@components/RouteButton.svelte'
+import Button from '@components/Button.svelte'
 import Input from '@components/Input.svelte';
 
 import '../styles/global.css';
@@ -15,7 +15,7 @@ const title = 'Guides | Secret Boxes'
         <p class="mt-2 mb-6 text-center text-sm text-[#A5A4B1]">To make sure you don't miss out on anything, sign up for our newsletter.<br> 
         We won't email more than once a week.</p>
 
-        <Input 
+        <!-- <Input 
             width="w-96" 
             placeholder="paul@altermail.com" >
             <Button 
@@ -25,8 +25,14 @@ const title = 'Guides | Secret Boxes'
                 size="sm">
                 Subscribe
             </Button>
-        </Input>
+        </Input> -->
 
-        <Button styles="mt-6" kind="text" route="/" size="sm">Go Back</Button>
+        <Button 
+            client:load
+            styles="mt-6" 
+            kind="text" 
+            disabled={false}
+            handler={{ action: '/' }}
+            size="sm">Go Back</Button>
     </div>
 </DefaultLayout>

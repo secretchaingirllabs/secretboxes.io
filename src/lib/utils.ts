@@ -4,3 +4,7 @@ export function toKebabCase(str: string): string {
         .replace(/[\s_]+/g, '-')
         .toLowerCase();
 }
+
+export function goTo(path: string) {
+    window.location.replace(path);
+}
