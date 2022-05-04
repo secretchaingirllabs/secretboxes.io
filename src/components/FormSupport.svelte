@@ -52,23 +52,25 @@
 <!--But we may want a better integration-->
 <form name="support" netlify enctype="multipart/form-data" on:submit|preventDefault={handleSubmit} class="flex flex-col space-y-5">
     <label for="email">Email Address</label>
-    <Input 
-        on:update={updateEmail}
-        name="email" 
-        placeholder="wumpus@foo.com" 
-        width="w-96" 
-        height="h-[45px]">
-    </Input>
-
+    <div class="relative w-96 h-[45px]">
+        <Input 
+            on:update={updateEmail}
+            name="email" 
+            styles="pl-4"
+            placeholder="wumpus@foo.com">
+        </Input>
+    </div>
+    
     <label for="subject">Subject</label>
-    <Input 
-        on:update={updateSubject}
-        name="subject" 
-        placeholder="setting up validator nodes" 
-        width="w-96" 
-        height="h-[45px]">
-    </Input>
-
+    <div class="relative w-96 h-[45px]">
+        <Input 
+            on:update={updateSubject}
+            name="subject" 
+            styles="pl-4"
+            placeholder="setting up validator nodes">
+        </Input>
+    </div>
+    
     <!-- HTML select & option tag do not enable enough styling options -->
     <!-- in order to reproduce the designs in Figma. A custom select -->
     <!-- component would be required. -->
