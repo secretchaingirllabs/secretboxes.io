@@ -5,7 +5,7 @@ box: {
     title: Secret Counter,
     description: "Use this tutorial to learn about launching a local Secret blockchain, modifying the secret contract, runing unit tests, and viewing debug messages in the node log.",
     prelude: A fun way for developers to quickly learn about working with secret contracts.,
-    difficulty: Beginner,
+    difficulty: Advanced,
     image: /illustrations/counter_illustration.svg,
     gitpod: https://gitpod.io/#https://github.com/gitpod-io/sveltejs-template
 }

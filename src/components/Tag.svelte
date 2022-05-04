@@ -7,11 +7,10 @@ const BEGINNER_STYLES = 'text-blue-800 bg-blue-rgba';
 const INTERMEDIATE_STYLES = 'text-orange-100 bg-orange-rgba';
 const ADVANCED_STYLES = 'text-green bg-green-rgba';
 
-
 // Note: Tag for some reason has a different font-size, line-height, and letter spacing
 // depending on if it is on the home page or on the BoxesListView page. Why? 
-function style() {
-    switch(text.toLowerCase()) {
+function style(str) {
+    switch(str.toLowerCase()) {
         case 'beginner': return `${BASE_STYLES} ${BEGINNER_STYLES}`
         case 'intermediate': return `${BASE_STYLES} ${INTERMEDIATE_STYLES}`
         case 'advanced': return `${BASE_STYLES} ${ADVANCED_STYLES}`
@@ -21,6 +20,6 @@ function style() {
 
 </script>
 
-<div class={style()}>
+<div class={style(text)}>
     {text.toUpperCase()}
 </div>
