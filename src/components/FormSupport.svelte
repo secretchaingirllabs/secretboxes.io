@@ -21,7 +21,6 @@
 
     function handleSubmit(e) {
         if (validateForm()) {
-            console.log('Form is valid')
             const formData = new FormData();
 
             formData.append('form-name', 'support')
