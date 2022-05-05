@@ -2,6 +2,7 @@
     import Input from '@components/Input.svelte';
     import Button from '@components/Button.svelte';
     import GenericModal from '@components/GenericModal.svelte';
+    import Animation from '@components/Animation.svelte';
 
     let email;
     let hasEmailError = false;
@@ -40,6 +41,7 @@
 
 {#if modalIsActive}
 <GenericModal>
+    <Animation loop={false} styles="flex justify-center w-10 h-10" id="newsletter-checkmark" path="https://assets4.lottiefiles.com/packages/lf20_pljonmfg.json"></Animation>
     <div class="font-display text-center text-h4 tracking-1.25 font-bold">Request Submitted</div>
     <div class="text-sm text-center mb-4">Thanks for joining our newsletter! We promise to send you only high quality alpha 😎</div>
     <div class="flex justify-center">

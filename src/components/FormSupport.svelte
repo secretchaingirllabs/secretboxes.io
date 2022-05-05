@@ -3,6 +3,7 @@
     import CustomSelect from '@components/CustomSelect.svelte';
     import GenericModal from '@components/GenericModal.svelte';
     import Button from '@components/Button.svelte'
+    import Animation from '@components/Animation.svelte';
 
     export let boxOptions;
     let osOptions = ['Mac OS', 'Windows', 'Linux', 'Ubunutu'];
@@ -103,6 +104,7 @@
 
 {#if modalIsActive}
 <GenericModal>
+    <Animation loop={false} styles="w-10 h-10 mx-auto" id="newsletter-checkmark" path="https://assets4.lottiefiles.com/packages/lf20_pljonmfg.json"></Animation>
     <div class="font-display text-center text-h4 tracking-1.25 font-bold">Request Submitted</div>
     <div class="text-sm text-center mb-4">Our team will get back to you as soon as possible.</div>
     <div class="flex justify-center">

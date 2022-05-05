@@ -14,5 +14,8 @@
     "@astrojs/tailwind": "^0.2.1",
     "astro": "^1.0.0-beta.20",
     "svelte": "^3.46.4"
+  },
+  "dependencies": {
+    "lottie-web": "^5.9.4"
   }
 }

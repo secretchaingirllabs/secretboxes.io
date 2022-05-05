@@ -2,8 +2,8 @@
 import { goTo } from '../lib/utils';
 
 import HomeLayout from '@layouts/Home.astro';
-// import Button from '@components/RouteButton.svelte';
 import Button from '@components/Button.svelte';
+import Animation from '@components/Animation.svelte';
 import Tag from '@components/Tag.svelte';
 import '../styles/global.css';
 
@@ -45,8 +45,13 @@ const testFunc = (path: string) => goTo(path);
 		<div id="showcase" class="flex flex-col space-y-32 items-center min-h-[900px]">
 
 			<div id="hello-world" class="flex items-center">
-				<!--Note: These illustration are actually Lotti files that need to be implemented -->
-				<img class="inline-flex mr-20" src="/illustrations/hello_world_illustration.svg" alt="Hello world box illustration">
+				<Animation 
+					client:load 
+					loop={true}
+					id="hello-world-lottie" 
+					styles="w-[250px] h-[170.63px] mr-20"
+					path="https://assets5.lottiefiles.com/private_files/lf30_0vbtxqrd.json">
+				</Animation>
 
 				<div class="inline-flex flex-col w-96">
 					<div class="pb-6 flex items-center">
@@ -115,14 +120,26 @@ const testFunc = (path: string) => goTo(path);
 					</div>
 				</div>
 
-				<!--Note: These illustration are actually Lotti files that need to be implemented -->
-				<img class="inline-flex ml-20" src="/illustrations/counter_illustration.svg" alt="Secret counter box illustration">
+				<Animation 
+					client:idle 
+					loop={true}
+					id="secret-counter-lottie" 
+					styles="w-[250px] h-[170.63px] ml-20"
+					path="https://assets5.lottiefiles.com/private_files/lf30_sqamzndl.json">
+				</Animation>
 
 			</div>	
 
 			<div id="richie-rich" class="flex items-center">
 				<!--Note: These illustration are actually Lotti files that need to be implemented -->
-				<img class="inline-flex mr-20" src="/illustrations/richie_rich_illustration.svg" alt="Richie rich box illustration">
+				<Animation 
+					client:idle 
+					loop={true}
+					id="richie-rich-lottie" 
+					styles="w-[250px] h-[170.63px] mr-20"
+					path="https://assets6.lottiefiles.com/private_files/lf30_woabmjiz.json">
+				</Animation>
+
 
 				<div class="inline-flex flex-col w-96">
 					<div class="pb-6 flex items-center">
