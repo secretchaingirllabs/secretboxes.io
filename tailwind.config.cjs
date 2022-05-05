@@ -90,7 +90,8 @@ module.exports = {
 				'footer-left': '5fr auto'
 			},
 			gridTemplateColumns: {
-				'footer': '2fr, minmax(0,1fr)'
+				'footer': '2fr, minmax(0,1fr)',
+				'dropdown': 'auto-fit, minmax(max-content, 1fr)'
 			},
 			gridAutoRows: {
 				'fit': 'minmax(min-content, max-content)'

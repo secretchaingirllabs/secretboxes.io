@@ -1,12 +1,23 @@
 <script>
+
+    // CustomSelect.svelte is responsible for creating a custom selection
+    // component. On desktop, where mouse clicks can be expected, custom
+    // form components work fine. On other, smaller devices a normal
+    // select is preferred for accessibility
+
+    // TODO: Allow for dividers
     import { createEventDispatcher } from 'svelte';
     import { toKebabCase } from '../lib/utils';
+    import { clickOutside } from 'src/lib/clickOutside';
 
     export let options;
     export let placeholder;
     export let name;
-
+    export let width = 'w-56';
+    
     let selected;
+    let screenWidth;
+    let isVisible = false;
 
     const dispatch = createEventDispatcher();
 
@@ -15,36 +26,55 @@
             value: selected,
         });
     };
+
+    function handleCustomSelectClick(e, option) {
+        isVisible = false;
+        selected = e.target.dataset.value;
+        placeholder = option;
+
+        console.table({
+            isVisible,
+            selected,
+            placeholder,
+        })
+        emitSelection();
+    }
 </script>
 
-<div class="relative">
-    <select name={name} bind:value={selected} on:change={emitSelection} class="select-native relative w-56 h-11 outline-none border border-solid border-purple-100 bg-[#eff0f6] selected mr-4 rounded-lg px-4 text-left">
-        <option value="" disabled selected hidden>{placeholder}</option>
-        {#each options as opt}
-            <option value={toKebabCase(opt)}>{opt}</option> 
-        {/each}
-    </select>
+<svelte:window bind:innerWidth={screenWidth}/>
 
-    <!-- <div class="select-custom absolute top-0 left-0 w-56 h-11 outline-none border border-solid border-[#9EA3BD] selected mr-4 rounded-lg px-4 text-left" aria-hidden="true">
-        <div>{placeholder}</div>
-        <div class="bg-purple-100 rounded-lg">
-            {#each options as opt}
-                <div class="bg-purple-200" data-value={toKebabCase(opt)}>{opt}</div> 
-            {/each}
+<div class="relative {width}" use:clickOutside on:click_outside={() => {isVisible = false}}>
+    {#if screenWidth > 1280}
+        <div on:click={() => {isVisible = !isVisible}} class="grid grid-flow-col content-center relative h-11 outline-none border border-solid border-[#9EA3BD] bg-[#f7f7fc] rounded-lg px-4 {isVisible ? 'border-0 bg-[#eff0f6]' : ''}" aria-hidden="true">
+            <div class="text-purple-100">{placeholder}</div>
+            {#if isVisible}
+                <img class="justify-self-end self-center" src="/icons/dropdown_up_arrow.svg" alt="Custom dropdown down arrow">
+            {:else}
+                <img class="justify-self-end self-center" src="/icons/dropdown_down_arrow.svg" alt="Custom dropdown down arrow">
+            {/if}
         </div>
-    </div> -->
+
+        {#if isVisible}
+            <div class="absolute border border-solid border-[#9ea3bd] text-purple-100 top-14 left-0 {width} rounded-lg z-10 bg-white overflow-hidden">
+                {#each options as opt}
+                    {#if opt === ''}
+                        <!-- If we pass the custom select an empty option we want to render a divider-->
+                        <div class="w-[90%] mx-auto h-[0.5px] bg-[#e3e3e3]"></div>
+                    {:else}
+                        <div on:click={(e) => handleCustomSelectClick(e, opt)} class="hover:bg-[#fced98] pl-4 py-1 m-0 first:rounded-t-lg last:rounded-b-lg" on:click={handleCustomSelectClick} data-value={toKebabCase(opt)}>{opt}</div> 
+                    {/if}
+                {/each}
+            </div>
+        {/if}
+
+    {:else}
+        <select name={name} bind:value={selected} on:change={emitSelection} class="relative h-11 outline-none border border-solid border-purple-100 bg-[#eff0f6] mr-4 rounded-lg px-4 text-left">
+            <option value="" disabled selected hidden>{placeholder}</option>
+            {#each options as opt}
+                {#if opt !== ''}
+                    <option value={toKebabCase(opt)}>{opt}</option> 
+                {/if}
+            {/each}
+        </select>
+    {/if}
 </div>
-
-<style>
-    /* @media (hover: hover) {
-        .select-custom {
-            display: block;
-        }
-    }
-
-    @media (hover: hover) {
-        .select-native:focus + .select-custom {
-            display: none;
-        }
-} */
-</style>

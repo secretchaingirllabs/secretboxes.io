@@ -146,7 +146,7 @@
     <!-- HTML select & option tag do not enable enough styling options -->
     <!-- in order to reproduce the designs in Figma. A custom select -->
     <!-- component would be required. -->
-    <div class="flex h-[45px] mb-5">
+    <div class="flex h-[45px] mb-5 space-x-4">
         <div on:click={() => {hasBoxError = false}} class="w-fit h-fit {hasBoxError ? 'text-[#e8101f]' : ''}">
             <CustomSelect 
                 on:select={updateBox}
@@ -166,7 +166,7 @@
         </div>
     </div>
 
-    <textarea on:click={() => {hasMessageError = false}} bind:value={message} class="mb-5 p-2 w-3/5 h-40 outline-none rounded-lg border border-solid border-purple-100 {hasMessageError ? 'border-[#e8101f]' : ''}" placeholder="I need help with getting my environment setup." name="message" id="message"></textarea>
+    <textarea on:click={() => {hasMessageError = false}} bind:value={message} class="mb-5 p-2 w-3/5 h-40 box-border outline-none rounded-lg border border-solid border-purple-100 {hasMessageError ? 'border-[#e8101f]' : ''}" placeholder="I need help with getting my environment setup." name="message" id="message"></textarea>
 
     <label for="attachments">Attachments (optional)</label>
     <label class="flex items-center justify-center space-x-3 cursor-pointer w-52 mb-5 h-11 bg-[#f7f7fc] border border-solid border-purple-100 rounded-lg {hasFilesError ? 'border-b-2 border-solid rounded-lg border-[#e8101f]' : ''}" id="support-form-attachments" for="file">

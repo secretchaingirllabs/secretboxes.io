@@ -8,7 +8,8 @@
     export let boxes: BoxMetadata[];
     let cache: BoxMetadata[] = [];
 
-    let fitlerOptions = ['All Boxes', 'Beginner', 'Intermediate', 'Advanced', 'Recently Added'];
+    // Note: CustomSelect can take an empty option and insert a divider
+    let fitlerOptions = ['All Boxes', 'Beginner', 'Intermediate', 'Advanced', '', 'Recently Added'];
 
     function filterEventHandler(e) {
         filter(e.detail.value);
@@ -67,6 +68,7 @@
     <div class="grow text-right justify-self-end">Filter & Sort</div>
     <CustomSelect
         on:select={filterEventHandler}
+        width="w-40"
         options={fitlerOptions}
         placeholder="All Boxes"
         name="box-filter"
