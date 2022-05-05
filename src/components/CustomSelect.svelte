@@ -1,11 +1,8 @@
 <script>
-
     // CustomSelect.svelte is responsible for creating a custom selection
     // component. On desktop, where mouse clicks can be expected, custom
     // form components work fine. On other, smaller devices a normal
     // select is preferred for accessibility
-
-    // TODO: Allow for dividers
     import { createEventDispatcher } from 'svelte';
     import { toKebabCase } from '../lib/utils';
     import { clickOutside } from 'src/lib/clickOutside';
@@ -45,7 +42,7 @@
 
 <div class="relative {width}" use:clickOutside on:click_outside={() => {isVisible = false}}>
     {#if screenWidth > 1280}
-        <div on:click={() => {isVisible = !isVisible}} class="grid grid-flow-col content-center relative h-11 outline-none border border-solid border-[#9EA3BD] bg-[#f7f7fc] rounded-lg px-4 {isVisible ? 'border-0 bg-[#eff0f6]' : ''}" aria-hidden="true">
+        <div on:click={() => {isVisible = !isVisible}} class="grid grid-flow-col cursor-pointer content-center relative h-11 outline-none border border-solid border-[#9EA3BD] bg-[#f7f7fc] rounded-lg px-4 {isVisible ? 'border-0 bg-[#eff0f6]' : ''}" aria-hidden="true">
             <div class="text-purple-100">{placeholder}</div>
             {#if isVisible}
                 <img class="justify-self-end self-center" src="/icons/dropdown_up_arrow.svg" alt="Custom dropdown down arrow">
@@ -61,7 +58,7 @@
                         <!-- If we pass the custom select an empty option we want to render a divider-->
                         <div class="w-[90%] mx-auto h-[0.5px] bg-[#e3e3e3]"></div>
                     {:else}
-                        <div on:click={(e) => handleCustomSelectClick(e, opt)} class="hover:bg-[#fced98] pl-4 py-1 m-0 first:rounded-t-lg last:rounded-b-lg" on:click={handleCustomSelectClick} data-value={toKebabCase(opt)}>{opt}</div> 
+                        <div on:click={(e) => handleCustomSelectClick(e, opt)} class="cursor-pointer hover:bg-[#fced98] pl-4 py-1 m-0 first:rounded-t-lg last:rounded-b-lg" on:click={handleCustomSelectClick} data-value={toKebabCase(opt)}>{opt}</div> 
                     {/if}
                 {/each}
             </div>

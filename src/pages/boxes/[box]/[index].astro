@@ -1,9 +1,12 @@
 ---
 import DefaultLayout from '@layouts/Default.astro';
-import { Markdown } from 'astro/components';
+import PostCountIndicator from '@components/PostCountIndicator.svelte';
 import { toKebabCase } from '../../../lib/utils';
+import { BoxPostFrontmatter } from '../../../lib/Boxes';
 
 import '../../../styles/global.css';
+
+const posts = await Astro.glob<BoxPostFrontmatter>('../../../content/**/*.md');
 
 export async function getStaticPaths() {
     const boxesPosts = await Astro.glob('../../../content/**/*.md')
@@ -23,10 +26,12 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const title = `${post.frontmatter.title} | Secret Boxes`
+const postsByBox = posts.filter(p => p.frontmatter.box.title === post.frontmatter.box.title);
+const sortedPosts = postsByBox.sort((a, b) => (a.frontmatter.index > b.frontmatter.index) ? 1 : -1)
 ---
 <DefaultLayout title={title}>
     <div class="w-1/2 mx-auto mt-24">
-        <div class="flex w-5/6 mx-auto items-center mb-40">
+        <div class="flex w-5/6 mx-auto items-center mb-28">
             <div class="w-[65%]">
                 <h2 class="font-display text-h2 mb-5">{post.frontmatter.box.title}</h2>
                 <p>{post.frontmatter.box.description}</p>
@@ -40,6 +45,9 @@ const title = `${post.frontmatter.title} | Secret Boxes`
             <!-- Need a BoxPostProgressBar component that knows the number of posts -->
             <!-- related to a particular box and the titles of each of those posts -->
         </div>
+
+
+        <PostCountIndicator client:load posts={sortedPosts} index={post.frontmatter.index}></PostCountIndicator>
         
         <div class="flex float-left items-center border border-solid border-[#e7e7e7] rounded-2xl p-7 mb-16 max-w-[70%]">
             <div class="flex items-center justify-center tracking-0.5 font-semibold self-center bg-[#00a991] min-w-[35px] min-h-[35px] text-white rounded-full mr-7">
