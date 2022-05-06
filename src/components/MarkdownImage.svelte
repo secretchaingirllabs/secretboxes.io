@@ -19,7 +19,7 @@
 </script>
 
 {#if isVisible}
-    <GenericModal>
+    <GenericModal style="w-1/2">
         <div class="flex flex-col">
             <svg on:click={() => isVisible = false} class="self-end mr-4 mb-2 cursor-pointer" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4.75 4.75L14.8629 14.8629" stroke="#14142B" stroke-width="3.93281" stroke-linecap="round" stroke-linejoin="round"/>
