@@ -5,6 +5,17 @@
     import Tag from '@components/Tag.svelte';
 
     export let data: BoxMetadata[]
+    export let posts;
+
+    function getFirstBoxPost(box) {
+        let filter = posts.filter(p => p.frontmatter.box.title === box.title && p.frontmatter.index === 1);
+
+        if (filter[0]) {
+            return toKebabCase(filter[0].frontmatter.title);
+        } else {
+            return '404';
+        }
+    }
 </script>
 
 <div class="w-3/5 mx-auto space-y-4 mb-56">
@@ -34,7 +45,7 @@
                     size="sm" 
                     styles=""
                     disabled={false}
-                    handler={{ action: `/boxes/${toKebabCase(d.title)}/1` }}>
+                    handler={{ action: `/boxes/${toKebabCase(d.title)}/${getFirstBoxPost(d)}` }}>
                     Learn More
                 </Button>
             </div>

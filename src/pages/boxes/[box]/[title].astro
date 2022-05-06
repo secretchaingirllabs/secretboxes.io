@@ -16,7 +16,7 @@ export async function getStaticPaths() {
         return {
             params: {
                 box: toKebabCase(post.frontmatter.box.title),
-                index: post.frontmatter.index.toString(),
+                title: toKebabCase(post.frontmatter.title),
             },
             props: { post }
         }
@@ -29,7 +29,7 @@ const { post } = Astro.props;
 const title = `${post.frontmatter.title} | Secret Boxes`
 const postsByBox = posts.filter(p => p.frontmatter.box.title === post.frontmatter.box.title);
 const sortedPosts = postsByBox.sort((a, b) => (a.frontmatter.index > b.frontmatter.index) ? 1 : -1)
-const boxTitle = toKebabCase(post.frontmatter.box.title);
+const boxTitle = post.frontmatter.box.title;
 ---
 <DefaultLayout title={title}>
     <div class="w-1/2 mx-auto mt-24">
@@ -67,8 +67,10 @@ const boxTitle = toKebabCase(post.frontmatter.box.title);
 
             <div class="mt-16 mb-32">
                 <MarkdownButtonControls 
+                    client:visible
                     index={post.frontmatter.index}
                     count={sortedPosts.length}
+                    posts={posts}
                     box={boxTitle}>
                 </MarkdownButtonControls>
             </div> 

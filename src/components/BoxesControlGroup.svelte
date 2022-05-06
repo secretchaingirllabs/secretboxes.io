@@ -5,7 +5,15 @@
     import { BoxMetadata } from 'src/lib/Boxes';
     import { onMount } from 'svelte';
 
-    export let boxes: BoxMetadata[];
+    export let posts;
+
+    let boxes: BoxMetadata[] = posts.filter(p => p.frontmatter.box)
+        .map(p => p.frontmatter.box)
+        .filter((p, index, self) => {
+           return index === self.findIndex((t) => {
+               return t.title === p.title
+           })
+        })
     let cache: BoxMetadata[] = [];
 
     // Note: CustomSelect can take an empty option and insert a divider
@@ -75,4 +83,4 @@
         ></CustomSelect>
 </div>
 
-<BoxCardGroup data={cache}></BoxCardGroup> 
+<BoxCardGroup data={cache} posts={posts}></BoxCardGroup> 

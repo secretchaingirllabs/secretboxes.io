@@ -7,18 +7,6 @@ import '../styles/global.css';
 const title = 'Boxes | Secret Boxes';
 
 const posts = await Astro.glob<BoxPostFrontmatter>('../content/**/*.md');
-
-// First filter remove falsey values
-// Map gives us the BoxMetadata from the post frontmatter
-// Second filter removes Boxes with the same title
-const boxesData = posts
-    .filter(p => p.frontmatter.box)
-    .map(p => p.frontmatter.box)
-    .filter((p, index, self) => {
-       return index === self.findIndex((t) => {
-           return t.title === p.title
-       })
-    })
 ---
 <DefaultLayout title={title}>
     <div class="w-3/5 mx-auto">
@@ -28,5 +16,5 @@ const boxesData = posts
         They include a simple web interface, a secret contract boilerplate and step-by-step tutorial!</p>
     </div>
 
-    <BoxesControlGroup client:load boxes={boxesData}></BoxesControlGroup>
+    <BoxesControlGroup client:load posts={posts}></BoxesControlGroup>
 </DefaultLayout>
