@@ -64,6 +64,7 @@ module.exports = {
 			// For sans font (Golos)
 			lg: ['1.625rem', '1.846'], // 26px 48px
 			DEFAULT: ['1rem', '1.5'], // 16px 24px
+			search: ['1rem', '1'], // 16px 24px
 			sm: ['0.875rem', '1.714'], // 14px 24px
 			xsm: ['0.75rem', '1.333'], // 12px 16px
 			xsm2: ['0.625rem', '1.6'], // 10px 16px
@@ -73,6 +74,7 @@ module.exports = {
 		extend: {
 			letterSpacing: {
 				DEFAULT: '0.0016em',
+				'search': '0.111962px',
 				'0.5': '0.03125em',
 				'1.25': '0.078125em',
 				'1': '0.0625em',

@@ -16,6 +16,7 @@
     "svelte": "^3.46.4"
   },
   "dependencies": {
+    "fuse.js": "^6.6.1",
     "lottie-web": "^5.9.4"
   }
 }

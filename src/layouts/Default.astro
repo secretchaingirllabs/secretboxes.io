@@ -1,12 +1,13 @@
 ---
 // Default.astro defines a generic layout for all pages to use. 
-import Header from '@components/Header.astro';
+import Header from '@components/Header.svelte';
 import Footer from '@components/Footer.astro';
-
+import { BoxPostFrontmatter } from '../lib/Boxes';
 export interface Props {
     title: string,
 };
 
+const posts = await Astro.glob<BoxPostFrontmatter>('../content/**/*.md');
 const { title = 'Secret Boxes' } = Astro.props;
 ---
 <html lang="en">
@@ -18,7 +19,7 @@ const { title = 'Secret Boxes' } = Astro.props;
     </head>
 
     <body class="min-h-screen">
-        <Header></Header>
+        <Header client:load posts={posts}></Header>
         
         <main class="relative">
             <slot />

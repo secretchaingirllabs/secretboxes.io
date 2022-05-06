@@ -1,14 +1,15 @@
 ---
 // Home.astro defines a generic layout for the index.astro page to use. 
 // Specifically, the home page requires a custom footer.
-import Header from '@components/Header.astro';
+import Header from '@components/Header.svelte';
 import NewsletterSignup from '@components/NewsletterSignup.svelte';
 import SocialButton from '@components/SocialButton.astro';
-
+import { BoxPostFrontmatter } from '../lib/Boxes';
 export interface Props {
     title: string,
 };
 
+const posts = await Astro.glob<BoxPostFrontmatter>('../content/**/*.md');
 const { title = 'Secret Boxes' } = Astro.props;
 ---
 <html lang="en">
@@ -23,7 +24,7 @@ const { title = 'Secret Boxes' } = Astro.props;
 	    <div class="absolute w-full h-full pointer-events-none bg-hero-sky bg-no-repeat bg-auto bg-center -z-30"></div>
 	    <div class="absolute w-full h-full pointer-events-none bg-hero bg-no-repeat bg-auto bg-center -z-20"></div>
 
-        <Header></Header> 
+        <Header client:load posts={posts}></Header> 
 
         <main>
             <slot />
