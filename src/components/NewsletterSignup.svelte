@@ -56,6 +56,7 @@
 </GenericModal>
 {/if}
 <form name="newsletter" netlify class="relative w-96 h-[52px]">
+    <label for="email" class="hidden">Email</label>
     <Input 
         on:update={updateEmail}
         name="email" 

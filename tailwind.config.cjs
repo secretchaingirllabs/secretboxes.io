@@ -54,30 +54,30 @@ module.exports = {
 		},
 		fontSize: {
 			// For display font (Chaney Wide)
-			display: ['4.25rem', '4.5rem'], // 68px, 72px
-			h1: ['4.25rem', '4.5rem'], // 68px, 72px
-			h2: ['2.625rem', '3rem'], // 42px, 48px
-			h3: ['2.125rem', '2.375rem'], // 34px, 38px
-			h4: ['1.625rem', '3rem'], // 26px, 48px
-			h5: ['1rem', '1.5rem'], // 16px, 24px
+			display: ['4.25rem', '1.058'], // 68px, 72px
+			h1: ['4.25rem', '1.058'], // 68px, 72px
+			h2: ['2.625rem', '1.142'], // 42px, 48px
+			h3: ['2.125rem', '1.117'], // 34px, 38px
+			h4: ['1.625rem', '1.846'], // 26px, 48px
+			h5: ['1rem', '1.5'], // 16px, 24px
 
 			// For sans font (Golos)
-			lg: ['1.625rem', '3rem'], // 26px 48px
-			DEFAULT: ['1rem', '1.5rem'], // 16px 24px
-			sm: ['0.875rem', '1.5rem'], // 14px 24px
-			xsm: ['0.75rem', '1rem'], // 12px 16px
-			xsm2: ['0.625rem', '1rem'], // 10px 16px
-			xsm3: ['0.75rem', '0.875rem'], // 12px 14px
-			xsm4: ['0.625rem', '0.75rem'], // 10px 12px
+			lg: ['1.625rem', '1.846'], // 26px 48px
+			DEFAULT: ['1rem', '1.5'], // 16px 24px
+			sm: ['0.875rem', '1.714'], // 14px 24px
+			xsm: ['0.75rem', '1.333'], // 12px 16px
+			xsm2: ['0.625rem', '1.6'], // 10px 16px
+			xsm3: ['0.75rem', '1.167'], // 12px 14px
+			xsm4: ['0.625rem', '1.2'], // 10px 12px
 		},
 		extend: {
 			letterSpacing: {
 				DEFAULT: '0.0016em',
-				'0.5': '0.5px',
-				'1.25': '1.25px',
-				'1': '1px',
-				'1.5': '1.5px',
-				'2': '2px',
+				'0.5': '0.03125em',
+				'1.25': '0.078125em',
+				'1': '0.0625em',
+				'1.5': '0.09375em',
+				'2': '0.125em',
 			},
 			colors: {
 				// These are used for Tag backgrounds
