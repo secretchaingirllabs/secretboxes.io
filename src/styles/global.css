@@ -55,9 +55,6 @@ select {
     margin-bottom: 1.5rem;
 }
 
-.markdown p > code {
-}
-
 .markdown h2 {
     font-family: 'Golos';
     font-style: normal;
@@ -78,7 +75,7 @@ select {
     margin-bottom: 1rem;
 }
 
-.markdown a {
+.markdown a :not(.md-controls>a) {
     color: #4867f8
 }
 

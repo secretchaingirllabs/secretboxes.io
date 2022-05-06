@@ -1,6 +1,7 @@
 ---
 import DefaultLayout from '@layouts/Default.astro';
 import PostCountIndicator from '@components/PostCountIndicator.svelte';
+import MarkdownButtonControls from '@components/MarkdownButtonControls.svelte';
 import { toKebabCase } from '../../../lib/utils';
 import { BoxPostFrontmatter } from '../../../lib/Boxes';
 
@@ -28,6 +29,7 @@ const { post } = Astro.props;
 const title = `${post.frontmatter.title} | Secret Boxes`
 const postsByBox = posts.filter(p => p.frontmatter.box.title === post.frontmatter.box.title);
 const sortedPosts = postsByBox.sort((a, b) => (a.frontmatter.index > b.frontmatter.index) ? 1 : -1)
+const boxTitle = toKebabCase(post.frontmatter.box.title);
 ---
 <DefaultLayout title={title}>
     <div class="w-1/2 mx-auto mt-24">
@@ -62,6 +64,14 @@ const sortedPosts = postsByBox.sort((a, b) => (a.frontmatter.index > b.frontmatt
         <!-- Below should be the rest of the markdown content-->
         <div class="markdown">
             <post.Content></post.Content>
+
+            <div class="mt-16 mb-32">
+                <MarkdownButtonControls 
+                    index={post.frontmatter.index}
+                    count={sortedPosts.length}
+                    box={boxTitle}>
+                </MarkdownButtonControls>
+            </div> 
         </div>
     </div>
 </DefaultLayout>
