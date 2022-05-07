@@ -13,25 +13,27 @@ const title = 'About | Secret Boxes';
     </div>
 
     
-    <div class="flex relative justify-items-center items-center w-2/5 mx-auto space-x-[5.375rem] mt-32">
+    <div class="flex flex-col lg:flex-row relative justify-items-center items-center w-full lg:w-2/5 mx-4 lg:mx-auto lg:space-x-[5.375rem] space-y-4 lg:space-y-0 mt-16 lg:mt-32">
         <img src="/illustrations/ufo_illustration.svg" alt="illustration of a ufo"> 
         <div>
-            <p class="tracking-0.5 text-[#121212] font-semibold dark:text-dark-primary">Help you build for the <span class="text-orange-300">real world</span></p>
-            <p class="text-background dark:text-dark-secondary">Secret Boxes are quickstarts to help you build decentralized dApps on Secret using customizable privacy.</p>
+            <p class="text-center lg:text-left mb-2 lg:mb-0 tracking-0.5 text-[#121212] font-semibold dark:text-dark-primary">Help you build for the <span class="text-orange-300">real world</span></p>
+            <p class="text-center lg:text-left text-background dark:text-dark-secondary">Secret Boxes are quickstarts to help you build decentralized dApps on Secret using customizable privacy.</p>
         </div>
 
-        <img class="absolute !m-0 left-0 -translate-x-48" src="/illustrations/planet_stars_1.svg" alt="Illustration of a planet and stars">
+        <img class="absolute !m-0 left-0 -translate-x-48 -z-1" src="/illustrations/planet_stars_1.svg" alt="Illustration of a planet and stars">
     </div>
 
 
-    <img class="absolute left-1/2 -translate-x-1/2" src="/illustrations/ufo_trail_1.svg" alt="First dashed trail leading from a UFO"> 
+    <img class="hidden lg:inline-block absolute left-1/2 -translate-x-1/2" src="/illustrations/ufo_trail_1.svg" alt="First dashed trail leading from a UFO"> 
 
-    <div class="flex items-center w-2/5 mx-auto space-x-[5.375rem] mt-32">
+    <div class="flex flex-col lg:flex-row relative justify-items-center items-center w-full lg:w-2/5 mx-4 lg:mx-auto lg:space-x-[5.375rem] space-y-4 lg:space-y-0 mt-16 lg:mt-32">
+        <img class="lg:hidden" src="/illustrations/ufo_illustration.svg" alt="illustration of a ufo"> 
+
         <div>
-            <p class="tracking-0.5 text-[#121212] font-semibold dark:text-dark-primary">Complete package for <span class="text-orange-300">developers</span></p>
-            <p class="text-background mb-6 dark:text-dark-secondary">Each box comes with everything you need to start building and includes:</p>
+            <p class="text-center lg:text-left tracking-0.5 text-[#121212] font-semibold dark:text-dark-primary">Complete package for <span class="text-orange-300">developers</span></p>
+            <p class="text-center lg:text-left text-background mb-6 dark:text-dark-secondary">Each box comes with everything you need to start building and includes:</p>
 
-            <div class="flex flex-col space-y-3">
+            <div class="flex flex-col space-y-3 items-center lg:items-start">
                 <div class="inline-flex">
                     <svg class="self-center" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="8" fill="#0387B0"/><path d="m11 6-4.125 4.5L5 8.455" stroke="#F7F7FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     <p class="text-[#4d4d4d] ml-2.5 dark:text-dark-tertiary">Local Blockchain</p>
@@ -54,23 +56,23 @@ const title = 'About | Secret Boxes';
             </div>
         </div>
         
-        <img src="/illustrations/ufo_illustration.svg" alt="illustration of a ufo"> 
+        <img class="hidden lg:inline-block" src="/illustrations/ufo_illustration.svg" alt="illustration of a ufo"> 
     </div>
 
-    <img class="absolute left-1/2 -translate-x-1/2" src="/illustrations/ufo_trail_2.svg" alt="Second dashed trail leading from a UFO"> 
+    <img class="hidden lg:inline-block absolute left-1/2 -translate-x-1/2" src="/illustrations/ufo_trail_2.svg" alt="Second dashed trail leading from a UFO"> 
 
-    <div class="flex relative items-center w-2/5 mx-auto space-x-[5.375rem] mt-32 pb-32">
-        <img src="/illustrations/ufo_illustration.svg" alt="illustration of a ufo"> 
+    <div class="flex flex-col lg:flex-row relative justify-items-center items-center w-full lg:w-2/5 mx-4 lg:mx-auto lg:space-x-[5.375rem] space-y-4 lg:space-y-0 mt-16 lg:mt-32 lg:pb-32">
+        <img class="z-10" src="/illustrations/ufo_illustration.svg" alt="illustration of a ufo"> 
 
         <div>
-            <p class="tracking-0.5 text-[#121212] dark:text-dark-primary font-semibold">We have the best boxes for <span class="text-orange-300">web3 and privacy</span></p>
-            <p class="text-background dark:text-dark-secondary">Secret Boxes can be anything from use case blueprints to chain integrations, technical bootstraps and more.</p>
+            <p class="text-center lg:text-left tracking-0.5 text-[#121212] dark:text-dark-primary font-semibold">We have the best boxes for <span class="text-orange-300">web3 and privacy</span></p>
+            <p class="text-center lg:text-left text-background dark:text-dark-secondary">Secret Boxes can be anything from use case blueprints to chain integrations, technical bootstraps and more.</p>
         </div>
 
-        <img class="absolute left-20 -bottom-20" src="/illustrations/ufo_trail_3.svg" alt="Third dashed trail leading from a UFO"> 
+        <img class="hidden lg:inline-block absolute left-20 -bottom-20" src="/illustrations/ufo_trail_3.svg" alt="Third dashed trail leading from a UFO"> 
     </div>
 
-    <div class="grid w-full justify-items-center relative">
+    <div class="grid w-full justify-items-center relative mt-16 lg:mt-0">
         <img class="absolute !m-0 right-0 top-0 -translate-x-[102%] -translate-y-[52%]" src="/illustrations/planet_stars_2.svg" alt="Illustration of a planet and stars">
         <img class="pb-6" src="/illustrations/ufo_end_illustration.svg" alt="An illustration of a UFO">
 
@@ -80,17 +82,16 @@ const title = 'About | Secret Boxes';
         </div>
     </div>
 
-    <!-- Forest BG -->
-        <div class="flex justify-center mt-4 pb-36 relative">
-            <div class="flex items-center justify-center rounded-full w-[40px] h-[40px] mr-8 bg-purple-100">
-                <img src="/icons/telegram_icon_no_border.svg" alt="Telegram Icon"> 
-            </div>
-
-
-            <div class="flex items-center justify-center rounded-full w-[40px] h-[40px] bg-purple-100">
-                <img src="/icons/discord_icon_no_border.svg" alt="Discord Icon"> 
-            </div>
-            <img class="absolute top-20 -translate-y-full" src="/illustrations/forest_illustration.svg" alt="Illustration of a forest with yellow trees">
+    <div class="flex justify-center mt-4 pb-36 relative">
+        <div class="flex items-center justify-center rounded-full w-[40px] h-[40px] mr-8 bg-purple-100">
+            <img src="/icons/telegram_icon_no_border.svg" alt="Telegram Icon"> 
         </div>
+
+
+        <div class="flex items-center justify-center rounded-full w-[40px] h-[40px] bg-purple-100">
+            <img src="/icons/discord_icon_no_border.svg" alt="Discord Icon"> 
+        </div>
+        <img class="absolute top-20 -translate-y-full" src="/illustrations/forest_illustration.svg" alt="Illustration of a forest with yellow trees">
+    </div>
 
 </DefaultLayout>

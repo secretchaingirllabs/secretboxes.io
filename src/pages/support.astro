@@ -24,12 +24,12 @@ const boxNames = posts
 
 ---
 <DefaultLayout title={title}>
-    <div id="support-hero" class="flex items-center w-3/5 mx-auto mt-36">
-        <div class="inline-flex flex-col w-full">
-            <div class="text-xsm text-orange-200 tracking-0.5 mb-1">SUPPORT & COMMUNITY</div>
+    <div id="support-hero" class="flex flex-col lg:flex-row items-center mx-6 lg:w-3/5 lg:mx-auto mt-16 lg:mt-36">
+        <div class="inline-flex flex-col w-full mb-4 lg:mb-0">
+            <div class="text-center lg:text-left text-xsm text-orange-200 tracking-0.5 mb-1">SUPPORT & COMMUNITY</div>
 
-            <h1 class="text-[#121212] dark:text-dark-primary text-h1 font-display tracking-1.25 mb-2.5">We're Here To Support <span class="text-orange-200">You</span></h1>
-            <p class="text-[#14142B] dark:text-dark-secondary mb-8">We will help you get going with Secret Boxes as part of your path to building dApps on the Secret Network.</p>
+            <h1 class="text-center lg:text-left text-[#121212] dark:text-dark-primary text-h2 font-display tracking-1.25 mb-2.5">We're Here To Support <span class="text-orange-200">You</span></h1>
+            <p class="text-[#14142B] dark:text-dark-secondary mb-2 lg:mb-8">We will help you get going with Secret Boxes as part of your path to building dApps on the Secret Network.</p>
 
             <Button 
                 client:load
@@ -50,18 +50,18 @@ const boxNames = posts
         <img class="inline-flex" src="/illustrations/support_illustration.svg" alt="Tech support illustration"> 
     </div>
 
-    <div id="support-ticket" class="mt-80 w-3/5 mx-auto">
+    <div id="support-ticket" class="mt-16 lg:mt-80 mx-6 lg:w-3/5 lg:mx-auto">
         <h2 class="text-h2 font-display tracking-1.5 dark:text-dark-primary">Support Ticket</h2>
         <p class="dark:text-dark-primary">Open a support ticket to start a conversation with us. <br>
         This will help us in building our FAQ to assist future Secret Box users!</p>
         <SupportForm client:load boxOptions={boxNames}></SupportForm>
     </div>
 
-    <div id="secret-community" class="w-2/5 mx-auto mt-44 mb-96">
+    <div id="secret-community" class="lg:w-2/5 mx-6 lg:mx-auto mt-16 lg:mt-44 mb-20 lg:mb-96">
         <h2 class="text-h2 font-display tracking-1.5 text-center mb-4 dark:text-dark-primary">Secret Community</h2>
-        <p class="text-center w-[55%] mx-auto mb-24 dark:text-dark-secondary">We have an awesome community of developers so come chat with us about use cases, suggestions and ideas, and more!</p>
+        <p class="text-center lg:w-[55%] mx-auto mb-6 lg:mb-24 dark:text-dark-secondary">We have an awesome community of developers so come chat with us about use cases, suggestions and ideas, and more!</p>
 
-        <div class="grid grid-cols-3 auto-rows-fit items-center justify-items-center gap-y-4 gap-x-0">
+        <div class="hidden lg:grid grid-cols-3 auto-rows-fit items-center justify-items-center gap-y-4 gap-x-0">
             <img class="" src="/icons/discord_lg_icon.svg" alt="Large Discord icon">
             <img class="" src="/icons/secret_lg_icon.svg" alt="Secret Network icon">
             <img class="" src="/icons/github_lg_icon.svg" alt="GitHub icon">
@@ -74,7 +74,6 @@ const boxNames = posts
             <p class="w-52 text-center dark:text-dark-tertiary">Where you can participate in more thoughtful discussions, ideas and more. </p>
             <p class="w-52 text-center dark:text-dark-tertiary">If you want to report an issue or make a suggestion, come find us. We welcome your feedback!</p>
 
-            <span class="">
             <Button 
                 client:visible
                 styles="" 
@@ -85,8 +84,6 @@ const boxNames = posts
                 <!--Find out if right facing arrow should go here. It's inconsistent in the designs-->
                 Check Discord
             </Button>
-
-            </span>
             
             <Button 
                 client:visible
@@ -109,6 +106,63 @@ const boxNames = posts
                 <!--Find out if right facing arrow should go here. It's inconsistent in the designs-->
                 Open An Issue
             </Button>
+        </div>
+
+        <div class="flex flex-col space-y-6 lg:hidden">
+            <div class="flex flex-col items-center justify-center space-y-4">
+                <img class="" src="/icons/discord_lg_icon.svg" alt="Large Discord icon">
+                <p class="font-semibold dark:text-dark-secondary">Chat on Discord</p>
+                <p class="w-full text-center dark:text-dark-tertiary">This is the best place to chat, have real time discussions, get help or make suggestions!</p>
+            
+                <div>
+                    <Button 
+                        client:visible
+                        styles="" 
+                        size="sm" 
+                        kind="primary" 
+                        disabled={false}
+                        handler={{ action: 'https://discord.gg/yCJ3vv8B9f' }}>
+                        <!--Find out if right facing arrow should go here. It's inconsistent in the designs-->
+                        Check Discord
+                    </Button>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center justify-center space-y-4">
+                <img class="" src="/icons/secret_lg_icon.svg" alt="Secret Network icon">
+                <p class="font-semibold dark:text-dark-secondary">Post on Forum</p>
+                <p class="w-52 text-center dark:text-dark-tertiary">Where you can participate in more thoughtful discussions, ideas and more. </p>
+                <div>
+                    <Button 
+                        client:visible
+                        styles="" 
+                        size="sm" 
+                        kind="primary" 
+                        disabled={false}
+                        handler={{ action: 'https://forum.scrt.network/' }}>
+                        <!--Find out if right facing arrow should go here. It's inconsistent in the designs-->
+                        Check Forum
+                    </Button>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center justify-center space-y-4">
+                <img class="" src="/icons/github_lg_icon.svg" alt="GitHub icon">
+                <p class="font-semibold dark:text-dark-secondary">Find us on Github</p>
+                <p class="w-52 text-center dark:text-dark-tertiary">If you want to report an issue or make a suggestion, come find us. We welcome your feedback!</p>
+                <div>
+                    <Button 
+                        client:visible
+                        styles="" 
+                        size="sm" 
+                        kind="primary" 
+                        disabled={false}
+                        handler={{ action: 'https://github.com/secretchaingirl/secretboxes.io' }}>
+                        <!--Find out if right facing arrow should go here. It's inconsistent in the designs-->
+                        Open An Issue
+                    </Button>
+                </div>
+            </div>
         </div>
     </div>
 </DefaultLayout>

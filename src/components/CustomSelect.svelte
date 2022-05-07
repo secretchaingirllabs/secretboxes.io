@@ -40,7 +40,7 @@
 
 <svelte:window bind:innerWidth={screenWidth}/>
 
-<div class="relative {width}" use:clickOutside on:click_outside={() => {isVisible = false}}>
+<div class="relative {width} lg:{width} mr-2 lg:mr-0" use:clickOutside on:click_outside={() => {isVisible = false}}>
     {#if screenWidth > 1280}
         <div on:click={() => {isVisible = !isVisible}} class="grid grid-flow-col cursor-pointer content-center relative h-11 outline-none border border-solid border-[#9EA3BD] bg-[#f7f7fc] rounded-lg px-4 {isVisible ? 'border-0 bg-[#eff0f6]' : ''}" aria-hidden="true">
             <div class="text-purple-100">{placeholder}</div>
@@ -65,7 +65,7 @@
         {/if}
 
     {:else}
-        <select name={name} bind:value={selected} on:change={emitSelection} class="relative h-11 outline-none border border-solid border-purple-100 bg-[#eff0f6] mr-4 rounded-lg px-4 text-left">
+        <select name={name} bind:value={selected} on:change={emitSelection} class="relative h-11 outline-none border border-solid border-purple-100 bg-[#eff0f6] lg:mr-4 rounded-lg px-4 text-left">
             <option value="" disabled selected hidden>{placeholder}</option>
             {#each options as opt}
                 {#if opt !== ''}
