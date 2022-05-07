@@ -26,7 +26,7 @@
     }
   }
 </script>
-<label for="theme-toggle" class="inline-block w-12 h-6 rounded-full cursor-pointer">
+<label for="theme-toggle" class="md:inline-block hidden w-12 h-6 rounded-full cursor-pointer">
   <input on:click={toggleTheme} bind:checked={isChecked} id="theme-toggle" class="hidden" type="checkbox" />
   <div class="main relative w-full h-full rounded-full bg-[#FFD951]"></div>
 </label>

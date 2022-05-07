@@ -13,11 +13,11 @@ const testFunc = (path: string) => goTo(path);
 ---
 <HomeLayout title={title}>
 	<div id="hero" class="h-[calc(100vh_-_5rem)] relative">
-		<div id="hero-content" class="grid grid-rows-4 pt-48 items-center justify-items-center">
+		<div id="hero-content" class="flex flex-col pt-32 space-y-8 px-8 md:pt-48 items-center">
 			<!--CSS Text strokes are inconsistent across browser. Import title as SVG -->
 			<img class="dark:hidden" src="/title.svg" alt="Secret Boxes hero title">	
 			<img class="hidden dark:inline-block" src="/title_white.svg" alt="Secret Boxes hero title">	
-			<h2 class="max-w-[450px] text-center text-[#606060] dark:text-dark-primary font-medium text-lg">
+			<h2 class="max-w-[450px] pb-4 text-center text-[#606060] dark:text-dark-primary font-medium md:text-lg">
 				The beautiful, fun and easy way to get started building 
 				<span class="text-[#E96930]">Secret Apps</span>
 			</h2>
@@ -31,30 +31,29 @@ const testFunc = (path: string) => goTo(path);
 				>
 				Start Unboxing
 			</Button>
-			<a href="#how-it-works" class="self-start">
+			<a class="block" href="#how-it-works" class="self-start">
 				<img height="22px" width="22px" src="/icons/down_arrow_icon.svg" alt="Home page down arrow">
 			</a>
 		
 		</div>
-		
 	</div>
 
-	<div id="how-it-works" class="text-purple-100 dark:text-dark-primary">
+	<div id="how-it-works" class="text-purple-100 dark:text-dark-primary mx-4 lg:p-0">
 		<div class="text-[#528AD3] text-center text-xsm font-bold tracking-1.5 mb-5">HOW IT WORKS</div>
-		<div class="font-display text-black dark:text-dark-primary text-center text-h3 font-bold tracking-1.5 mb-20">START BUILDING</div>
+		<div class="font-display text-black dark:text-dark-primary text-center text-h3 font-bold tracking-1.5 mb-8 lg:mb-20">START BUILDING</div>
 
-		<div id="showcase" class="flex flex-col space-y-32 items-center min-h-[900px]">
+		<div id="showcase" class="flex flex-col items-center lg:min-h-[900px] space-y-16 lg:space-y-32">
 
-			<div id="hello-world" class="flex items-center">
+			<div id="hello-world" class="flex flex-col lg:flex-row items-center justify-center space-y-8">
 				<Animation 
 					client:load 
 					loop={true}
 					id="hello-world-lottie" 
-					styles="w-[250px] h-[170.63px] mr-20"
+					styles="w-[250px] h-[170.63px] mx-auto lg:mx-0 lg:mr-20"
 					path="https://assets5.lottiefiles.com/private_files/lf30_0vbtxqrd.json">
 				</Animation>
 
-				<div class="inline-flex flex-col w-96">
+				<div class="lg:inline-flex lg:flex-col lg:w-96">
 					<div class="pb-6 flex items-center">
 						<div class="inline-flex mr-4 font-display tracking-1 text-[24px] leading-[27px]">Hello World</div>
 						<Tag text="beginner"></Tag>
@@ -87,9 +86,17 @@ const testFunc = (path: string) => goTo(path);
 				</div>
 			</div>	
 
-			<div id="secret-counter" class="flex items-center">
-				
-				<div class="inline-flex flex-col w-96">
+			<div id="secret-counter" class="flex flex-col lg:flex-row items-center justify-center space-y-8">
+				<Animation 
+					client:load 
+					loop={true}
+					id="secret-counter-lottie-mobile" 
+					styles="w-[250px] h-[170.63px] lg:hidden"
+					path="https://assets5.lottiefiles.com/private_files/lf30_sqamzndl.json">
+				</Animation>
+
+				<div class="lg:inline-flex lg:flex-col lg:w-96">
+					
 					<div class="pb-6 flex items-center">
 						<div class="inline-flex mr-4 font-display tracking-1 text-[24px] leading-[27px]">Secret Counter</div>
 						<Tag text="beginner"></Tag>
@@ -125,24 +132,23 @@ const testFunc = (path: string) => goTo(path);
 					client:idle 
 					loop={true}
 					id="secret-counter-lottie" 
-					styles="w-[250px] h-[170.63px] ml-20"
+					styles="w-[250px] h-[170.63px] hidden lg:block lg:ml-20"
 					path="https://assets5.lottiefiles.com/private_files/lf30_sqamzndl.json">
 				</Animation>
 
 			</div>	
 
-			<div id="richie-rich" class="flex items-center">
+			<div id="richie-rich" class="flex flex-col lg:flex-row items-center justify-center space-y-8">
 				<!--Note: These illustration are actually Lotti files that need to be implemented -->
 				<Animation 
 					client:idle 
 					loop={true}
 					id="richie-rich-lottie" 
-					styles="w-[250px] h-[170.63px] mr-20"
+					styles="w-[250px] h-[170.63px] lg:mr-20"
 					path="https://assets6.lottiefiles.com/private_files/lf30_woabmjiz.json">
 				</Animation>
 
-
-				<div class="inline-flex flex-col w-96">
+				<div class="lg:inline-flex lg:flex-col lg:w-96">
 					<div class="pb-6 flex items-center">
 						<div class="inline-flex mr-4 font-display tracking-1 text-[24px] leading-[27px]">Richie Rich</div>
 						<Tag text="intermediate"></Tag>
