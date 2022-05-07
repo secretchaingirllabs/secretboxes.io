@@ -18,7 +18,7 @@ const { title = 'Secret Boxes' } = Astro.props;
         <title>{title}</title>   
     </head>
 
-    <body class="min-h-screen">
+    <body class="min-h-screen dark:bg-background">
         <Header client:load posts={posts}></Header>
         
         <main class="relative">

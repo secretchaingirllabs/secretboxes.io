@@ -120,7 +120,7 @@
 {/if}
 
 <form name="support" netlify enctype="multipart/form-data" on:submit|preventDefault={handleSubmit} class="flex flex-col mt-11">
-    <label for="email">Email Address</label>
+    <label for="email" class="dark:text-dark-primary">Email Address</label>
     <div class="relative w-96 h-[45px] mb-5 {hasEmailError ? 'border-b-2 border-solid rounded-lg border-[#e8101f]' : ''}">
         <Input 
             on:clicked={() => { hasEmailError = false }}
@@ -132,7 +132,7 @@
         </Input>
     </div>
     
-    <label for="subject">Subject</label>
+    <label for="subject" class="dark:text-dark-primary">Subject</label>
     <div class="relative w-96 h-[45px] mb-5 {hasSubjectError ? 'border-b-2 border-solid rounded-lg border-[#e8101f]' : ''}">
         <Input 
             on:clicked={() => {hasSubjectError = false}}
@@ -168,7 +168,7 @@
 
     <textarea on:click={() => {hasMessageError = false}} bind:value={message} class="mb-5 p-2 w-3/5 h-40 box-border outline-none rounded-lg border border-solid border-purple-100 {hasMessageError ? 'border-[#e8101f]' : ''}" placeholder="I need help with getting my environment setup." name="message" id="message"></textarea>
 
-    <label for="attachments">Attachments (optional)</label>
+    <label for="attachments" class="dark:text-dark-primary">Attachments (optional)</label>
     <label class="flex items-center justify-center space-x-3 cursor-pointer w-52 mb-5 h-11 bg-[#f7f7fc] border border-solid border-purple-100 rounded-lg {hasFilesError ? 'border-b-2 border-solid rounded-lg border-[#e8101f]' : ''}" id="support-form-attachments" for="file">
         <img class="inline-block" src="/icons/file_upload.svg" alt="Icon for file uploads">
         <span>Add or Drop Files</span>

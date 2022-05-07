@@ -1,19 +1,33 @@
 <script>
-  // Note: Problem with this implementation is that theme is not saved in localstorage
-  let theme = 'light';
+  import { onMount } from "svelte";
+
+  export let theme = 'light';
+
+  let isChecked = theme === 'dark';
+
+  onMount(() => {
+    // We only to worry about the dark case onMount
+    // Light theme does not add a class and so onMount no class
+    // needs tp be removed.
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  })
 
   function toggleTheme() {
     if (theme === 'light') {
       document.documentElement.classList.add('dark');
       theme = 'dark';
+      localStorage.theme = 'dark';
     } else {
       document.documentElement.classList.remove('dark');
       theme = 'light';
+      localStorage.theme = 'light';
     }
   }
 </script>
 <label for="theme-toggle" class="inline-block w-12 h-6 rounded-full cursor-pointer">
-  <input on:click={toggleTheme} id="theme-toggle" class="hidden" type="checkbox" />
+  <input on:click={toggleTheme} bind:checked={isChecked} id="theme-toggle" class="hidden" type="checkbox" />
   <div class="main relative w-full h-full rounded-full bg-[#FFD951]"></div>
 </label>
 

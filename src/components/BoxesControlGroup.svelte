@@ -73,7 +73,7 @@
     </Button>
 
     <p class="text-xsm2 text-[#E3662f] tracking-[0.4px]">COMING SOON</p>
-    <div class="grow text-right justify-self-end">Filter & Sort</div>
+    <div class="grow text-right justify-self-end dark:text-dark-primary">Filter & Sort</div>
     <CustomSelect
         on:select={filterEventHandler}
         width="w-40"

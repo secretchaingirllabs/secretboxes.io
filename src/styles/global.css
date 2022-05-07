@@ -41,6 +41,7 @@ select {
     float: right;
     clear: right;
     padding-left: 2.25rem;
+    @apply dark:text-dark-primary;
 }
 
 .markdown > :nth-child(n+3) {
@@ -49,12 +50,13 @@ select {
 }
 
 .markdown > :first-child {
-    @apply font-semibold mb-3
+    @apply font-semibold mb-3;
 }
 
 
 .markdown p {
     margin-bottom: 1.5rem;
+    @apply dark:text-dark-secondary;
 }
 
 .markdown h2 {
@@ -64,6 +66,7 @@ select {
     font-size: 26px;
     line-height: 48px;
     margin-bottom: 1rem;
+    @apply dark:text-dark-primary;
 }
 
 .markdown h2:first-of-type {
@@ -75,6 +78,7 @@ select {
     list-style-image: url('/icons/list_icon.svg');
     margin-left: 2rem;
     margin-bottom: 1rem;
+    @apply dark:text-dark-secondary;
 }
 
 .markdown a :not(.md-controls>a) {
@@ -82,12 +86,14 @@ select {
 }
 
 .markdown ol > li > a {
-    @apply inline-block text-black hover:text-[#FF8A00] mb-2.5 tracking-0.5
+    @apply inline-block text-black hover:text-[#FF8A00] mb-2.5 tracking-0.5 dark:text-dark-secondary dark:hover:text-[#FF8A00];
 }
+
 .markdown .gray {
     background-color: #f2f2f2;
     border-radius: 8px; 
-    padding: 2.25rem 3.5rem
+    padding: 2.25rem 3.5rem;
+    @apply dark:bg-dark-bg-secondary dark:text-dark-primary;
 }
 
 .markdown mark {

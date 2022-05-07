@@ -47,7 +47,12 @@ module.exports = {
 			green: '#4DAE00', // Advanced Tag Text + Icon
 			// Dropdown
 			dropdown: '#FFED98',
-			modal: 'rgba(0,0,0,0.4)'
+			modal: 'rgba(0,0,0,0.4)',
+			'dark-primary': '#EEEEEE',
+			'dark-secondary': '#CCCCCC',
+			'dark-tertiary': '#999999',
+			'dark-bg-secondary': '#33373a',
+			'dark-hover': '#4d5256',
 		},
 		fontFamily: {
 			sans: ['Golos', 'Arial', 'sans-serif'],

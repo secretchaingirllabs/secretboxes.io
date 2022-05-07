@@ -15,8 +15,9 @@ const testFunc = (path: string) => goTo(path);
 	<div id="hero" class="h-[calc(100vh_-_5rem)] relative">
 		<div id="hero-content" class="grid grid-rows-4 pt-48 items-center justify-items-center">
 			<!--CSS Text strokes are inconsistent across browser. Import title as SVG -->
-			<img src="/title.svg" alt="Secret Boxes hero title">	
-			<h2 class="max-w-[450px] text-center text-[#606060] font-medium text-lg">
+			<img class="dark:hidden" src="/title.svg" alt="Secret Boxes hero title">	
+			<img class="hidden dark:inline-block" src="/title_white.svg" alt="Secret Boxes hero title">	
+			<h2 class="max-w-[450px] text-center text-[#606060] dark:text-dark-primary font-medium text-lg">
 				The beautiful, fun and easy way to get started building 
 				<span class="text-[#E96930]">Secret Apps</span>
 			</h2>
@@ -38,9 +39,9 @@ const testFunc = (path: string) => goTo(path);
 		
 	</div>
 
-	<div id="how-it-works" class="text-purple-100">
+	<div id="how-it-works" class="text-purple-100 dark:text-dark-primary">
 		<div class="text-[#528AD3] text-center text-xsm font-bold tracking-1.5 mb-5">HOW IT WORKS</div>
-		<div class="font-display text-black text-center text-h3 font-bold tracking-1.5 mb-20">START BUILDING</div>
+		<div class="font-display text-black dark:text-dark-primary text-center text-h3 font-bold tracking-1.5 mb-20">START BUILDING</div>
 
 		<div id="showcase" class="flex flex-col space-y-32 items-center min-h-[900px]">
 
