@@ -18,7 +18,7 @@
     }
 </script>
 
-<div class="w-3/5 mx-auto space-y-4 mb-56">
+<div class="mx-4 mt-8 mb-16 lg:mt-0 lg:w-3/5 lg:mx-auto space-y-4 lg:mb-56">
     {#each data as d}
         <div class="inline-flex flex-col py-4 px-6 mr-4 items-center w-[340px] h-[380px] border border-solid border-[#e3e3e3] dark:border-dark-bg-secondary box-border rounded-2xl">
             <div class="self-end">

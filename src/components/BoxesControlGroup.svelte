@@ -62,7 +62,7 @@
     })
 </script>
 
-<div class="flex items-center justify-start w-3/5 mx-auto space-x-3 mb-4">
+<div class="flex flex-col lg:flex-row space-y-3 justify-center items-center lg:justify-start lg:w-3/5 lg:mx-auto lg:space-x-3 lg:space-y-0 lg:mb-4">
     <Button 
         styles="" 
         disabled={true}
@@ -73,10 +73,10 @@
     </Button>
 
     <p class="text-xsm2 text-[#E3662f] tracking-[0.4px]">COMING SOON</p>
-    <div class="grow text-right justify-self-end dark:text-dark-primary">Filter & Sort</div>
+    <div class="lg:grow lg:text-right lg:justify-self-end dark:text-dark-primary">Filter & Sort</div>
     <CustomSelect
         on:select={filterEventHandler}
-        width="w-40"
+        width="lg:w-40"
         options={fitlerOptions}
         placeholder="All Boxes"
         name="box-filter"
