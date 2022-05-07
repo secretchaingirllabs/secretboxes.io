@@ -32,16 +32,16 @@ const sortedPosts = postsByBox.sort((a, b) => (a.frontmatter.index > b.frontmatt
 const boxTitle = post.frontmatter.box.title;
 ---
 <DefaultLayout title={title}>
-    <div class="w-1/2 mx-auto mt-24">
-        <div class="flex w-5/6 mx-auto items-center mb-28">
-            <div class="w-[65%]">
+    <div class="mx-6 lg:w-1/2 lg:mx-auto mt-8 lg:mt-24">
+        <div class="flex flex-row lg:w-5/6 lg:mx-auto items-center lg:mb-28">
+            <div class="w-9/12 lg:w-[65%]">
                 <h2 class="font-display text-h2 mb-5 dark:text-dark-primary">{post.frontmatter.box.title}</h2>
                 <p class="dark:text-dark-secondary">{post.frontmatter.box.description}</p>
             </div>
             
             <!-- This is a lotti animation -->
-            <div class="flex grow justify-end">
-                <img class="scale-125" src={post.frontmatter.box.image} alt={`Illustration for ${post.frontmatter.box.title} box`}>
+            <div class="flex shrink lg:grow justify-end">
+                <img class="lg:scale-125" src={post.frontmatter.box.image} alt={`Illustration for ${post.frontmatter.box.title} box`}>
             </div>
 
             <!-- Need a BoxPostProgressBar component that knows the number of posts -->
@@ -51,7 +51,7 @@ const boxTitle = post.frontmatter.box.title;
 
         <PostCountIndicator client:load posts={sortedPosts} index={post.frontmatter.index}></PostCountIndicator>
         
-        <div class="flex float-left items-center border border-solid border-[#e7e7e7] dark:border-dark-bg-secondary rounded-2xl p-7 mb-16 max-w-[70%]">
+        <div class="flex lg:float-left items-center border border-solid border-[#e7e7e7] dark:border-dark-bg-secondary rounded-2xl p-4 my-4 lg:p-7 lg:mb-16 lg:max-w-[70%]">
             <div class="flex items-center justify-center tracking-0.5 font-semibold self-center bg-[#00a991] min-w-[35px] min-h-[35px] text-white rounded-full mr-7">
                 <div>{post.frontmatter.index}</div>
             </div>

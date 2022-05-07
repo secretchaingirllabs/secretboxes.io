@@ -42,7 +42,7 @@
     }
 </script>
 
-<div class="flex justify-evenly w-full mb-20 relative" style="--line-width: {LINE_WIDTH}">
+<div class="hidden lg:flex justify-evenly w-full mb-20 relative" style="--line-width: {LINE_WIDTH}">
     {#each posts as post, i}
         <div class="relative flex flex-col items-center w-36 {styleLine(i+1)}">
             <div class="flex items-center justify-center w-5 h-5 text-xsm rounded-full {styleNumber(i + 1)}">{i + 1}</div>

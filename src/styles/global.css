@@ -37,16 +37,12 @@ select {
 */
 
 .markdown > :first-child, .markdown > :nth-child(2) {
-    width: 26%;
-    float: right;
-    clear: right;
-    padding-left: 2.25rem;
     @apply dark:text-dark-primary;
+    @apply lg:float-right lg:clear-right lg:w-[26%] lg:pl-[2.25rem];
 }
 
 .markdown > :nth-child(n+3) {
-    width: 74%;
-    clear: left;
+    @apply lg:w-[74%] lg:clear-left
 }
 
 .markdown > :first-child {
