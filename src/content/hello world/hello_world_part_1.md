@@ -1,6 +1,6 @@
 ---
 setup: |
-  import MarkdownImage from '@components/MarkdownImage.svelte'
+  import MarkdownImage from '../../components/MarkdownImage.svelte'
 title: Launch Developer Blockchain 
 description: The first thing you’ll need to do to start developing secret contracts in your local environment is install and launch a Secret Network blockchain.
 box: {

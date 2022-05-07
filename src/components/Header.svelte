@@ -1,6 +1,6 @@
 <script>
     import Input from '@components/Input.svelte';
-    // import ThemeToggle from '@components/ThemeToggle.astro';
+    import ThemeToggle from '@components/ThemeToggle.svelte';
     import TopNav from '@components/TopNav.svelte';
     import SearchModal from '@components/SearchModal.svelte';
 
@@ -30,6 +30,6 @@
             </Input>
         </div>
 
-        <!-- <ThemeToggle></ThemeToggle> -->
+        <ThemeToggle></ThemeToggle>
     </div>
 </header>
