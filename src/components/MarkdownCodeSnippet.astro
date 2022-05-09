@@ -1,0 +1,9 @@
+---
+import MarkdownCodeSnippetButton from '@components/MarkdownCodeSnippetButton.svelte';
+import { Markdown } from 'astro/components';
+---
+<MarkdownCodeSnippetButton client:idle>
+    <Markdown>
+        <slot></slot>
+    </Markdown>
+</MarkdownCodeSnippetButton>

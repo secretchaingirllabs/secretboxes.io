@@ -2,6 +2,7 @@
 setup: |
   import MarkdownImage from 'src/components/MarkdownImage.svelte';
   import MarkdownVersionSelect from 'src/components/MarkdownVersionSelect.svelte';
+  import MarkdownCodeSnippet from 'src/components/MarkdownCodeSnippet.astro';
 title: Launch Developer Blockchain 
 description: The first thing you’ll need to do to start developing secret contracts in your local environment is install and launch a Secret Network blockchain.
 box: {
@@ -27,21 +28,20 @@ It's super easy and quick, once you have `docker` installed. Just a few commands
 
 ## Setup Your Environment
 
-
-
 - Install [Docker](https://docs.docker.com/get-docker/) for your environment (Mac, Windows, Linux).
-
 
 <MarkdownVersionSelect client:visible versions={frontmatter.versions}></MarkdownVersionSelect>
 
 <div id="linux" class="version">
 In a terminal window start the Secret Network by running the docker container named secretdev:
 
+<MarkdownCodeSnippet buttonId="snippet-1">
 ```
 docker run -it --rm \
   -p 26657:26657 -p 26656:26656 -p 1337:1337 \
   --name secretdev enigmampc/secret-network-sw-dev
 ```
+</MarkdownCodeSnippet>
 
 <mark>Note: To stop the secretdev blockchain enter `ctrl + c`</mark>
 
