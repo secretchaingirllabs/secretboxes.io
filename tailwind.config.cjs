@@ -68,6 +68,7 @@ module.exports = {
 			h5: ['1rem', '1.5'], // 16px, 24px
 
 			// For sans font (Golos)
+			'404': ['1.5rem', '1.208'], // 24px 29px
 			lg: ['1.625rem', '1.846'], // 26px 48px
 			DEFAULT: ['1rem', '1.5'], // 16px 24px
 			search: ['1rem', '1'], // 16px 24px
@@ -79,6 +80,7 @@ module.exports = {
 		},
 		extend: {
 			letterSpacing: {
+				'404': '-0.02em',
 				DEFAULT: '0.0016em',
 				'search': '0.111962px',
 				'0.5': '0.03125em',
