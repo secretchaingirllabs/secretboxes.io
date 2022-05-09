@@ -30,11 +30,6 @@
         selected = e.target.dataset.value;
         placeholder = option;
 
-        console.table({
-            isVisible,
-            selected,
-            placeholder,
-        })
         emitSelection();
     }
 </script>

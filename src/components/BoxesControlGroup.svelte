@@ -37,8 +37,14 @@
                 let advanced = boxes.filter(box => box.difficulty.toLowerCase() === 'advanced');
                 cache = advanced;
                 break;
-            case 'added-recently': 
-                return
+            case 'recently-added': 
+                let temp = boxes;
+
+                temp.sort((a, b) => {
+                    return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+                })
+
+                cache = temp;
             default: cache = boxes;
         }
     }
@@ -53,16 +59,14 @@
         let difficulty = params.difficulty; 
 
         if (difficulty) {
-            console.log(`Difficulty ${difficulty} detected`)
             filter(difficulty);
         } else {
-            console.log(`No difficulty detected`)
             cache = boxes
         }
     })
 </script>
 
-<div class="flex flex-col lg:flex-row space-y-3 justify-center items-center lg:justify-start lg:w-3/5 lg:mx-auto lg:space-x-3 lg:space-y-0 lg:mb-4">
+<div class="flex flex-col lg:flex-row space-y-3 justify-center items-center lg:justify-start lg:w-[54.8%] lg:mx-auto lg:space-x-3 lg:space-y-0 lg:mb-4">
     <Button 
         styles="" 
         disabled={true}

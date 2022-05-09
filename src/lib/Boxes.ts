@@ -3,14 +3,14 @@ export interface BoxPostFrontmatter {
     description: string,
     box: BoxMetadata,
     index: number,
-    image: string,
-    lotti?: string,
 }
 
 export interface BoxMetadata {
+    createdAt: Date,
     title: string,
     description: string,
     prelude: string,
     difficulty: string,
     image: string,
+    lottie: string,
 }

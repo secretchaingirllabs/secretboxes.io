@@ -9,7 +9,7 @@ const title = 'Boxes | Secret Boxes';
 const posts = await Astro.glob<BoxPostFrontmatter>('../content/**/*.md');
 ---
 <DefaultLayout title={title}>
-    <div class="mx-4 lg:w-3/5 lg:mx-auto">
+    <div class="mx-4 lg:w-[54.8%] lg:mx-auto">
         <h2 class="font-display text-h3 text-center my-8 lg:my-0 lg:text-left lg:text-h2 lg:tracking-1.5 lg:mt-32 lg:mb-2 dark:text-dark-primary">Secrets in the box</h2>
         <p class="font-semibold text-center lg:text-left lg:tracking-0.5 text-[#575757] dark:text-dark-secondary lg:mb-5">Let's do this!</p>
         <p class="text-purple-100 text-center lg:text-left dark:text-dark-secondary mb-9">Secret Boxes contain the essential components for building Secret Applications.<br> 

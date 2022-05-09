@@ -2,6 +2,7 @@
 title: Launch Developer Blockchain 
 description: The first thing you’ll need to do to start developing secret contracts in your local environment is install and launch a Secret Network blockchain.
 box: {
+    createdAt: 2022-05-01,
     title: Hello World,
     description: "Use this tutorial to learn about launching a local Secret blockchain, modifying the secret contract, runing unit tests, and viewing debug messages in the node log.", 
     prelude: A fun way for developers to quickly learn about working with secret contracts.,
