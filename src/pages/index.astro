@@ -1,6 +1,4 @@
 ---
-import { goTo } from '../lib/utils';
-
 import HomeLayout from '@layouts/Home.astro';
 import Button from '@components/Button.svelte';
 import Animation from '@components/Animation.svelte';
@@ -8,12 +6,10 @@ import Tag from '@components/Tag.svelte';
 import '../styles/global.css';
 
 let title = 'Home | Secret Boxes';
-
-const testFunc = (path: string) => goTo(path);
 ---
 <HomeLayout title={title}>
 	<div id="hero" class="h-[calc(100vh_-_5rem)] relative">
-		<div id="hero-content" class="flex flex-col pt-32 space-y-8 px-8 md:pt-48 items-center">
+		<div id="hero-content" class="flex flex-col pt-32 space-y-2 px-8 md:pt-48 items-center">
 			<!--CSS Text strokes are inconsistent across browser. Import title as SVG -->
 			<img class="dark:hidden" src="/title.svg" alt="Secret Boxes hero title">	
 			<img class="hidden dark:inline-block" src="/title_white.svg" alt="Secret Boxes hero title">	
@@ -31,7 +27,7 @@ const testFunc = (path: string) => goTo(path);
 				>
 				Start Unboxing
 			</Button>
-			<a class="block" href="#how-it-works" class="self-start">
+			<a class="block pt-4" href="#how-it-works" class="self-start">
 				<img height="22px" width="22px" src="/icons/down_arrow_icon.svg" alt="Home page down arrow">
 			</a>
 		
@@ -40,7 +36,7 @@ const testFunc = (path: string) => goTo(path);
 
 	<div id="how-it-works" class="text-purple-100 dark:text-dark-primary mx-4 lg:p-0">
 		<div class="text-[#528AD3] text-center text-xsm font-bold tracking-1.5 mb-5">HOW IT WORKS</div>
-		<div class="font-display text-black dark:text-dark-primary text-center text-h3 font-bold tracking-1.5 mb-8 lg:mb-20">START BUILDING</div>
+		<div class="font-display text-black dark:text-dark-primary text-center text-h3 font-bold tracking-1.5 mb-8 lg:mb-14">START BUILDING</div>
 
 		<div id="showcase" class="flex flex-col items-center lg:min-h-[900px] space-y-16 lg:space-y-32">
 

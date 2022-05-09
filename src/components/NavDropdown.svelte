@@ -17,10 +17,10 @@
 
 </span>
 {#if dropDownIsVisible}
-    <div use:clickOutside on:click_outside={hideDropdown} class="absolute z-10 mt-2.5 pt-1 border border-solid border-[#dbdce3] rounded-lg bg-white dark:bg-[#33373a] dark:border-[#33333a]">
+    <div use:clickOutside on:click_outside={hideDropdown} class="absolute flex flex-col justify-center top-6 -left-8 w-[324px] py-4 z-10 mt-2.5 pt-1 border border-solid border-[#dbdce3] rounded-lg bg-white dark:bg-[#33373a] dark:border-[#33333a]">
 
         <a href="/boxes/?difficulty=beginner">
-            <div class="flex items-center hover:bg-[#f7f7f7] dark:hover:bg-dark-hover px-8 pt-4 pb-2">
+            <div class="flex items-center hover:bg-[#f7f7f7] dark:hover:bg-dark-hover px-8 py-2 mt-2">
                 <div class="flex w-[31px] h-[31px] items-center justify-center bg-[#f4f4f4] rounded mr-4">
                     <img width="19" height="19" src="/icons/blue_square_icon.svg" alt="Blue square icon for beginner boxes">
                 </div>
@@ -56,6 +56,6 @@
             </div>
         </a>
 
-        <a class="block py-4 mx-8 pointer-events-auto cursor-pointer text-xsm3 text-blue-600 dark:text-purple-200 border-t border-solid border-gray pt-[0.563rem]" href="/boxes">Unbox All Secrets</a>
+        <a class="block mx-8 pointer-events-auto cursor-pointer text-xsm3 text-blue-600 dark:text-purple-200 border-t border-solid border-gray pt-[0.563rem]" href="/boxes">Unbox All Secrets</a>
     </div>
 {/if}

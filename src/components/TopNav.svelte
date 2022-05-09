@@ -3,7 +3,7 @@
 </script>
 
 <nav class="text-sm font-medium tracking-0.5 text-purple-100 dark:text-dark-primary hidden md:block">
-    <span class="mx-2">
+    <span class="mx-2 relative">
         <a href="/boxes">Boxes</a>
         <NavDropdown></NavDropdown>
     </span>

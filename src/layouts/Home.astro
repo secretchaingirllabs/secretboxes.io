@@ -20,9 +20,9 @@ const { title = 'Secret Boxes' } = Astro.props;
         <title>{title}</title>   
     </head>
 
-    <body class="min-h-screen dark:bg-background">
-	    <div class="absolute w-full h-full pointer-events-none bg-hero-sky bg-no-repeat bg-contain bg-center lg:bg-auto -z-30"></div>
-	    <div class="absolute w-full h-full pointer-events-none bg-hero bg-no-repeat bg-cover bg-center lg:bg-auto -z-20"></div>
+    <body class="min-h-screen dark:bg-background relative">
+	    <div class="absolute top-0 left-0 w-full h-screen pointer-events-none bg-hero-sky bg-no-repeat bg-contain bg-center lg:bg-auto -z-30"></div>
+	    <div class="absolute top-0 left-0 w-full h-screen pointer-events-none bg-hero bg-no-repeat bg-cover bg-center lg:bg-auto -z-20"></div>
 
         <Header client:load posts={posts}></Header> 
 
@@ -36,15 +36,15 @@ const { title = 'Secret Boxes' } = Astro.props;
             <div class="bg-primary pt-8 lg:p-0">
                 <div class="ml-8 lg:grid lg:grid-rows-footer-left lg:h-full lg:w-[50%] lg:m-auto">
 
-                    <div class="mr-8 lg:mr-0 lg:self-center">
+                    <div class="mr-8 lg:mr-0 lg:self-center lg:pt-24">
                         <label class="block lg:mb-2 text-left text-background" for="newletter">STAY UP TO DATE</label>
 
                         <NewsletterSignup client:visible></NewsletterSignup>
 
-                        <p class="my-8 lg:w-96 lg:mt-8 text-sm text-[#272727]">We’d love to hear from you! Feel free to contact us with your ideas or feedback.<br>
+                        <p class="my-8 lg:w-80 lg:mt-8 lg:mb-0 text-sm text-[#272727]">We’d love to hear from you! Feel free to contact us with your ideas or feedback.<br>
                         And check out our <span class="font-bold">Github</span> to see how you can contribute.</p>
 
-                        <div class="mb-8 flex lg:mt-10">
+                        <div class="mb-8 flex lg:mt-10 lg:mb-16">
                             <SocialButton img="/icons/github_icon.svg" route="https://github.com/secretchaingirl" alt="Github Icon"></SocialButton> 
                             <SocialButton img="/icons/telegram_icon.svg" route="/" alt="Telegram Icon"></SocialButton> 
                             <SocialButton img="/icons/discord_icon.svg" route="/" alt="Discord Icon"></SocialButton> 
