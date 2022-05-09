@@ -19,13 +19,13 @@
 </script>
 
 {#if isVisible}
-    <GenericModal style="w-1/2">
+    <GenericModal style="w-1/2 mt-20">
         <div class="flex flex-col">
             <svg on:click={() => isVisible = false} class="self-end mr-4 mb-2 cursor-pointer" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4.75 4.75L14.8629 14.8629" stroke="#14142B" stroke-width="3.93281" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M4.75 14.8633L14.8629 4.7504" stroke="#14142B" stroke-width="3.93281" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <img class="px-11" src={image} alt={alt}>
+            <img class="px-11 max-h-full max-w-full" src={image} alt={alt}>
             <div class="self-end mr-11 mt-4">
                 <Button kind="secondary" size="sm" handler={{ action: downloadImage }}>
                     Download

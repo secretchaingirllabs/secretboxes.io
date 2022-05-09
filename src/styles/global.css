@@ -85,10 +85,11 @@ select {
     @apply inline-block text-black hover:text-[#FF8A00] mb-2.5 tracking-0.5 dark:text-dark-secondary dark:hover:text-[#FF8A00];
 }
 
-.markdown .gray {
+.markdown .version {
     background-color: #f2f2f2;
     border-radius: 8px; 
     padding: 2.25rem 3.5rem;
+    margin-top: 1rem;
     @apply dark:bg-dark-bg-secondary dark:text-dark-primary;
 }
 

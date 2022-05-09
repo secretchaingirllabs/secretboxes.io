@@ -7,5 +7,6 @@ import svelte from "@astrojs/svelte";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://snazzy-conkies-d2e682.netlify.app',
-  integrations: [svelte(), tailwind(), sitemap()]
+  integrations: [svelte(), tailwind(), sitemap()],
+  markdown: { mode: 'mdx' },
 });
