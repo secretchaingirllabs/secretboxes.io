@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '@layouts/Default.astro';
+import Animation from '@components/Animation.svelte';
 import PostCountIndicator from '@components/PostCountIndicator.svelte';
 import MarkdownButtonControls from '@components/MarkdownButtonControls.svelte';
 import { toKebabCase } from '../../../lib/utils';
@@ -39,13 +40,9 @@ const boxTitle = post.frontmatter.box.title;
                 <p class="dark:text-dark-secondary">{post.frontmatter.box.description}</p>
             </div>
             
-            <!-- This is a lotti animation -->
             <div class="flex shrink lg:grow justify-end">
-                <img class="lg:scale-125" src={post.frontmatter.box.image} alt={`Illustration for ${post.frontmatter.box.title} box`}>
+                <Animation client:load id="markdown-lottie-header" path={post.frontmatter.box.lottie} styles="w-[250px] h-[170.63px]" loop={true}></Animation>
             </div>
-
-            <!-- Need a BoxPostProgressBar component that knows the number of posts -->
-            <!-- related to a particular box and the titles of each of those posts -->
         </div>
 
 

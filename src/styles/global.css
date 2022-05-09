@@ -55,6 +55,10 @@ select {
     @apply dark:text-dark-secondary;
 }
 
+.markdown p > code {
+    @apply bg-white dark:bg-dark-hover;
+}
+
 .markdown h2 {
     font-family: 'Golos';
     font-style: normal;
@@ -65,7 +69,7 @@ select {
     @apply dark:text-dark-primary;
 }
 
-.markdown h2:first-of-type {
+.markdown h2 {
     border-top: 0.5px solid #d6d6d6;
     padding-top: 1rem;
 }
@@ -73,11 +77,10 @@ select {
 .markdown ul {
     list-style-image: url('/icons/list_icon.svg');
     margin-left: 2rem;
-    margin-bottom: 1rem;
-    @apply dark:text-dark-secondary;
+    @apply mb-6 dark:text-dark-secondary;
 }
 
-.markdown a :not(.md-controls>a) {
+.markdown a:not(.md-controls a, .markdown > :nth-child(2) a) {
     color: #4867f8
 }
 
@@ -94,7 +97,7 @@ select {
 }
 
 .markdown mark {
-    @apply bg-primary block py-4 px-6 my-6 rounded-lg;
+    @apply inline-block bg-primary py-4 px-6 mb-6 rounded-lg;
 }
 
 .markdown mark > code {
@@ -105,9 +108,9 @@ select {
     background-color: #fff !important;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
     padding-left: 2rem;
     border-radius: 8px;
+    @apply mb-6
 }
 
 .astro-code span span {
