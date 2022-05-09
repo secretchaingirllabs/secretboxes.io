@@ -1,8 +1,4 @@
 ---
-setup: |
-  import MarkdownImage from 'src/components/MarkdownImage.svelte';
-  import MarkdownVersionSelect from 'src/components/MarkdownVersionSelect.svelte';
-  import MarkdownCodeSnippet from 'src/components/MarkdownCodeSnippet.astro';
 title: Launch Developer Blockchain 
 description: The first thing you’ll need to do to start developing secret contracts in your local environment is install and launch a Secret Network blockchain.
 box: {
@@ -30,27 +26,27 @@ It's super easy and quick, once you have `docker` installed. Just a few commands
 
 - Install [Docker](https://docs.docker.com/get-docker/) for your environment (Mac, Windows, Linux).
 
-<MarkdownVersionSelect client:visible versions={frontmatter.versions}></MarkdownVersionSelect>
+<!-- <MarkdownVersionSelect client:visible versions={frontmatter.versions}></MarkdownVersionSelect> -->
 
 <div id="linux" class="version">
 In a terminal window start the Secret Network by running the docker container named secretdev:
 
-<MarkdownCodeSnippet buttonId="snippet-1">
+<!-- <MarkdownCodeSnippet> -->
 ```
 docker run -it --rm \
   -p 26657:26657 -p 26656:26656 -p 1337:1337 \
   --name secretdev enigmampc/secret-network-sw-dev
 ```
-</MarkdownCodeSnippet>
+<!-- </MarkdownCodeSnippet> -->
 
 <mark>Note: To stop the secretdev blockchain enter `ctrl + c`</mark>
 
 Your local blockchain starts with a set of keys or accounts, named `a,` `b,` `c,` and `d.`
 
-<MarkdownImage 
+<!-- <MarkdownImage 
   client:visible
   alt="Image of Secret testnet startup"
-  image="/boxes/hello world/secretdev-startup-1.jpg"></MarkdownImage>
+  image="/boxes/hello world/secretdev-startup-1.jpg"></MarkdownImage> -->
 
 After initializing and validating the genesis file you can see the network starting and blocks getting committed. Included in the startup is an HTTP REST server (also known as the LCD or Light Client Daemon) that can be accessed via `localhost` on port 1337
 
