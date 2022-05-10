@@ -49,6 +49,18 @@
         }
     }
 
+    function getDifficultyCompareScore(difficulty: string) {
+        switch(difficulty.toLowerCase()) {
+            case 'beginner': return 0;
+            case 'intermediate': return 1;
+            case 'advanced': return 2;
+            default: return 3;
+        }
+    }
+
+    // When this component is loaded into the page, theres a chance the user
+    // passed a query string in the URL to prefilter the listed boxes by difficulty
+    // If they didn't pass query string, we just return all boxes sorted by difficulty. 
     onMount(() => {
         const params = new Proxy(new URLSearchParams(window.location.search), {
             // @ts-ignore: Unreachable code error
@@ -61,7 +73,20 @@
         if (difficulty) {
             filter(difficulty);
         } else {
-            cache = boxes
+            cache = boxes.sort((a, b) => {
+                let aRank = getDifficultyCompareScore(a.difficulty);
+                let bRank = getDifficultyCompareScore(b.difficulty);
+
+                if (aRank < bRank) {
+                    return -1;
+                }
+
+                if (aRank > bRank) {
+                    return 1;
+                }
+
+                return 0
+            })
         }
     })
 </script>
