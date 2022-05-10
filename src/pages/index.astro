@@ -6,6 +6,9 @@ import Tag from '@components/Tag.svelte';
 import '../styles/global.css';
 
 let title = 'Home | Secret Boxes';
+
+// This is an empty function used for our disabled buttons, so that they don't interfere with SEO metrics
+const empty: Function = () => {};
 ---
 <HomeLayout title={title}>
 	<div id="hero" class="h-[calc(100vh_-_5rem)] relative">
@@ -63,8 +66,8 @@ let title = 'Home | Secret Boxes';
 							styles="" 
 							kind="primary" 
 							size="sm" 
-							disabled={false}
-							handler={{ action: 'https://gitpod.io/#https://github.com/gitpod-io/sveltejs-template' }}>
+							disabled={true}
+							handler={{ action: empty() }}>
 							<!-- Gitpod Icon -->
 							<img class="mr-2" src="/icons/gitpod_icon.svg" alt="">
 							<span>Launch</span>
@@ -75,7 +78,7 @@ let title = 'Home | Secret Boxes';
 							kind="secondary" 
 							size="sm" 
 							disabled={false}
-							handler={{ action: '/boxes' }}>
+							handler={{ action: '/boxes/hello-world/launch-developer-blockchain' }}>
 							Learn more	
 						</Button>
 					</div>
@@ -106,8 +109,8 @@ let title = 'Home | Secret Boxes';
 							styles="" 
 							kind="primary" 
 							size="sm" 
-							disabled={false}
-							handler={{ action: '/boxes' }}>
+							disabled={true}
+							handler={{ action: empty() }}>
 							<!-- Gitpod Icon -->
 							<img class="mr-2" src="/icons/gitpod_icon.svg" alt="">
 							Launch
@@ -118,7 +121,7 @@ let title = 'Home | Secret Boxes';
 							kind="secondary" 
 							size="sm" 
 							disabled={false}
-							handler={{ action: '/boxes' }}>
+							handler={{ action: '/boxes/secret-counter/coming-soon' }}>
 							Learn more
 						</Button>
 					</div>
@@ -158,8 +161,8 @@ let title = 'Home | Secret Boxes';
 							styles="" 
 							kind="primary" 
 							size="sm" 
-							disabled={false}
-							handler={{ action: '/boxes' }}>
+							disabled={true}
+							handler={{ action: empty() }}>
 							<!-- Gitpod Icon -->
 							<img class="mr-2" src="/icons/gitpod_icon.svg" alt="">
 							Launch
@@ -169,7 +172,7 @@ let title = 'Home | Secret Boxes';
 							kind="secondary" 
 							size="sm" 
 							disabled={false}
-							handler={{ action: '/boxes' }}>
+							handler={{ action: '/boxes/richie-rich/coming-soon' }}>
 							Learn more
 						</Button>
 					</div>

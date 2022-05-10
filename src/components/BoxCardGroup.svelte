@@ -4,6 +4,9 @@
     import Button from '@components/Button.svelte'
     import Tag from '@components/Tag.svelte';
 
+    // This is an empty function used for our disabled buttons, so that they don't interfere with SEO metrics
+    const empty: Function = () => {};
+
     export let data: BoxMetadata[]
     export let posts;
 
@@ -16,6 +19,7 @@
             return '404';
         }
     }
+
 </script>
 
 {#if data.length === 0}
@@ -38,8 +42,8 @@
                     kind="primary" 
                     size="sm" 
                     styles=""
-                    disabled={false}
-                    handler={{ action: '/' }}>
+                    disabled={true}
+                    handler={{ action: empty() }}>
 					<img class="mr-2" src="/icons/gitpod_icon.svg" alt="">
                     Launch
                 </Button>

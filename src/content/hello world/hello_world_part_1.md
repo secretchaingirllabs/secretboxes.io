@@ -85,10 +85,3 @@ secretcli keys list
 Use exit to `quit` your interactive Docker session.
 
 </div>
-
-<div id="mac-os" class="version">
-  This is the mac os content
-</div>
-<div id="windows" class="version">
-  This is the windows content
-</div>

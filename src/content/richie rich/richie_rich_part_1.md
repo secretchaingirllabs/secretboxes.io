@@ -3,13 +3,13 @@ title: Coming Soon
 description: This secret box is in active devlopment and more info will be shared with Secret Network community soon!
 box: {
     createdAt: 2022-04-01,
-    title: Secret Counter,
-    description: "Based on “simple counter,” the template for smart contract development on Secret, this box illustrates the basics of querying and modifying contract state using the “getCount” and “increment” messages.",
+    title: Richie Rich,
+    description: "How do you find out who’s the richest without revealing your net worth to the world? This secret box, based on Yao’s Millionaires’ Problem, illustrates how that can be done on Secret.",
     prelude: A fun way for developers to quickly learn about working with secret contracts.,
-    difficulty: Beginner,
-    image: /illustrations/counter_illustration.svg,
+    difficulty: Intermediate,
+    image: /illustrations/richie_rich_illustration.svg,
     gitpod: https://gitpod.io/#https://github.com/gitpod-io/sveltejs-template,
-    lottie: https://assets5.lottiefiles.com/private_files/lf30_sqamzndl.json
+    lottie: https://assets6.lottiefiles.com/private_files/lf30_woabmjiz.json
 }
 index: 1
 ---
