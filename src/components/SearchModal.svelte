@@ -1,6 +1,6 @@
 <script>
     import Fuse from 'fuse.js';
-    import { createEventDispatcher } from 'svelte';
+    import { onMount, createEventDispatcher } from 'svelte';
     import { clickOutside } from 'src/lib/clickOutside';
     import { toKebabCase } from 'src/lib/utils';
     
@@ -24,6 +24,13 @@
     let isVisible = false;
     let query = '';
 
+    // This component only appears when the user has clicked on an input
+    // in the header. We need switch focus from the input they clicked on
+    // to this input for better usability.
+    onMount(() => {
+        document.getElementById('search-bar-modal-input').focus();
+    })
+
     function goTo(post) {
         let box = toKebabCase(post.item.frontmatter.box.title);
         let postTitle = toKebabCase(post.item.frontmatter.title);
@@ -39,7 +46,7 @@
 
 <div class="fixed w-full h-full top-0 left-0 bg-modal overflow-auto z-10">
     <div use:clickOutside on:click_outside={emitClickOutside}>
-        <input bind:value={query} on:input={() => isVisible = true} class="block w-1/2 h-14 mx-auto mt-[200px] outline-none bg-white rounded-lg bg-search bg-no-repeat bg-left-center pl-8 pr-2" type="text" placeholder="search"/>
+        <input id="search-bar-modal-input" bind:value={query} on:input={() => isVisible = true} class="block w-1/2 h-14 mx-auto mt-[200px] outline-none bg-white rounded-lg bg-search bg-no-repeat bg-left-center pl-8 pr-2" type="text" placeholder="search"/>
 
         {#if isVisible && query !== ''}
             <div class="mt-3 w-1/2 mx-auto h-80 bg-white rounded-lg overflow-scroll px-4">

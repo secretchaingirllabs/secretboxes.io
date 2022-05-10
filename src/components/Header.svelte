@@ -3,7 +3,6 @@
     import ThemeToggle from '@components/ThemeToggle.svelte';
     import TopNav from '@components/TopNav.svelte';
     import SearchModal from '@components/SearchModal.svelte';
-    import { onMount } from 'svelte';
 
     export let posts = [];
 
