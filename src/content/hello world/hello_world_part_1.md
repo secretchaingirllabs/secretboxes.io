@@ -19,6 +19,8 @@ versions: ['Linux', 'Windows', 'Mac OS']
 2. [Query the latest block](#query-the-latest-block)
 3. [Use the CLI to Interact with the Network](#query-the-latest-block)
 
+<div id="content">
+
 This tutorial is for developers to get started with development on the Secret Network. The local blockchain runs in a docker container and simulates the Intel SGX (TEE) that is a requirement for the Holodeck testnet and mainnet.
 
 It's super easy and quick, once you have `docker` installed. Just a few commands!
@@ -84,4 +86,5 @@ secretcli keys list
 
 Use exit to `quit` your interactive Docker session.
 
+</div>
 </div>
