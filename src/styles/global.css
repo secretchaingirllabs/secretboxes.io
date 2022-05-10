@@ -35,7 +35,6 @@ select {
     CSS using Tailwind's normal deterministic style unless opting for
     @tailwindcss/typography plugin
 */
-
 .markdown > :first-child, .markdown > :nth-child(2) {
     @apply dark:text-dark-primary;
     @apply lg:float-right lg:clear-right lg:w-[26%] lg:pl-[2.25rem];
@@ -76,7 +75,7 @@ select {
 
 .markdown ul {
     list-style-image: url('/icons/list_icon.svg');
-    margin-left: 2rem;
+    margin-left: 1rem;
     @apply mb-6 dark:text-dark-secondary;
 }
 
@@ -93,7 +92,7 @@ select {
     border-radius: 8px; 
     padding: 2.25rem 3.5rem;
     margin-top: 1rem;
-    @apply dark:bg-dark-bg-secondary dark:text-dark-primary;
+    @apply m-0 dark:bg-dark-bg-secondary dark:text-dark-primary;
 }
 
 .markdown mark {
