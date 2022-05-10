@@ -3,6 +3,7 @@
     import ThemeToggle from '@components/ThemeToggle.svelte';
     import TopNav from '@components/TopNav.svelte';
     import SearchModal from '@components/SearchModal.svelte';
+    import FirstVisitModal from '@components/FirstVisitModal.svelte';
 
     export let posts = [];
 
@@ -14,6 +15,8 @@
 {#if isVisible}
     <SearchModal posts={posts} on:click_outside={() => { isVisible = false }}></SearchModal>
 {/if}
+
+<FirstVisitModal></FirstVisitModal>
 
 <header class="grid grid-cols-2 h-20 items-center">
     <a class="inline justify-self-center" href="/">
