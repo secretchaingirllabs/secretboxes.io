@@ -2,7 +2,7 @@
 title: Coming Soon
 description: This secret box is in active devlopment and more info will be shared with Secret Network community soon!
 box: {
-    createdAt: 2022-04-01,
+    createdAt: 2022-05-03,
     title: Richie Rich,
     description: "How do you find out who’s the richest without revealing your net worth to the world? This secret box, based on Yao’s Millionaires’ Problem, illustrates how that can be done on Secret.",
     prelude: A fun way for developers to quickly learn about working with secret contracts.,
