@@ -8,7 +8,7 @@ box: {
     prelude: A fun way for developers to quickly learn about working with secret contracts.,
     difficulty: Intermediate,
     image: /illustrations/richie_rich_illustration.svg,
-    gitpod: https://gitpod.io/#https://github.com/gitpod-io/sveltejs-template,
+    gitpod: "",
     lottie: https://assets6.lottiefiles.com/private_files/lf30_woabmjiz.json
 }
 index: 1

@@ -12,5 +12,6 @@ export interface BoxMetadata {
     prelude: string,
     difficulty: string,
     image: string,
+    gitpod: string,
     lottie: string,
 }

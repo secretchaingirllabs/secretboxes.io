@@ -20,6 +20,9 @@
         }
     }
 
+    function isLaunchBtnDisabled(box) {
+        return box.gitpod === '';
+    };
 </script>
 
 {#if data.length === 0}
@@ -42,8 +45,8 @@
                     kind="primary" 
                     size="sm" 
                     styles=""
-                    disabled={true}
-                    handler={{ action: empty() }}>
+                    disabled={isLaunchBtnDisabled(d)}
+                    handler={{ action: d.gitpod }}>
 					<img class="mr-2" src="/icons/gitpod_icon.svg" alt="">
                     Launch
                 </Button>

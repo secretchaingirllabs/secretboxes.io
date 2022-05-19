@@ -8,7 +8,7 @@ box: {
     prelude: A fun way for developers to quickly learn about working with secret contracts.,
     difficulty: Beginner,
     image: /illustrations/hello_world_illustration.svg,
-    gitpod: https://gitpod.io/#https://github.com/gitpod-io/sveltejs-template,
+    gitpod: https://gitpod.io/#https://github.com/secretchaingirl/secret-hello-world-box-vuejs/tree/main,
     lottie: https://assets5.lottiefiles.com/private_files/lf30_0vbtxqrd.json
 }
 index: 1
